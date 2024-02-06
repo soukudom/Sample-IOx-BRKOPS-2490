@@ -1,0 +1,30 @@
+descriptor-schema-version: "2.10"
+
+info:
+  name: CLEU-WEB-AP-APP-2
+  description: "CLEU24-web-ap-app-2"
+  version: "2.7.2"
+  author-link: "http://www.cisco.com"
+  author-name: "Cisco Systems"
+
+app:
+ # Refer Platform Support Matrix table.
+ # armv7l for 32 bit CPU Architecture.
+ # aarch64 for 64 bit CPU Architecture.
+  cpuarch: aarch64
+  type: docker # Indicate app type (docker)
+  resources:
+    profile: c1.small
+    network:
+       -   
+        interface-name: eth0
+        ports:
+            tcp: [8000]
+            udp: [8000]
+
+# Specify runtime and startup
+
+  startup:
+    rootfs: rootfs.img
+    target: "/bin/sh /init.sh"
+    #os-mode: true
