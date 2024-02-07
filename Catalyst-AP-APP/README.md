@@ -1,4 +1,4 @@
-#How to build the code 
+# How to build the code 
 1. [Download the ioxclient](https://developer.cisco.com/docs/iox/#!iox-resource-downloads)
 The tool ioxclient is required to convert docker image to the proper format for Catalyst APs. 
 2. Install Docker (see details based on your OS)
