@@ -5,6 +5,8 @@
 4. Save docker image with `docker save cleu24-app:latest -o demo.tar`
 5. Select installation tool and deploy the app. In section below you find details for Cisco Catalyst Center and CLI
 
+Note: Unfortunately the demo.tar has more than 100 MB and cannot be uploaded to Github repository. On the other hand, it is the great opportunity to try docker commands :-) 
+
 
 # Install via Catalyst Center
 1. Select Provision ->
@@ -19,4 +21,4 @@
 5. Activate and Start the appid 
 
 
-Note: More detailed information you can find [here](https://developer.cisco.com/docs/app-hosting/#!getting-cat9k-setup)
+Note: More detailed information you can find [here](https://developer.cisco.com/docs/app-hosting/#!getting-cat9k-setup). There is much more examples including details, such as networking configuration.
