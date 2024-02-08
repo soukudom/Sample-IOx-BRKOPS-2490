@@ -9,7 +9,7 @@ Note: Unfortunately the demo.tar has more than 100 MB and cannot be uploaded to 
 
 
 # Install via Catalyst Center
-1. Select Provision ->
+1. Select Provision -> App Hosting for Switches
 2. Click New App and upload the saved docker tar file
 3. Click on the uploaded app dash, select Install and follow the wizard 
 
