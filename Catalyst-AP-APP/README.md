@@ -8,6 +8,7 @@ The tool ioxclient is required to convert docker image to the proper format for 
 6. Select installation tool and deploy the app. In section below you find details for Cisco Catalyst Center and ioxclient
 
 Note: Packages of sample app are available in the package directory
+Note 2: Before installation check that IOx feature is enabled on C9800
 
 # Install via Catalyst Center
 1. Go to Provision -> IoT Services
