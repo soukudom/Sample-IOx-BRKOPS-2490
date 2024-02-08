@@ -10,3 +10,6 @@ Note: To make packet capture alive you need to mirror the traffic to the IOx app
 
 # Install via CLI
 1. The same approach as for Catalyst Switch Sample app
+
+
+Note: Video demonstration - TBD

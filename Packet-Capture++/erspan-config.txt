@@ -1,10 +1,10 @@
 ERSPAN Source – vlan interface
 Switch(config)#monitor session 2 type  erspan-source
-Switch(config-mon-erspan-src)#source interface vlan 10
+Switch(config-mon-erspan-src)#source vlan <vlan-id>
 Switch(config-mon-erspan-src)#no shut
 Switch(config-mon-erspan-src)#destination
-Switch(config-mon-erspan-src-dst)#ip address 10.1.1.5 #IP address of the IOx app
-Switch(config-mon-erspan-src-dst)#origin ip address 10.1.1.1
+Switch(config-mon-erspan-src-dst)#ip address <IP address of the IOx app>
+Switch(config-mon-erspan-src-dst)#origin ip address <IP address for the switch SVI>
 Switch(config-mon-erspan-src-dst)#erspan-id 5 
 
 App Port Configuration (L2 Port)
