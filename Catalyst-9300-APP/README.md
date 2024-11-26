@@ -18,6 +18,8 @@ Make sure Docker is installed on your system. You can find installation instruct
    ```
    sh iox-service 
    ```
+   ![ioxservice](./img/ioxservice.png)
+
    Get info on any installed apps, use the `sh app-hosting ?` command.
 
 2. Configure network interface for the application
