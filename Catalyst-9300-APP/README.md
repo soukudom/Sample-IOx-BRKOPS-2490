@@ -29,7 +29,7 @@ Make sure Docker is installed on your system. You can find installation instruct
    ```
    ```iox
    conf t
-   app-hosting appid MYAPP 
+   app-hosting appid cleu25-app 
    app-vnic AppGigabitEthernet trunk 
    vlan <vlan_id> guest-interface 0 
    end
