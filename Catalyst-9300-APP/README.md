@@ -29,11 +29,11 @@ Make sure Docker is installed on your system. You can find installation instruct
 1. Download or clone this GitHub repository to your local machine.
 2. Navigate to the directory containing the Dockerfile and run:
    ```
-   docker build -t cleu24-app .
+   docker build -t cleu25-app .
    ```
 3. Export the image to a .tar file:
    ```
-   docker save cleu24-app:latest -o demo.tar
+   docker save cleu25-app:latest -o demo.tar
    ```
 
 Note: Unfortunately the demo.tar has more than 100 MB and cannot be uploaded to Github repository. On the other hand, it is the great opportunity to try docker commands :-)
@@ -53,15 +53,15 @@ Note: Find more information and a detailed guide in the [Catalyst Center End Use
 ### Option 2: Install via CLI
 
 1. Copy the `demo.tar` file to the SSD (usfblash1) of your Switch.
-2. Install the application using the command:
+2. Install the application using the command  ```app-hosting install appid <app-name> package usbflash1:<docker-tar-file> ```, e.g.:
     ```
-    app-hosting install appid <app-name> package usbflash1:<docker-tar-file>
+    app-hosting install appid cleu25-app package usbflash1:demo.tar
     ```
 3. Configure network interface for the application
 4. Activate and Start the the application
     ```
-    app-hosting active appid <app-name> 
-    app-hosting start appid <app-name> 
+    app-hosting active appid cleu25-app 
+    app-hosting start appid cleu25-app 
    ```
 
 Note: More detailed information you can find [here](https://developer.cisco.com/docs/app-hosting/#!getting-cat9k-setup). There is much more examples including details, such as networking configuration.
@@ -71,29 +71,29 @@ Note: More detailed information you can find [here](https://developer.cisco.com/
 
 1. To Verify the app status, use:
    ```
-   sh app-hosting detail appid MYAPP 
+   sh app-hosting detail appid cleu25-app 
    ```
 
 2. Connect to the app 
    ```
-   app-hosting connect appid MYAPP session   
+   app-hosting connect appid cleu25-app session   
    ```
 
 **Stop and Remove app**
 1. Stop app
    ```iox
-   app-hosting stop appid MYAPP
+   app-hosting stop appid cleu25-app
    ```
 2. Deactivate app
    ```iox
-   app-hosting deactivate appid MYAPP
+   app-hosting deactivate appid cleu25-app
    ```
 3. Uninstall app
    ```iox
-   app-hosting uninstall appid MYAPP
+   app-hosting uninstall appid cleu25-app
    ```
-4. Remove the app-hosting config
+4. Remove the app-hosting cleu25-app
    ```iox
    conf t
-   no app-hosting appid MYAPP   
+   no app-hosting appid cleu25-app   
    ```
