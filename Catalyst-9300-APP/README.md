@@ -15,21 +15,22 @@ Make sure Docker is installed on your system. You can find installation instruct
    ```
 
    Verify the IOX service:
+
    ```
    sh iox-service 
    ```
+
    ![ioxservice](./img/ioxservice.png)
 
    Get info on any installed apps, use the `sh app-hosting ?` command.
-
 2. Configure network interface for the application
-    ```iox
+
+   ```iox
    conf t
    interface AppGigabitEthernet 1/0/1
    switchport trunk allowed vlan <vlan_id>
    switchport mode trunk  
    ```
-
 3. (Optional) If you need to disable signed verification for app hosting, execute:
 
    ```
@@ -69,20 +70,21 @@ Note: Find more information and a detailed guide in the [Catalyst Center End Use
 2. Configure the interface of the app
    ```
    conf t
-   app-hosting appid cleu25-app 
+   app-hosting appid cleu25 
    app-vnic AppGigabitEthernet trunk 
    vlan <vlan_id> guest-interface 0 
    end
    ```
-2. Install the application using the command  `app-hosting install appid <app-name> package usbflash1:<docker-tar-file>`. E.g.:
+3. Install the application using the command  `app-hosting install appid <app-name> package usbflash1:<docker-tar-file>`. E.g.:
    ```
-   app-hosting install appid cleu25-app package usbflash1:demo.tar
+   app-hosting install appid cleu25 package usbflash1:demo.tar
    ```
-3. Activate and Start the the application
+4. Activate and Start the the application
    ```
-   app-hosting activate appid cleu25-app 
-   app-hosting start appid cleu25-app 
+   app-hosting activate appid cleu25 
+   app-hosting start appid cleu25 
    ```
+
 ![StartApp](./img/install-activate-start.png)
 
 Note: More detailed information you can find [here](https://developer.cisco.com/docs/app-hosting/#!getting-cat9k-setup). There is much more examples including details, such as networking configuration.
@@ -92,24 +94,26 @@ Note: More detailed information you can find [here](https://developer.cisco.com/
 1. To Verify the app status, use:
 
    ```
-   sh app-hosting detail appid cleu25-app 
+   sh app-hosting detail appid cleu25 
    ```
 2. Connect to the app
 
    ```
-   app-hosting connect appid cleu25-app session   
+   app-hosting connect appid cleu25 session   
    ```
 
 **Stop and Remove app**
+
 1. Stop, remove and uninstall the app:
    ```iox
-   app-hosting stop appid cleu25-app
-   app-hosting deactivate appid cleu25-app
-   app-hosting uninstall appid cleu25-app
+   app-hosting stop appid cleu25
+   app-hosting deactivate appid cleu25
+   app-hosting uninstall appid cleu25
    ```
-4. Remove the app-hosting cleu25-app
+2. Remove the app-hosting cleu25
    ```iox
    conf t
-   no app-hosting appid cleu25-app   
+   no app-hosting appid cleu25   
    ```
+
 ![StopApp](./img/uninstall-deactivate-stop.png)
