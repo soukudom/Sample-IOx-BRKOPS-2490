@@ -79,6 +79,7 @@ Note: Find more information and a detailed guide in the [Catalyst Center End Use
    app-hosting activate appid cleu25-app 
    app-hosting start appid cleu25-app 
    ```
+![StartApp](./img/install-activate-start.png)
 
 Note: More detailed information you can find [here](https://developer.cisco.com/docs/app-hosting/#!getting-cat9k-setup). There is much more examples including details, such as networking configuration.
 
@@ -96,17 +97,10 @@ Note: More detailed information you can find [here](https://developer.cisco.com/
    ```
 
 **Stop and Remove app**
-
-1. Stop app
+1. Stop, remove and uninstall the app:
    ```iox
    app-hosting stop appid cleu25-app
-   ```
-2. Deactivate app
-   ```iox
    app-hosting deactivate appid cleu25-app
-   ```
-3. Uninstall app
-   ```iox
    app-hosting uninstall appid cleu25-app
    ```
 4. Remove the app-hosting cleu25-app
@@ -114,3 +108,4 @@ Note: More detailed information you can find [here](https://developer.cisco.com/
    conf t
    no app-hosting appid cleu25-app   
    ```
+![StopApp](./img/uninstall-deactivate-stop.png)
