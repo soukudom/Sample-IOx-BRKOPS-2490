@@ -60,8 +60,8 @@ Note: Find more information and a detailed guide in the [Catalyst Center End Use
 3. Configure network interface for the application
 4. Activate and Start the the application
     ```
-    app-hosting active appid MYAPP
-    app-hosting start appid MYAPP
+    app-hosting active appid <app-name> 
+    app-hosting start appid <app-name> 
    ```
 
 Note: More detailed information you can find [here](https://developer.cisco.com/docs/app-hosting/#!getting-cat9k-setup). There is much more examples including details, such as networking configuration.
