@@ -29,13 +29,7 @@ Make sure Docker is installed on your system. You can find installation instruct
    switchport trunk allowed vlan <vlan_id>
    switchport mode trunk  
    ```
-   ```iox
-   conf t
-   app-hosting appid cleu25-app 
-   app-vnic AppGigabitEthernet trunk 
-   vlan <vlan_id> guest-interface 0 
-   end
-   ```
+
 3. (Optional) If you need to disable signed verification for app hosting, execute:
 
    ```
@@ -72,6 +66,14 @@ Note: Find more information and a detailed guide in the [Catalyst Center End Use
 ### Option 2: Install via CLI
 
 1. Copy the `demo.tar` file to the SSD (usfblash1) of your Switch.
+2. Configure the interface of the app
+   ```
+   conf t
+   app-hosting appid cleu25-app 
+   app-vnic AppGigabitEthernet trunk 
+   vlan <vlan_id> guest-interface 0 
+   end
+   ```
 2. Install the application using the command  `app-hosting install appid <app-name> package usbflash1:<docker-tar-file>`. E.g.:
    ```
    app-hosting install appid cleu25-app package usbflash1:demo.tar
