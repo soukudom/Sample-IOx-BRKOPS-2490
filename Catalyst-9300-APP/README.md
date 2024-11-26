@@ -76,7 +76,7 @@ Note: Find more information and a detailed guide in the [Catalyst Center End Use
    ```
 3. Activate and Start the the application
    ```
-   app-hosting active appid cleu25-app 
+   app-hosting activate appid cleu25-app 
    app-hosting start appid cleu25-app 
    ```
 
