@@ -37,7 +37,7 @@ Note: In hierarchy you need to go to floor level to see available APs
 ## Option 2: Install via ioxclient
 1. Configure an `ioxclient` profile and deploy the app based on the instructions [here](https://developer.cisco.com/docs/app-hosting-ap/#!deploy-iox-application-on-ap-using-ioxclient/activate-the-iox-application-on-ap)
     ```
-    ioxclient profiles create MY-PROFILE
+    ioxclient profiles create
     ```
     To verify the active profile, use `ioxclient profiles list`.
 
@@ -55,6 +55,15 @@ Note: In hierarchy you need to go to floor level to see available APs
     ``` 
 
 After deployment use `ioxclient app info CLEU-AP-APP` to validate configuration
+
+**Stop and Remove app**
+
+1. Stop, remove and uninstall the app:
+   ```iox
+   app-hosting stop appid cleu25
+   app-hosting deactivate appid cleu25
+   app-hosting uninstall appid cleu25
+   ```
 
 **Verify and Test the app (from the AP itself)**
 1. To Verify the app status, use:
