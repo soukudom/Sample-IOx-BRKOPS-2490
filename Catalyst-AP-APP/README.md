@@ -41,28 +41,28 @@ Note: In hierarchy you need to go to floor level to see available APs
     ```
     To verify the active profile, use `ioxclient profiles list`.
 
-2.  Install the application using the command. Note that the name `CLEU-WEB-AP-APP` is the same as defined in the `package.yaml`'s `name` variable.
+2.  Install the application using the command.
     ```
-    ioxclient app install CLEU-WEB-AP-APP package.tar
+    ioxclient app install CLEUAPP package.tar
     ```
-3.  To activate the app use. Append an activation file if needed with `--payload activation.json`.
+3.  To activate the app use:
     ```
-    ioxclient app activate CLEU-WEB-AP-APP
+    ioxclient app activate CLEUAPP --payload activation.json
     ``` 
 4.  Now, start the app
     ```
-    ioxclient app start CLEU-WEB-AP-APP
+    ioxclient app start CLEUAPP
     ``` 
 
-After deployment use `ioxclient app info CLEU-WEB-AP-APP` to validate configuration
+After deployment use `ioxclient app info CLEUAPP` to validate configuration
 
 **Stop and Remove app**
 
 1. Stop, remove and uninstall the app:
    ```iox
-    ioxclient app stop CLEU-WEB-AP-APP
-    ioxclient app deactivate CLEU-WEB-AP-APP
-    ioxclient app uninstall CLEU-WEB-AP-APP
+    ioxclient app stop CLEUAPP
+    ioxclient app deactivate CLEUAPP
+    ioxclient app uninstall CLEUAPP
    ```
 
 **Verify and Test the app (from the AP itself)**
