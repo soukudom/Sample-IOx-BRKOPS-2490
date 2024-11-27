@@ -1,0 +1,7 @@
+{
+    "resources":
+    {
+            "network": [{"interface-name": "eth0", "network-name": "iox-nat0", "port_map":{"mode" : "1to1" } }],
+            "devices": [{"type": "serial", "alias": "usb_serial", "label": "HOST_DEV", "device-id":"/dev/ttyUSB0", "usage":"Serial device of USB port of AP"}]
+    }
+}
