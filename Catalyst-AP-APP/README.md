@@ -35,34 +35,34 @@ Note: Packages of sample app are available in the package directory
 Note: In hierarchy you need to go to floor level to see available APs
 
 ## Option 2: Install via ioxclient
-1. Configure an `ioxclient` profile and deploy the app based on the instructions [here](https://developer.cisco.com/docs/app-hosting-ap/#!deploy-iox-application-on-ap-using-ioxclient/activate-the-iox-application-on-ap)
+1. Configure an `ioxclient` profile and deploy the app based on the instructions [here](https://developer.cisco.com/docs/app-hosting-ap/#!deploy-iox-application-on-ap-using-ioxclient/activate-the-iox-application-on-ap).
     ```
     ioxclient profiles create
     ```
     To verify the active profile, use `ioxclient profiles list`.
 
-2.  Install the application using the command  
+2.  Install the application using the command. Note that the name `CLEU-WEB-AP-APP` is the same as defined in the `package.yaml`'s `name` variable.
     ```
-    ioxclient app install CLEU-AP-APP package.tar
+    ioxclient app install CLEU-WEB-AP-APP package.tar
     ```
 3.  To activate the app use. Append an activation file if needed with `--payload activation.json`.
     ```
-    ioxclient app activate CLEU-AP-APP
+    ioxclient app activate CLEU-WEB-AP-APP
     ``` 
 4.  Now, start the app
     ```
-    ioxclient app start CLEU-AP-APP
+    ioxclient app start CLEU-WEB-AP-APP
     ``` 
 
-After deployment use `ioxclient app info CLEU-AP-APP` to validate configuration
+After deployment use `ioxclient app info CLEU-WEB-AP-APP` to validate configuration
 
 **Stop and Remove app**
 
 1. Stop, remove and uninstall the app:
    ```iox
-   app-hosting stop appid cleu25
-   app-hosting deactivate appid cleu25
-   app-hosting uninstall appid cleu25
+    ioxclient app stop CLEU-WEB-AP-APP
+    ioxclient app deactivate CLEU-WEB-AP-APP
+    ioxclient app uninstall CLEU-WEB-AP-APP
    ```
 
 **Verify and Test the app (from the AP itself)**
