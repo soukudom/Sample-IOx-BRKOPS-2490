@@ -35,12 +35,26 @@ Note: Packages of sample app are available in the package directory
 Note: In hierarchy you need to go to floor level to see available APs
 
 ## Option 2: Install via ioxclient
-1. Configure ioxclient profile and deploy the app based on the instructions [here](https://developer.cisco.com/docs/app-hosting-ap/#!deploy-iox-application-on-ap-using-ioxclient/activate-the-iox-application-on-ap)
-2. After deployment use `ioxclient app info <app name>` to validate configuration
+1. Configure an `ioxclient` profile and deploy the app based on the instructions [here](https://developer.cisco.com/docs/app-hosting-ap/#!deploy-iox-application-on-ap-using-ioxclient/activate-the-iox-application-on-ap)
+    ```
+    ioxclient profiles create MY-PROFILE
+    ```
+2.  Install the application using the command  
+    ```
+    ioxclient app install MY-PROFILE package.tar
+    ```
+3.  To activate the app, use. Append an activation file if needed with `--payload activation-serial.json``.
+    ```
+    ioxclient app activate MY-PROFILE
+    ``` 
+4.  Now, start the app
+    ```
+    ioxclient app start MY-PROFILE
+    ``` 
 
-Note: For console access you can use ioxclient or  AP CLI command `connect iox application`
+After deployment use `ioxclient app info CLEU-AP-APP` to validate configuration
 
-**Verify and Test the app**
+**Verify and Test the app (from the AP itself)**
 1. To Verify the app status, use:
     ```iox
     sh iox applications
