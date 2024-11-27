@@ -6,6 +6,7 @@ The tool ioxclient is required to convert docker image to the proper format for 
 # Step by Step Guide
 ## Set up you infrastrcture
 Before installation check that IOx feature is enabled on C9800.
+![UsbEnable](img/usb-enable.png)
 
 ## Containerize the Application
 1. Download or clone this GitHub repository to your local machine.
