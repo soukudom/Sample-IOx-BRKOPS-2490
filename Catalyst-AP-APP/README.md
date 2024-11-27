@@ -39,17 +39,19 @@ Note: In hierarchy you need to go to floor level to see available APs
     ```
     ioxclient profiles create MY-PROFILE
     ```
+    To verify the active profile, use `ioxclient profiles list`.
+
 2.  Install the application using the command  
     ```
-    ioxclient app install MY-PROFILE package.tar
+    ioxclient app install CLEU-AP-APP package.tar
     ```
-3.  To activate the app, use. Append an activation file if needed with `--payload activation.json`.
+3.  To activate the app use. Append an activation file if needed with `--payload activation.json`.
     ```
-    ioxclient app activate MY-PROFILE
+    ioxclient app activate CLEU-AP-APP
     ``` 
 4.  Now, start the app
     ```
-    ioxclient app start MY-PROFILE
+    ioxclient app start CLEU-AP-APP
     ``` 
 
 After deployment use `ioxclient app info CLEU-AP-APP` to validate configuration
