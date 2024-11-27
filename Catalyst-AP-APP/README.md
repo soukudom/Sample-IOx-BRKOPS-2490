@@ -43,7 +43,7 @@ Note: In hierarchy you need to go to floor level to see available APs
     ```
     ioxclient app install MY-PROFILE package.tar
     ```
-3.  To activate the app, use. Append an activation file if needed with `--payload activation-serial.json``.
+3.  To activate the app, use. Append an activation file if needed with `--payload activation.json`.
     ```
     ioxclient app activate MY-PROFILE
     ``` 
