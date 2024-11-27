@@ -85,7 +85,7 @@ Note: Find more information and a detailed guide in the [Catalyst Center End Use
    app-hosting start appid cleu25 
    ```
 
-![StartApp](./img/install-activate-start.png)
+![StartApp](./../img/install-activate-start.png)
 
 Note: More detailed information you can find [here](https://developer.cisco.com/docs/app-hosting/#!getting-cat9k-setup). There is much more examples including details, such as networking configuration.
 
@@ -116,4 +116,4 @@ Note: More detailed information you can find [here](https://developer.cisco.com/
    no app-hosting appid cleu25   
    ```
 
-![StopApp](./img/uninstall-deactivate-stop.png)
+![StopApp](./../img/uninstall-deactivate-stop.png)

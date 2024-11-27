@@ -40,7 +40,6 @@ Note: In hierarchy you need to go to floor level to see available APs
     ioxclient profiles create
     ```
     To verify the active profile, use `ioxclient profiles list`.
-
 2.  Install the application using the command.
     ```
     ioxclient app install CLEUAPP package.tar
@@ -53,17 +52,18 @@ Note: In hierarchy you need to go to floor level to see available APs
     ```
     ioxclient app start CLEUAPP
     ``` 
+![StartApp](./../img/install-activate-start.png)
 
 After deployment use `ioxclient app info CLEUAPP` to validate configuration
 
 **Stop and Remove app**
-
 1. Stop, remove and uninstall the app:
    ```iox
     ioxclient app stop CLEUAPP
     ioxclient app deactivate CLEUAPP
     ioxclient app uninstall CLEUAPP
    ```
+![StopApp](./../img/uninstall-deactivate-stop.png)
 
 **Verify and Test the app (from the AP itself)**
 1. To Verify the app status, use:
