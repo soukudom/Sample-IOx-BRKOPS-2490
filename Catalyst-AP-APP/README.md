@@ -56,15 +56,6 @@ Note: In hierarchy you need to go to floor level to see available APs
 
 After deployment use `ioxclient app info CLEUAPP` to validate configuration
 
-**Stop and Remove app**
-1. Stop, remove and uninstall the app:
-   ```iox
-    ioxclient app stop CLEUAPP
-    ioxclient app deactivate CLEUAPP
-    ioxclient app uninstall CLEUAPP
-   ```
-![StopApp](./../img/uninstall-deactivate-stop.png)
-
 **Verify and Test the app (from the AP itself)**
 1. To Verify the app status, use:
     ```iox
@@ -75,3 +66,12 @@ After deployment use `ioxclient app info CLEUAPP` to validate configuration
     ```iox
     connect iox application
     ```
+**Stop and Remove app**
+1. Stop, remove and uninstall the app:
+   ```iox
+    ioxclient app stop CLEUAPP
+    ioxclient app deactivate CLEUAPP
+    ioxclient app uninstall CLEUAPP
+   ```
+![StopApp](./../img/uninstall-deactivate-stop.png)
+
