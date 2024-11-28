@@ -32,7 +32,9 @@ Note: Packages of sample app are available in the package directory
 2. Click "New App" and upload the package.tar file.
 3. Click on the uploaded app dash, select Install and follow the wizard
 
-Note: In hierarchy you need to go to floor level to see available APs
+Note: In hierarchy you need to go to floor level to see available APs.
+
+Note2: Note: Find more information and a detailed guide in the [Application Hosting on Catalyst Access Points Deployment Guide](https://www.cisco.com/c/en/us/products/collateral/wireless/access-points/guide-c07-744305.html).
 
 ## Option 2: Install via ioxclient
 1. Configure an `ioxclient` profile and deploy the app based on the instructions [here](https://developer.cisco.com/docs/app-hosting-ap/#!deploy-iox-application-on-ap-using-ioxclient/activate-the-iox-application-on-ap).
