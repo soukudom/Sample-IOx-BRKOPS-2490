@@ -5,7 +5,7 @@ The tool ioxclient is required to convert docker image to the proper format for 
 
 # Step by Step Guide
 ## Set up you infrastrcture
-Before installation check that IOx feature is enabled on C9800:
+Before installation enable the IOx feature on your C9800 controller:
 ```
 conf t
 ap profile default-ap-profile
