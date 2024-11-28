@@ -5,8 +5,14 @@ The tool ioxclient is required to convert docker image to the proper format for 
 
 # Step by Step Guide
 ## Set up you infrastrcture
-Before installation check that IOx feature is enabled on C9800.
-![AppHostEnable](img/apphost-enable.png)
+Before installation check that IOx feature is enabled on C9800:
+```
+conf t
+ap profile default-ap-profile
+apphost
+end
+``` 
+To verify if apphost is enabled on your 9800 controller, use `sh ap apphost summary`.
 
 ## Containerize the Application
 1. Download or clone this GitHub repository to your local machine.
