@@ -11,11 +11,11 @@ Make sure Docker is installed on your system. You can find installation instruct
    ```
    conf t
    iox
+   ip http server
    end
    ```
 
    Verify the IOX service:
-
    ```
    sh iox-service 
    ```
@@ -91,9 +91,10 @@ Note: More detailed information you can find [here](https://developer.cisco.com/
 
 **Verify and Test the app**
 
-1. To Verify the app status, use:
+1. To Verify the installed apps and an app status, use:
 
    ```
+   sh app-hosting list
    sh app-hosting detail appid cleu25 
    ```
 2. Connect to the app
