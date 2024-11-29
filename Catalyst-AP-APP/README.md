@@ -64,7 +64,7 @@ Note2: Find more information and a detailed guide in the [Application Hosting on
 
 After deployment use `ioxclient app info CLEUAPP` to validate configuration.
 
-<img src="img/ioxclient.gif" width="600">
+<img src="img/ioxclient.gif" width="700">
 
 **Verify and Test the app (from the AP itself)**
 1. To Verify the app status, use:
