@@ -63,6 +63,7 @@ Note2: Find more information and a detailed guide in the [Application Hosting on
 ![StartApp](./../img/install-activate-start.png)
 
 After deployment use `ioxclient app info CLEUAPP` to validate configuration
+![Ioxclient](img/ioxclient.gif)
 
 **Verify and Test the app (from the AP itself)**
 1. To Verify the app status, use:
