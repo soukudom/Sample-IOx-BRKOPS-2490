@@ -89,6 +89,8 @@ Note: Find more information and a detailed guide in the [Catalyst Center End Use
 
 Note: More detailed information you can find [here](https://developer.cisco.com/docs/app-hosting/#!getting-cat9k-setup). There is much more examples including details, such as networking configuration.
 
+<img src="img/app-hosting.gif" width="700">
+
 **Verify and Test the app**
 
 1. To Verify the installed apps and an app status, use:
