@@ -1,3 +1,4 @@
+#!/usr/bin/python
 from bottle import route, run
 
 @route("/")
