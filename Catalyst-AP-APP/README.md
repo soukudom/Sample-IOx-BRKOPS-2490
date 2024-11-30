@@ -37,7 +37,7 @@ To verify if apphost is enabled on your 9800 controller, use `sh ap apphost summ
    ```
 6. Select installation tool and deploy the app. In section below you find details for Cisco Catalyst Center and ioxclient
 
-Note: Packages of sample app are available in the package directory
+Note: Packages of sample app are available in the `/package` directory.
 
 ## Option 1: Install via Catalyst Center
 1. In Catalyst Center, open *Provision > Services > IoT Services*.
