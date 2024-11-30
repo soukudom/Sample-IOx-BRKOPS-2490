@@ -17,9 +17,15 @@ To verify if apphost is enabled on your 9800 controller, use `sh ap apphost summ
 ## Containerize the Application
 1. Download or clone this GitHub repository to your local machine.
 2. Navigate to the directory containing the Dockerfile and run:
-   ```
-   docker build -t web-ap-app .
-   ```
+    ```
+    docker build -t web-ap-app .
+    ```
+    To verify the the image, use:
+    ```
+    docker images
+    ```
+    If you build the docker image in a different environment than on your linux machine (where ioxclient is intstalled), save the docker image as .tar file, copy it and load it on the destination host: `docker save web-ap-app:latest -o demo.tar`, then load the docker image on the destiantion `docker load -i demo.tar`.
+
 3. Once the docker image is created, use `ioxclient` to create the package file:
     ```
     ioxclient docker package -p ext2 web-ap-app ./conf
