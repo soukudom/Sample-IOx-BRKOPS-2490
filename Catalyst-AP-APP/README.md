@@ -4,7 +4,7 @@ The tool ioxclient is required to convert docker image to the proper format for 
 2. Install Docker (see details based on your OS)
 
 # Step by Step Guide
-## Set up you infrastrcture
+## Set up you Infrastructure
 Before installation enable the IOx feature on your C9800 controller:
 ```
 conf t
@@ -37,7 +37,7 @@ To verify if apphost is enabled on your 9800 controller, use `sh ap apphost summ
    ```
 6. Select installation tool and deploy the app. In section below you find details for Cisco Catalyst Center and ioxclient
 
-Note: A Package of the sample app (`package.tar`) and a packaged `demo.tar` Docker container is available in the `/packages` directory.
+Note: A Package of the sample app (`package.tar`) and a packaged `demo.tar` Docker container are available in the `/packages` directory.
 
 ## Option 1: Install via Catalyst Center
 1. In Catalyst Center, open *Provision > Services > IoT Services*.
