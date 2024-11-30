@@ -16,11 +16,10 @@ app:
   resources:
     profile: c1.small
     network:
-       -   
-        interface-name: eth0
-        ports:
-            tcp: [8000]
-            udp: [8000]
+    - interface-name: eth0
+      ports:
+        tcp: [8000]
+        udp: [8000]
 
 # Specify runtime and startup
 
