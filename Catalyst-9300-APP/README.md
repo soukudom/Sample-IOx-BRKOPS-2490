@@ -37,7 +37,8 @@ Make sure Docker is installed on your system. You can find installation instruct
    conf t
    no app-hosting signed-verification
    ```
-
+   To verify if signed verification has been disbaled, use `sh app-hosting infra`.
+   
 ## Containerize the Application
 
 1. Download or clone this GitHub repository to your local machine.
