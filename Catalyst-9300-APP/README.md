@@ -51,12 +51,12 @@ Make sure Docker is installed on your system. You can find installation instruct
    docker save cleu25-app:latest -o demo.tar
    ```
 
-Note: Unfortunately the demo.tar has more than 100 MB and cannot be uploaded to Github repository. On the other hand, it is the great opportunity to try docker commands :-)
-
-4. (Optional) You can use the `ioxclient` tool, to package the docker container with the `packacke.yaml` to add medatadata information or overwrite the allocated app resouces. To do so, run the following command and which will create the `package.tar` file that you can now deploy on your switch. 
+4. (Optional) You can use the `ioxclient` tool, to package the docker container with the `packacke.yaml` to add medatadata information or overwrite the allocated app resouces. To do so, run the following command and which will create the `package.tar` file that you can now deploy on your switch (instead of `demo.tar`). 
    ```
    ioxclient docker package cleu25-app ./conf
    ```
+
+Note: Unfortunately the `demo.tar` has more than 100 MB and cannot be uploaded to Github repository. On the other hand, it is the great opportunity to try docker commands :-)
 
 ## Install the Application
 
@@ -65,7 +65,7 @@ Select installation tool and deploy the app. In section below you find details f
 ### Option 1: Install via Catalyst Center
 
 1. In Catalyst Center, open *Provision > Services > Application Hosting*.
-2. Click "New App" and upload the demo.tar file.
+2. Click "New App" and upload the `demo.tar` file.
 3. Select the uploaded app, click "Install," and follow the installation wizard.
 
 Note: Find more information and a detailed guide in the [Catalyst Center End User Guide](https://www.cisco.com/c/en/us/td/docs/cloud-systems-management/network-automation-and-management/catalyst-center/2-3-7/user_guide/b_cisco_catalyst_center_user_guide_237/b_cisco_dna_center_ug_2_3_7_chapter_01111.html?bookSearch=true#id_132431).
