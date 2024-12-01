@@ -1,7 +1,11 @@
+# Ignore macOS-specific metadata file
 .DS_Store
-Catalyst-9300-APP/demo.tar
 
-## Ingore newly create package files
+## Ignore newly created demo.tar files 
+Catalyst-9300-APP/demo.tar
+Catalyst-AP-APP/demo.tar
+
+## Ingore newly created package files
 */conf/package.tar
 */conf/.package.metadata
 
