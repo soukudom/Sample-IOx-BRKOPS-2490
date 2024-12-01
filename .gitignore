@@ -3,3 +3,5 @@ Catalyst-9300-APP/demo.tar
 
 ## Ingore newly create package files
 */conf/package.tar
+*/conf/.package.metadata
+
