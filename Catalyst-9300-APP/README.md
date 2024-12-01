@@ -51,7 +51,7 @@ Make sure Docker is installed on your system. You can find installation instruct
    docker save cleu25-app:latest -o demo.tar
    ```
 
-4. (Optional) You can use the `ioxclient` tool, to package the docker container with the `packacke.yaml` to add medatadata information or overwrite the allocated app resouces. To do so, run the following command and which will create the `package.tar` file that you can now deploy on your switch (instead of `demo.tar`). 
+4. (Optional) You can use the `ioxclient` tool, to package the docker container with the `packacke.yaml` to add medatadata information or overwrite the allocated app resouces. To do so, run the following command  which will create the `package.tar` file that you can now deploy on your switch (instead of `demo.tar`). 
    ```
    ioxclient docker package cleu25-app ./conf
    ```
