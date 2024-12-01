@@ -38,7 +38,7 @@ Make sure Docker is installed on your system. You can find installation instruct
    no app-hosting signed-verification
    ```
    To verify if signed verification has been disbaled, use `sh app-hosting infra`.
-   
+
 ## Containerize the Application
 
 1. Download or clone this GitHub repository to your local machine.
@@ -52,6 +52,11 @@ Make sure Docker is installed on your system. You can find installation instruct
    ```
 
 Note: Unfortunately the demo.tar has more than 100 MB and cannot be uploaded to Github repository. On the other hand, it is the great opportunity to try docker commands :-)
+
+4. (Optional) You can use the `ioxclient` tool, to package the docker container with the `packacke.yaml` to add medatadata information or overwrite the allocated app resouces. To do so, run the following command and which will create the `package.tar` file that you can now deploy on your switch. 
+   ```
+   ioxclient docker package cleu25-app ./conf
+   ```
 
 ## Install the Application
 

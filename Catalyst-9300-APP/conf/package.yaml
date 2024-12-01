@@ -1,0 +1,27 @@
+descriptor-schema-version: "2.10"
+
+info:
+  name: CLEU-WEB-9300-APP
+  version: "2.7.2"
+  author-link: "http://www.cisco.com"
+  author-name: "Cisco Systems"
+  description: "CLEU25-web-9300-app"
+
+app:
+  cpuarch: x86_64
+  type: docker
+
+  resources:
+    profile: custom
+    cpu: 1850
+    disk: 1
+    memory: 500
+    network:
+    - interface-name: eth0
+      ports:
+        tcp: [8000]
+        udp: [8000]
+
+  startup:
+    rootfs: rootfs.tar
+    target: "/bin/sh /init.sh"
