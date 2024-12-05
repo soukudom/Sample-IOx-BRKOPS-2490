@@ -68,6 +68,8 @@ Select installation tool and deploy the app. In section below you find details f
 2. Click "New App" and upload the `demo.tar` file.
 3. Select the uploaded app, click "Install," and follow the installation wizard.
 
+<img src="img/switch-app-hosting-catc.gif" width="700">
+
 Note: Find more information and a detailed guide in the [Catalyst Center End User Guide](https://www.cisco.com/c/en/us/td/docs/cloud-systems-management/network-automation-and-management/catalyst-center/2-3-7/user_guide/b_cisco_catalyst_center_user_guide_237/b_cisco_dna_center_ug_2_3_7_chapter_01111.html?bookSearch=true#id_132431).
 
 ### Option 2: Install via CLI
