@@ -30,10 +30,9 @@ To verify if apphost is enabled on your 9800 controller, use `sh ap apphost summ
     ```
     ioxclient docker package -p ext2 web-ap-app ./conf
     ```
-
    Check if successfully has been created:
    ```
-   ls -lr
+   ls -lr ./conf
    ```
 6. Select installation tool and deploy the app. In section below you find details for Cisco Catalyst Center and ioxclient
 
@@ -44,9 +43,9 @@ Note: A Package of the sample app (`package.tar`) and a packaged `demo.tar` Dock
 2. Click "New App" and upload the package.tar file.
 3. Click on the uploaded app dash, select Install and follow the wizard
 
-Note: In hierarchy you need to go to floor level to see available APs.
+<img src="img/ap-app-hosting-catc.gif" width="700">
 
-Note2: Find more information and a detailed guide in the [Application Hosting on Catalyst Access Points Deployment Guide](https://www.cisco.com/c/en/us/products/collateral/wireless/access-points/guide-c07-744305.html).
+Note: Find more information and a detailed guide in the [Application Hosting on Catalyst Access Points Deployment Guide](https://www.cisco.com/c/en/us/products/collateral/wireless/access-points/guide-c07-744305.html).
 
 ## Option 2: Install via ioxclient
 1. Configure an `ioxclient` profile and deploy the app based on the instructions [here](https://developer.cisco.com/docs/app-hosting-ap/#!deploy-iox-application-on-ap-using-ioxclient/activate-the-iox-application-on-ap).
