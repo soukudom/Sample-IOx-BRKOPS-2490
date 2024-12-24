@@ -23,7 +23,7 @@ Make sure Docker is installed on your system. You can find installation instruct
    ![ioxservice](./img/ioxservice.png)
 
    Get info on any installed apps, use the `sh app-hosting ?` command.
-2. The following commands configure the `AppGigabitEthernet` interface as a trunk, allowing only traffic from the specified VLAN `<vlan_id>` to pass through. Note that the `AppGig` interface is only available on the Cisco Catalyst 9300 series, Catalyst 9400 series and Catalyst 9500X switches. 
+2. Configure the `AppGigabitEthernet` interface to allow only traffic from the specified VLAN `<vlan_id>` to pass through. Note that the `AppGig` interface is only available on the Cisco Catalyst 9300 series, Catalyst 9400 series and Catalyst 9500X switches. 
    ```iox
    conf t
    interface AppGigabitEthernet 1/0/1
