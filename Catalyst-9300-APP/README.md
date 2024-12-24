@@ -75,12 +75,12 @@ Note: Find more information and a detailed guide in the [Catalyst Center End Use
 ### Option 2: Install via CLI
 
 1. Copy the `demo.tar` file to the SSD (usfblash1) of your Switch.
-2. Configure the interface of the app
+2. Set up the interface for the application. In this example, the app is connected to a specific VLAN, and a single vNIC receives an IP address via DHCP. The `<guest-interface-number>` represents the Ethernet interface number inside the container (e.g., `eth0` if the value is set to 0):
    ```
    conf t
    app-hosting appid cleu25 
    app-vnic AppGigabitEthernet trunk 
-   vlan <vlan_id> guest-interface 0 
+   vlan <vlan_id> guest-interface <guest-interface-number> 
    end
    ```
 3. Install the application using the command  `app-hosting install appid <app-name> package usbflash1:<docker-tar-file>`. E.g.:
