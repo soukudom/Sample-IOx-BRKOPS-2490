@@ -128,19 +128,14 @@ Note: More detailed information you can find [here](https://developer.cisco.com/
 
 ![StopApp](./../img/uninstall-deactivate-stop.png)
 
-
 ---
-### Useful Resources  
-
----
-
 ### Useful Resources  
 
 - [Cisco Developer Documentation - Application Hosting](https://developer.cisco.com/docs/app-hosting/#!getting-cat9k-setup)  
   Comprehensive guide on application hosting, including setup, configuration, and examples.  
 
-- [Cisco Catalyst 9300 Series Switches - White Paper](https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-9300-series-switches/white-paper-c11-742415.html)  
-  Detailed insights and technical information about the Catalyst 9300 Series Switches.  
+- [Application Hosting on the Cisco Catalyst 9000 Series Switches White paper](https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-9300-series-switches/white-paper-c11-742415.html)  
+  Detailed insights and technical information about AppHosting on Cisco Catalyst 9000 Series Switches. 
 
 - [Programmability Configuration Guide, Cisco IOS XE Dublin 17.12.x](https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/prog/configuration/1712/b_1712_programmability_cg/m_1712_prog_app_hosting.html)  
   A detailed guide on programmability and application hosting for Cisco IOS XE Dublin 17.12.x.  
