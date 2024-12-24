@@ -140,7 +140,7 @@ Note: More detailed information you can find [here](https://developer.cisco.com/
 - [Programmability Configuration Guide, Cisco IOS XE Dublin 17.12.x](https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/prog/configuration/1712/b_1712_programmability_cg/m_1712_prog_app_hosting.html)  
   A detailed guide on programmability and application hosting for Cisco IOS XE Dublin 17.12.x.  
 
-- [Application Hosting (Catalyst Center End User Guide)](https://www.cisco.com/c/en/us/td/docs/cloud-systems-management/network-automation-and-management/catalyst-center/2-3-7/user_guide/b_cisco_catalyst_center_user_guide_237.html)  
+- [Application Hosting (Catalyst Center End User Guide)](https://www.cisco.com/c/en/us/td/docs/cloud-systems-management/network-automation-and-management/catalyst-center/2-3-7/user_guide/b_cisco_catalyst_center_user_guide_237/b_cisco_dna_center_ug_2_3_7_chapter_01111.html?bookSearch=true#id_132431)  
   End-user guide for application hosting in Catalyst Center.  
 
 ---
