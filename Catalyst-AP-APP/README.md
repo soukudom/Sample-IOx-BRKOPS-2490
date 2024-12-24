@@ -91,3 +91,16 @@ Note: Find more information on the Cisco DevNet site on how to [Deploy IOx Appli
    ```
 ![StopApp](./../img/uninstall-deactivate-stop.png)
 
+
+---
+### Useful Resources  
+
+- [Cisco Developer Documentation - Application Hosting on Cisco Catalyst Access Points](https://developer.cisco.com/docs/app-hosting-ap/application-hosting-on-cisco-catalyst-access-points-application-hosting-on-cisco-catalyst-access-points/)  
+  Comprehensive guide on application hosting, including setup, configuration, and examples.  
+
+- [Application Hosting on Catalyst Access Points Deployment Guide](https://www.cisco.com/c/en/us/products/collateral/wireless/access-points/guide-c07-744305.html)  
+  Deployment guide for application hosting on Cisco Catalyst Access Points.  
+
+---
+
+
