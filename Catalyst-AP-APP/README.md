@@ -1,9 +1,12 @@
-# Prerequisites
+# Catalyst AP APP
+This is a sample application that demonstrates a simple web server running on Cisco Catalyst 9100 Access Points.
+
+## Prerequisites
 1. [Download ioxclient](https://developer.cisco.com/docs/iox/#!iox-resource-downloads). The tool `ioxclient` is required to convert docker image to the proper format for Catalyst APs. You can also install the IOx SDE which is an Ubuntu VM (14.04) with all the tools (docker, ioxclient) required to build an IOx application package pre-installed. 
 2. Install Docker (see details based on your OS).
 
-# Step by Step Guide
-## Set up you Infrastructure
+## Step by Step deployment 
+### Set up you Infrastructure
 Before installation enable the IOx feature on your C9800 controller:
 ```
 conf t
@@ -13,7 +16,7 @@ end
 ``` 
 To verify if apphost is enabled on your 9800 controller, use `sh ap apphost summary`.
 
-## Containerize the Application
+### Containerize the Application
 1. Download or clone this GitHub repository to your local machine.
 2. Navigate to the directory containing the Dockerfile and run:
     ```
@@ -37,7 +40,11 @@ To verify if apphost is enabled on your 9800 controller, use `sh ap apphost summ
 
 Note: A Package of the sample app (`package.tar`) and a packaged `demo.tar` Docker container are available in the `/packages` directory.
 
-## Option 1: Install via Catalyst Center
+### Install the Application
+
+Select installation tool and deploy the app. In section below you find details for Cisco Catalyst Center and CLI.
+
+#### Option 1: Install via Catalyst Center
 1. In Catalyst Center, open *Provision > Services > IoT Services*.
 2. Click "New App" and upload the package.tar file.
 3. Click on the uploaded app dash, select Install and follow the wizard
@@ -46,7 +53,7 @@ Note: A Package of the sample app (`package.tar`) and a packaged `demo.tar` Dock
 
 Note: Find more information and a detailed guide in the [Application Hosting on Catalyst Access Points Deployment Guide](https://www.cisco.com/c/en/us/products/collateral/wireless/access-points/guide-c07-744305.html).
 
-## Option 2: Install via ioxclient
+#### Option 2: Install via ioxclient
 1. Configure an `ioxclient` profile:
     ```
     ioxclient profiles create
@@ -93,7 +100,7 @@ Note: Find more information on the Cisco DevNet site on how to [Deploy IOx Appli
 
 
 ---
-### Useful Resources  
+## Useful Resources  
 
 - [Cisco Developer Documentation - Application Hosting on Cisco Catalyst Access Points](https://developer.cisco.com/docs/app-hosting-ap/application-hosting-on-cisco-catalyst-access-points-application-hosting-on-cisco-catalyst-access-points/)  
   Comprehensive guide on application hosting, including setup, configuration, and examples.  

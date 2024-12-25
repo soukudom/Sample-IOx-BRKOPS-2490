@@ -1,10 +1,13 @@
-# Prerequisites
+# Catalyst 9300 APP
+This is a sample application that demonstrates a simple web server running on Cisco Catalyst 9300 switches.
+
+## Prerequisites
 
 Make sure Docker is installed on your system. You can find installation instructions specific to your operating system on the Docker website.
+ 
+## Step by Step deployment 
 
-# Step by Step guide
-
-## Set up your infrastructure
+### Set up your infrastructure
 
 1. Enter configuration mode and enable iox:
 
@@ -38,7 +41,7 @@ Make sure Docker is installed on your system. You can find installation instruct
    ```
    To verify if signed verification has been disbaled, use `sh app-hosting infra`.
 
-## Containerize the Application
+### Containerize the Application
 
 1. Download or clone this GitHub repository to your local machine.
 2. Navigate to the directory containing the Dockerfile and run:
@@ -57,11 +60,11 @@ Make sure Docker is installed on your system. You can find installation instruct
 
 Note: Unfortunately the `demo.tar` has more than 100 MB and cannot be uploaded to Github repository. On the other hand, it is the great opportunity to try docker commands :-)
 
-## Install the Application
+### Install the Application
 
 Select installation tool and deploy the app. In section below you find details for Cisco Catalyst Center and CLI.
 
-### Option 1: Install via Catalyst Center
+#### Option 1: Install via Catalyst Center
 
 1. In Catalyst Center, open *Provision > Services > Application Hosting*.
 2. Click "New App" and upload the `demo.tar` file.
@@ -71,7 +74,7 @@ Select installation tool and deploy the app. In section below you find details f
 
 Note: Find more information and a detailed guide in the [Catalyst Center End User Guide](https://www.cisco.com/c/en/us/td/docs/cloud-systems-management/network-automation-and-management/catalyst-center/2-3-7/user_guide/b_cisco_catalyst_center_user_guide_237/b_cisco_dna_center_ug_2_3_7_chapter_01111.html?bookSearch=true#id_132431).
 
-### Option 2: Install via CLI
+#### Option 2: Install via CLI
 
 1. Copy the `demo.tar` file to the SSD (usfblash1) of your Switch.
 2. Set up the interface for the application. In this example, the app is connected to a specific VLAN, and a single vNIC receives an IP address via DHCP. The `<guest-interface-number>` represents the Ethernet interface number inside the container (e.g., `eth0` if the value is set to 0):
@@ -129,7 +132,7 @@ Note: More detailed information you can find [here](https://developer.cisco.com/
 ![StopApp](./../img/uninstall-deactivate-stop.png)
 
 ---
-### Useful Resources  
+## Useful Resources  
 
 - [Cisco Developer Documentation - Application Hosting](https://developer.cisco.com/docs/app-hosting/#!getting-cat9k-setup)  
   Comprehensive guide on application hosting, including setup, configuration, and examples.  
