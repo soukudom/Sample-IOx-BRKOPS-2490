@@ -85,10 +85,12 @@ Note: Find more information on the Cisco DevNet site on how to [Deploy IOx Appli
     sh iox applications
     ```
 
-2. Connect to the app
+2. Connect to the app 
     ```iox
     connect iox application
     ```
+    Note that this command not is supported on Console, use SSH session to connect.
+    
 **Stop and Remove app**
 1. Stop, remove and uninstall the app:
    ```iox
