@@ -46,8 +46,8 @@ Select installation tool and deploy the app. In section below you find details f
 
 #### Option 1: Install via Catalyst Center
 1. In Catalyst Center, open *Provision > Services > IoT Services*.
-2. Click "New App" and upload the package.tar file.
-3. Click on the uploaded app dash, select Install and follow the wizard
+2. Click "New App" and upload the `package.tar` file.
+3. Click on the uploaded app dash, select "Install" and follow the installation wizard.
 
 <img src="img/ap-app-hosting-catc.gif" width="700">
 
@@ -73,13 +73,18 @@ Note: Find more information and a detailed guide in the [Application Hosting on 
     ``` 
 ![StartApp](./../img/install-activate-start.png)
 
-After deployment use `ioxclient app info CLEUAPP` to validate configuration.
-
 Note: Find more information on the Cisco DevNet site on how to [Deploy IOx Application on AP Using ioxclient](https://developer.cisco.com/docs/app-hosting-ap/deploy-iox-application-on-ap-using-ioxclient/).
 
 <img src="img/ioxclient.gif" width="700">
 
-**Verify and Test the app (from the AP itself)**
+**Verify the app**
+1. To Verify the installed apps, check the app status, or to validate configuration, use:
+    ```iox
+    ioxclient application list
+    ioxclient application info CLEUAPP
+    ```
+
+**Verify and Test the app from the AP itself**
 1. To Verify the app status, use:
     ```iox
     sh iox applications
