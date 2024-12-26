@@ -94,7 +94,7 @@ Note: Find more information on the Cisco DevNet site on how to [Deploy IOx Appli
     ```iox
     connect iox application
     ```
-    Note that this command not is supported on Console, use SSH session to connect.
+    Note that this command is not supported on Console, use SSH session to connect.
     
 **Stop and Remove app**
 1. Stop, remove and uninstall the app:
