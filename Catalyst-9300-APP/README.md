@@ -7,7 +7,27 @@ Make sure Docker is installed on your system. You can find installation instruct
  
 ## Step by Step deployment 
 
-### Set up your infrastructure
+### Create your Application File
+
+1. Download or clone this GitHub repository to your local machine.
+2. Navigate to the directory containing the Dockerfile and run:
+   ```
+   docker build -t cleu25-app .
+   ```
+3. Export the image to a .tar file:
+   ```
+   docker save cleu25-app:latest -o demo.tar
+   ```
+
+4. (Optional) You can use the `ioxclient` tool, to package the docker container with the `packacke.yaml` to add medatadata information or overwrite the allocated app resouces. To do so, run the following command  which will create the `package.tar` file that you can now deploy on your switch (instead of `demo.tar`). 
+   ```
+   ioxclient docker package cleu25-app ./conf
+   ```
+
+Note: Unfortunately the `demo.tar` has more than 100 MB and cannot be uploaded to Github repository. On the other hand, it is the great opportunity to try docker commands :-)
+
+
+### Set up the Infrastructure
 
 1. Enter configuration mode and enable iox:
 
@@ -41,24 +61,6 @@ Make sure Docker is installed on your system. You can find installation instruct
    ```
    To verify if signed verification has been disbaled, use `sh app-hosting infra`.
 
-### Containerize the Application
-
-1. Download or clone this GitHub repository to your local machine.
-2. Navigate to the directory containing the Dockerfile and run:
-   ```
-   docker build -t cleu25-app .
-   ```
-3. Export the image to a .tar file:
-   ```
-   docker save cleu25-app:latest -o demo.tar
-   ```
-
-4. (Optional) You can use the `ioxclient` tool, to package the docker container with the `packacke.yaml` to add medatadata information or overwrite the allocated app resouces. To do so, run the following command  which will create the `package.tar` file that you can now deploy on your switch (instead of `demo.tar`). 
-   ```
-   ioxclient docker package cleu25-app ./conf
-   ```
-
-Note: Unfortunately the `demo.tar` has more than 100 MB and cannot be uploaded to Github repository. On the other hand, it is the great opportunity to try docker commands :-)
 
 ### Install the Application
 

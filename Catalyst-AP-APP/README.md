@@ -6,17 +6,8 @@ This is a sample application that demonstrates a simple web server running on Ci
 2. Install Docker (see details based on your OS).
 
 ## Step by Step deployment 
-### Set up you Infrastructure
-Before installation enable the IOx feature on your C9800 controller:
-```
-conf t
-ap profile default-ap-profile
-apphost
-end
-``` 
-To verify if apphost is enabled on your 9800 controller, use `sh ap apphost summary`.
 
-### Containerize the Application
+### Create your Application File
 1. Download or clone this GitHub repository to your local machine.
 2. Navigate to the directory containing the Dockerfile and run:
     ```
@@ -39,6 +30,16 @@ To verify if apphost is enabled on your 9800 controller, use `sh ap apphost summ
 6. Select installation tool and deploy the app. In section below you find details for Cisco Catalyst Center and ioxclient
 
 Note: A Package of the sample app (`package.tar`) and a packaged `demo.tar` Docker container are available in the `/packages` directory.
+
+### Set up the Infrastructure
+Before installation enable the IOx feature on your C9800 controller:
+```
+conf t
+ap profile default-ap-profile
+apphost
+end
+``` 
+To verify if apphost is enabled on your 9800 controller, use `sh ap apphost summary`.
 
 ### Install the Application
 
