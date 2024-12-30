@@ -2,8 +2,8 @@
 .DS_Store
 
 ## Ignore newly created demo.tar files 
-Catalyst-9300-APP/demo.tar
-Catalyst-AP-APP/demo.tar
+Catalyst-9300-APP/demo*
+Catalyst-AP-APP/demo*
 
 ## Ingore newly created package files
 */conf/package.tar
