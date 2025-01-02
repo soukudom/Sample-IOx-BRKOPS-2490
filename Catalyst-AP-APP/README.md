@@ -17,7 +17,10 @@ This is a sample application that demonstrates a simple web server running on Ci
     ```
     docker images
     ```
-    If you build the docker image in a different environment than on your linux machine (where ioxclient is intstalled), save the docker image as .tar file, copy it and load it on the destination host: `docker save web-ap-app:latest -o demo.tar`, then load the docker image on the destiantion `docker load -i demo.tar`.
+    - On an x86_64-based architecture you can use QEMU to emulate the ARM architecture. To do this, uncomment lines 2 and 6 in the Dockerfile and run:
+    `docker build --platform linux/arm64 -t arm64-web-ap-app .` 
+
+    - If you build the docker image in a different environment than on your linux machine (where ioxclient is intstalled), save the docker image as .tar file, copy it and load it on the destination host: `docker save web-ap-app:latest -o demo.tar`, then load the docker image on the destiantion `docker load -i demo.tar`.
 
 3. Once the docker image is created, use `ioxclient` to create the package file:
     ```
