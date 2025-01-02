@@ -8,7 +8,8 @@ This is a sample application that demonstrates a simple web server running on Ci
 ## Step by Step deployment 
 
 ### Create your Application File
-1. Download or clone this GitHub repository to your local machine.
+1. Download or clone this GitHub repository to your local machine. Note that The specified base image, `arm64v8/alpine`, has been tested with Alpine Linux v3.21.0.
+
 2. Navigate to the directory containing the Dockerfile and run:
     ```
     docker build -t web-ap-app .
