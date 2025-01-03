@@ -24,5 +24,6 @@ app:
   # Define the root filesystem (rootfs.img) and target command to start the app.
   startup:
     rootfs: rootfs.img
-    target: "/bin/sh /init.sh"
+    target: "python3 /main.py"
+    workdir: /
     #os-mode: true

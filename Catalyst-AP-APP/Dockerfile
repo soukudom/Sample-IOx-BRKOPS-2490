@@ -9,6 +9,5 @@ RUN apk --no-cache add python3 py3-pip py3-bottle
 
 EXPOSE 8000 
 COPY main.py /main.py 
-COPY init.sh /init.sh 
-CMD ["/bin/sh", "/init.sh"]
+CMD ["python3", "/main.py"]
 
