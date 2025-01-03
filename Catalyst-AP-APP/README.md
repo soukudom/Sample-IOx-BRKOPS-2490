@@ -25,7 +25,7 @@ This is a sample application that demonstrates a simple web server running on Ci
 
 3. Once the docker image is created, use `ioxclient` to create the package file:
     ```
-    ioxclient docker package -p ext2 web-ap-app ./conf
+    ioxclient docker package -p ext2 web-ap-app:latest ./conf
     ```
    Check if successfully has been created:
    ```
