@@ -3,9 +3,11 @@ This is a sample application that demonstrates a simple web server running on Ci
 
 ## Prerequisites
 
-Make sure Docker is installed on your system. You can find installation instructions specific to your operating system on the Docker website.
+1. Make sure Docker is installed on your system. You can find installation instructions specific to your operating system on the Docker website.
 
 Note: This setup uses Docker version `24.0.5`.
+
+2. (Optional) [Download ioxclient](https://developer.cisco.com/docs/iox/#!iox-resource-downloads).
 
 ## Step by Step deployment 
 
