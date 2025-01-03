@@ -25,3 +25,4 @@ app:
   startup:
     rootfs: rootfs.tar
     target: "python3 /main.py"
+    workdir: /
