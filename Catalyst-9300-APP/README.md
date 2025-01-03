@@ -4,10 +4,9 @@ This is a sample application that demonstrates a simple web server running on Ci
 ## Prerequisites
 
 1. Make sure Docker is installed on your system. You can find installation instructions specific to your operating system on the Docker website.
+2. (Optional) [Download ioxclient](https://developer.cisco.com/docs/iox/#!iox-resource-downloads).
 
 Note: This setup uses Docker version `24.0.5`.
-
-2. (Optional) [Download ioxclient](https://developer.cisco.com/docs/iox/#!iox-resource-downloads).
 
 ## Step by Step deployment 
 
@@ -18,6 +17,10 @@ Note: This setup uses Docker version `24.0.5`.
    ```
    docker build -t cleu25-app .
    ```
+   To verify the the image, use:
+   ```
+   docker images
+   ```
 3. Export the image to a .tar file:
    ```
    docker save cleu25-app:latest -o demo.tar
@@ -25,7 +28,7 @@ Note: This setup uses Docker version `24.0.5`.
 
 4. (Optional) You can use the `ioxclient` tool, to package the docker container with the `packacke.yaml` to add medatadata information or overwrite the allocated app resouces. To do so, run the following command  which will create the `package.tar` file that you can now deploy on your switch (instead of `demo.tar`). 
    ```
-   ioxclient docker package cleu25-app ./conf
+   ioxclient docker package cleu25-app:latest ./conf
    ```
 
 Note: Unfortunately the `demo.tar` has more than 100 MB and cannot be uploaded to Github repository. On the other hand, it is the great opportunity to try docker commands :-)
