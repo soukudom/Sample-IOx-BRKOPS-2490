@@ -1,0 +1,6 @@
+{
+    "resources":
+    {
+            "network": [{"interface-name": "eth0", "network-name": "iox-nat0", "port_map":{"mode" : "1to1" } }]
+    }
+}

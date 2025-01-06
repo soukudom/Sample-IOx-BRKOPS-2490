@@ -1,9 +1,9 @@
 descriptor-schema-version: "2.10"
 
 info:
-  name: CLEU-WEB-AP-APP-2
-  description: "CLEU24-web-ap-app-2"
-  version: "2.7.2"
+  name: CLEU-WEB-AP-APP
+  description: "CLEU25-web-ap-app"
+  version: "1.0.0"
   author-link: "http://www.cisco.com"
   author-name: "Cisco Systems"
 
@@ -12,19 +12,18 @@ app:
  # armv7l for 32 bit CPU Architecture.
  # aarch64 for 64 bit CPU Architecture.
   cpuarch: aarch64
-  type: docker # Indicate app type (docker)
+  type: docker
   resources:
     profile: c1.small
     network:
-       -   
-        interface-name: eth0
-        ports:
-            tcp: [8000]
-            udp: [8000]
+    - interface-name: eth0
+      ports:
+        tcp: [8000]
+        udp: [8000]
 
-# Specify runtime and startup
-
+  # Define the root filesystem (rootfs.img) and target command to start the app.
   startup:
     rootfs: rootfs.img
-    target: "/bin/sh /init.sh"
+    target: "python3 /main.py"
+    workdir: /
     #os-mode: true
