@@ -10,18 +10,14 @@ This is a sample application that demonstrates a simple web server running on Ci
 ### Create your Application File
 1. Download or clone this GitHub repository to your local machine. Note that The specified base image, `arm64v8/alpine`, has been tested with Alpine Linux v3.21.0.
 
-2. Navigate to the directory containing the Dockerfile and run:
+2. Navigate to the directory containing the Dockerfile and build the image. To build for ARM architecture on an x86 machine, specify the target platform:
     ```
-    docker build -t web-ap-app .
+    docker build --platform linux/arm64 -t web-ap-app .
     ```
     To verify the the image, use:
     ```
     docker images
     ```
-    - On an x86_64-based architecture you can use QEMU to emulate the ARM architecture. Before building the image, make sure QEMU is set up on your host system (`docker run --rm --privileged multiarch/qemu-user-static --reset -p yes`). Then, uncomment line 2 in the Dockerfile and run:
-    `docker build --platform linux/arm64 -t web-ap-app .` 
-
-    - If you build the docker image in a different environment than on your linux machine (where ioxclient is intstalled), save the docker image as .tar file, copy it and load it on the destination host: `docker save web-ap-app:latest -o demo.tar`, then load the docker image on the destiantion `docker load -i demo.tar`.
 
 3. Once the docker image is created, use `ioxclient` to create the package file:
     ```
