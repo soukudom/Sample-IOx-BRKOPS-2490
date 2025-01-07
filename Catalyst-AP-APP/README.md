@@ -18,7 +18,7 @@ This is a sample application that demonstrates a simple web server running on Ci
     ```
     docker images
     ```
-    - On an x86_64-based architecture you can use QEMU to emulate the ARM architecture. Before building the image, make sure QEMU is set up on your host system (`docker run --rm --privileged multiarch/qemu-user-static --reset -p yes`). Then, uncomment lines 2 and 6 in the Dockerfile and run:
+    - On an x86_64-based architecture you can use QEMU to emulate the ARM architecture. Before building the image, make sure QEMU is set up on your host system (`docker run --rm --privileged multiarch/qemu-user-static --reset -p yes`). Then, uncomment line 2 in the Dockerfile and run:
     `docker build --platform linux/arm64 -t web-ap-app .` 
 
     - If you build the docker image in a different environment than on your linux machine (where ioxclient is intstalled), save the docker image as .tar file, copy it and load it on the destination host: `docker save web-ap-app:latest -o demo.tar`, then load the docker image on the destiantion `docker load -i demo.tar`.
