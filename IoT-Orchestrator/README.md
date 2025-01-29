@@ -47,7 +47,8 @@ curl -k --location 'https://<<IoT-IP>>:8081/scim/v2/Devices' \ # For example: 19
     ],
     "dataReceiverUrl": []
   }
-} ```
+} 
+```
 
 2. Register the Data Receiver Application
 ```
@@ -87,6 +88,6 @@ curl -k --location 'https://<<IoT-IP>>:8081/control/registration/registerTopic' 
 ```
 
 4. Get Data
+```
 mosquitto_sub -h <<IoT-IP>> -p 41883 -t enterprise/hospital/advertisements -u "https://<<data app ID>>" --pw <<control app ID>>
-
-5.
+```
