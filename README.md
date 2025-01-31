@@ -7,6 +7,9 @@ Sample web hello world based application for Catalyst 9000 family: [Catalyst-930
 ## Catalyst-AP-APP
 Sample web hello world based application for Catalyst 9100 family: [Catalyst-AP-APP](/Catalyst-AP-APP/README.md).
 
+## IoT-Orchestrator
+Guide to configure the BLE Becons in the IoT Orchestrator: [IoT-Orchestrator](/IoT-Orchestrator/README.md).
+
 ## Packet-Caputre++
 TCI App with required configuration on the network device: [Packet-Capture-Capture++](/Packet-Capture++/README.md). 
 
