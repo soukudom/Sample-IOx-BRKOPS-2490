@@ -10,5 +10,8 @@ Sample web hello world based application for Catalyst 9100 family: [Catalyst-AP-
 ## Packet-Caputre++
 TCI App with required configuration on the network device: [Packet-Capture-Capture++](/Packet-Capture++/README.md). 
 
+## iPerf-APP
+Simple iPerf App with Graphical User Interface running on Catalyst 9000 Switches: [iPerf-APP](/iPerf-APP/README.md). 
 
-Note: In case of any challenges feel free to open an Issue. We can provide fix or clarification.
+
+*Note*: In case of any challenges feel free to open an Issue. We can provide fix or clarification.

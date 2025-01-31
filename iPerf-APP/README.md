@@ -8,5 +8,4 @@ docker build --platform linux/amd64 -t iperf3-app .
 ```
 docker save iperf3-app -o demo.tar
 ```
-3. Deploy the app on your Catalyst Switch. Find more infos [here](https://github.com/soukudom/Sample-IOx-BRKOPS-2490/blob/main/Catalyst-9300-APP/README.md).
-
+3. Deploy the app on your Catalyst Switch as described in section [Catalyst-9300-APP](/Catalyst-9300-APP/README.md). 
