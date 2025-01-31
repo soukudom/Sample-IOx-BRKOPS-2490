@@ -1,5 +1,5 @@
 # build this image on x86_64 based architecuture 
-# if using arm-based environment, use simple cross-compilation build `docker build --platform linux/arm64 -t web-ap-app .`
+# if using arm-based environment, use simple cross-compilation build `docker build --platform linux/amd64 -t web-ap-app .`
 
 FROM python:3-alpine
 
