@@ -9,3 +9,8 @@ Catalyst-AP-APP/demo*
 */conf/package.tar
 */conf/.package.metadata
 
+# Hide any Pyton virtual environments
+*/venv
+
+# Hide new demo.tar files
+iPerf-App/demo.tar
