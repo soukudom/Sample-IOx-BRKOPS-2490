@@ -60,7 +60,7 @@ Note: Find more information and a detailed guide in the [Application Hosting on 
     ioxclient profiles create
     ```
     To verify the active profile, use `ioxclient profiles list`.
-2.  Install the application using:
+2.  Install the application by pointing to your locally stored package file:
     ```
     ioxclient app install CLEUAPP package.tar
     ```
