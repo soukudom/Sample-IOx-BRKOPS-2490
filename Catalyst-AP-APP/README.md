@@ -8,7 +8,7 @@ This is a sample application that demonstrates a simple web server running on Ci
 ## Step by Step deployment 
 
 ### Create your Application File
-1. Download or clone this GitHub repository to your local machine. Note that The specified base image, `arm64v8/alpine`, has been tested with Alpine Linux v3.21.0.
+1. Download or clone this GitHub repository to your local machine. Note that The specified base image, `arm64v8/alpine`, has been tested with Alpine Linux `v3.21.0`.
 
 2. Navigate to the directory containing the Dockerfile and build the image. To build for ARM architecture on an x86 machine, specify the target platform:
     ```
@@ -60,15 +60,15 @@ Note: Find more information and a detailed guide in the [Application Hosting on 
     ioxclient profiles create
     ```
     To verify the active profile, use `ioxclient profiles list`.
-2.  Install the application using the command.
+2.  Install the application using:
     ```
     ioxclient app install CLEUAPP package.tar
     ```
-3.  To activate the app use:
+3.  Then, activate the app. Optionally, provide an `activation.json` file if the IOx app needs access to a serial device or a 1:1 network port map.
     ```
     ioxclient app activate CLEUAPP --payload activation.json
     ``` 
-4.  Now, start the app
+4.  Now, start the app:
     ```
     ioxclient app start CLEUAPP
     ``` 
