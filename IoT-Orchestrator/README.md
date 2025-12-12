@@ -1,19 +1,33 @@
 # IoT Orchestrator Asset Tracking Example
-Cisco Spaces Connect for IoT Services solution enables delivery of advanced BLE capabilities over Cisco Catalyst Wireless infrastructure. In this example you can see required steps for recieving BLE beacons.
-Please make sure you replated variables with values from your network. In the example we have the following variables:
+Cisco Spaces Connect for IoT Services solution enables delivery of advanced BLE capabilities over Cisco Catalyst Wireless infrastructure. 
 
-- [[IoT-IP]] -> IP address of IoT Orchestrator APP
-- [[Name of the BLE device]] -> Any name in string format that represents the BLE sensor
-- [[Mac address of the BLE device]] -> MAC address of the BLE sensor
-- [[ONBOARD APP ID]] -> Onboarding App ID available in the IoT Orchestrator GUI*
-- [[ONBOARD APP KEY]] -> Onboarding App Key available in the IoT Orchestrator GUI*
-- [[CONTROL APP ID]] -> Control App ID available in the IoT Orchestrator GUI*
-- [[ble device id]] -> BLE device ID available in the IoT Orchestrator GUI after sensor registration
+## Prerequisite
+Follow the complete [IoT Orchestrator Configuration Guide](https://www.cisco.com/c/dam/en/us/td/docs/wireless/spaces/iot-orchestrator/qsg/spaces-connect-iot-qsg.pdf) to set up the IoT Orchestrator on your 9800 Controller. 
+
+Make sure that you uploaded the `server.key` and the certificate and that you have created the application keys in the IoT Orchestrator GUI.
+
+This example specifically walks you through the process of:
+1. Onboarding a BLE sensor.
+2. Registering a data receiver application to consume sensor data.
+3. Registering a topic to specify the type of BLE data to receive.
+4. Subscribing to the MQTT topic to retrieve the BLE beacon advertisements.
+
+## Variables
+Please make sure you replace the placeholder variables below with values specific to your network and IoT Orchestrator setup.
+- `[[IoT-IP]]` -> IP address of IoT Orchestrator APP
+- `[[Name of the BLE device]]` -> Any name in string format that represents the BLE sensor
+- `[[MAC ADDRESS]]` -> MAC address of the BLE sensor
+- `[[ONBOARD APP ID]]` -> Onboarding App ID available in the IoT Orchestrator GUI*
+- `[[ONBOARD APP KEY]]` -> Onboarding App Key available in the IoT Orchestrator GUI*
+- `[[CONTROL APP ID]]` -> Control App ID available in the IoT Orchestrator GUI*
+- `[[BLE DEVICE ID]]` -> BLE device ID available in the IoT Orchestrator GUI after sensor registration
+
 
 *) Under *Administration > App Registration > Show Registered Apps*
 
-Complete configuration guide: https://www.cisco.com/c/dam/en/us/td/docs/wireless/spaces/iot-orchestrator/qsg/spaces-connect-iot-qsg.pdf
-## 1. Onboard sensors
+## Steps
+
+### 1. Onboard Sensors
 ```bash
 curl -k --location 'https://[[IoT-IP]]:8081/scim/v2/Devices' \ # For example: 192.168.104.10
 --header 'x-api-key: [[ONBOARD APP KEY]]' \
@@ -30,7 +44,7 @@ curl -k --location 'https://[[IoT-IP]]:8081/scim/v2/Devices' \ # For example: 19
     "versionSupport": [
       "5.3"
     ],
-    "deviceMacAddress": "[[Mac address of the BLE device]]", # For example: F6:04:FB:B0:92:2D
+    "deviceMacAddress": "[[MAC ADDRESS]]", # For example: F6:04:FB:B0:92:2D
     "isRandom": false,
     "mobility": false,
     "pairingMethods": [
@@ -52,7 +66,7 @@ curl -k --location 'https://[[IoT-IP]]:8081/scim/v2/Devices' \ # For example: 19
 }'
 ```
 
-## 2. Register the Data Receiver Application
+### 2. Register the Data Receiver Application
 ```bash
 curl -k --location 'https://[[IoT-IP]]:8081/control/registration/registerDataApp' \
 --header 'Content-Type: application/json' \
@@ -69,7 +83,7 @@ curl -k --location 'https://[[IoT-IP]]:8081/control/registration/registerDataApp
 }'
 ```
 
-## 3. Register Topic
+### 3. Register Topic
 ```bash
 curl -k --location 'https://[[IoT-IP]]:8081/control/registration/registerTopic' \
 --header 'x-api-key: [[control application key]]' \
@@ -79,7 +93,7 @@ curl -k --location 'https://[[IoT-IP]]:8081/control/registration/registerTopic' 
 "technology": "ble",
 "topic": "enterprise/hospital/advertisements",
 "ids": [
-  "[[ble device id]]" # For example: "57f85940-ea8e-405f-bc06-b744141db08c"
+  "[[BLE DEVICE ID]]" # For example: "57f85940-ea8e-405f-bc06-b744141db08c"
 ],
 "controlApp": "[[CONTROL APP ID]]",
 "ble": {
@@ -89,7 +103,7 @@ curl -k --location 'https://[[IoT-IP]]:8081/control/registration/registerTopic' 
 '
 ```
 
-## 4. Get Data
+### 4. Get Data
 ```bash
 mosquitto_sub -h [[IoT-IP]] -p 41883 -t enterprise/hospital/advertisements -u "https://[[data app ID]]" --pw [[CONTROL APP ID]]
 ```
