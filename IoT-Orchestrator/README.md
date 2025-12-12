@@ -20,10 +20,11 @@ Please make sure you replace the placeholder variables below with values specifi
 - `[[ONBOARD APP ID]]` -> Onboarding App ID available in the IoT Orchestrator GUI*
 - `[[ONBOARD APP KEY]]` -> Onboarding App Key available in the IoT Orchestrator GUI*
 - `[[CONTROL APP ID]]` -> Control App ID available in the IoT Orchestrator GUI*
-- `[[BLE DEVICE ID]]` -> BLE device ID available in the IoT Orchestrator GUI after sensor registration
+- `[[DATA APP ID]]` -> Data App ID available in the IoT Orchestrator GUI*
+- `[[BLE DEVICE ID]]` -> BLE device ID available in the IoT Orchestrator GUI after sensor registration**
 
-
-*) Under *Administration > App Registration > Show Registered Apps*
+*) Under *Administration > App Registration > Show Registered Apps*\
+**) Under *Inventory > BLE Client*
 
 ## Steps
 
@@ -77,7 +78,7 @@ curl -k --location 'https://[[IoT-IP]]:8081/control/registration/registerDataApp
 "topic": "enterprise/hospital/advertisements", # any MQTT Topic name
 "dataApps": [
 {
-"dataAppID": "[[data app ID]]" # For example: dataApplication
+"dataAppID": "[[DATA APP ID]]" # For example: dataApplication
 }
 ]
 }'
@@ -105,5 +106,5 @@ curl -k --location 'https://[[IoT-IP]]:8081/control/registration/registerTopic' 
 
 ### 4. Get Data
 ```bash
-mosquitto_sub -h [[IoT-IP]] -p 41883 -t enterprise/hospital/advertisements -u "https://[[data app ID]]" --pw [[CONTROL APP ID]]
+mosquitto_sub -h [[IoT-IP]] -p 41883 -t enterprise/hospital/advertisements -u "https://[[DATA APP ID]]" --pw [[CONTROL APP ID]]
 ```
