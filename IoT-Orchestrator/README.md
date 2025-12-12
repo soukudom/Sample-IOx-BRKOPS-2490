@@ -113,4 +113,4 @@ curl -k --location 'https://[[IoT-IP]]:8081/control/registration/registerTopic' 
 mosquitto_sub -h [[IoT-IP]] -p 41883 -t enterprise/hospital/advertisements -u "https://[[DATA APP ID]]" --pw [[CONTROL APP ID]]
 ```
 
-### 5. Consume data!
+### 5. Consume the data!
