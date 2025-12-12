@@ -110,7 +110,9 @@ curl -k --location 'https://[[IoT-IP]]:8081/control/registration/registerTopic' 
 
 ### 4. Subscribing to the MQTT topic
 ```bash
-mosquitto_sub -h [[IoT-IP]] -p 41883 -t enterprise/hospital/advertisements -u "https://[[DATA APP ID]]" --pw [[CONTROL APP ID]]
+mosquitto_sub -h [[IoT-IP]] -p 41883 -t enterprise/hospital/advertisements \
+-u '[[DATA APP ID]]' \
+--pw '[[DATA APP KEY]]'
 ```
-
+To subscribe to all topics, use `mosquitto_sub -h [[IoT-IP]] -p 41883 -u '[[DATA APP ID]]' --pw '[[DATA APP KEY]]' -t '#' -v`
 ### 5. Consume the data!
