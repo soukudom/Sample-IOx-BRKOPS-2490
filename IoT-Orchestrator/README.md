@@ -5,16 +5,18 @@ Please make sure you replated variables with values from your network. In the ex
 - [[IoT-IP]] -> IP address of IoT Orchestrator APP
 - [[Name of the BLE device]] -> Any name in string format that represents the BLE sensor
 - [[Mac address of the BLE device]] -> MAC address of the BLE sensor
-- [[onboarding app ID]] -> Onboarding App ID available in the IoT Orchestrator GUI
-- [[control app ID]] -> Control App ID available in the IoT Orchestrator GUI
+- [[ONBOARD APP ID]] -> Onboarding App ID available in the IoT Orchestrator GUI*
+- [[ONBOARD APP KEY]] -> Onboarding App Key available in the IoT Orchestrator GUI*
+- [[CONTROL APP ID]] -> Control App ID available in the IoT Orchestrator GUI*
 - [[ble device id]] -> BLE device ID available in the IoT Orchestrator GUI after sensor registration
 
+*) Under *Administration > App Registration > Show Registered Apps*
 
 Complete configuration guide: https://www.cisco.com/c/dam/en/us/td/docs/wireless/spaces/iot-orchestrator/qsg/spaces-connect-iot-qsg.pdf
 ## 1. Onboard sensors
-```
+```bash
 curl -k --location 'https://[[IoT-IP]]:8081/scim/v2/Devices' \ # For example: 192.168.104.10
---header 'x-api-key: [[onboard application key]]' \
+--header 'x-api-key: [[ONBOARD APP KEY]]' \
 --header 'Content-Type: application/json' \
 --data '{
   "schemas": [
@@ -41,9 +43,9 @@ curl -k --location 'https://[[IoT-IP]]:8081/scim/v2/Devices' \ # For example: 19
     }
   },
   "urn:ietf:params:scim:schemas:extension:endpointAppsExt:2.0:Device": {
-    "onboardingUrl": "[[onboarding app ID]]", # For example: onboardApplication
+    "onboardingUrl": "[[ONBOARD APP ID]]", # For example: onboardApplication
     "deviceControlUrl": [
-      "[[control app ID]]" # For example: controlApplication
+      "[[CONTROL APP ID]]" # For example: controlApplication
     ],
     "dataReceiverUrl": []
   }
@@ -51,13 +53,13 @@ curl -k --location 'https://[[IoT-IP]]:8081/scim/v2/Devices' \ # For example: 19
 ```
 
 ## 2. Register the Data Receiver Application
-```
+```bash
 curl -k --location 'https://[[IoT-IP]]:8081/control/registration/registerDataApp' \
 --header 'Content-Type: application/json' \
 --header 'x-api-key: [[control application key]]' \
 --data '
 {
-"controlApp": "[[control app ID]]",
+"controlApp": "[[CONTROL APP ID]]",
 "topic": "enterprise/hospital/advertisements", # any MQTT Topic name
 "dataApps": [
 {
@@ -68,7 +70,7 @@ curl -k --location 'https://[[IoT-IP]]:8081/control/registration/registerDataApp
 ```
 
 ## 3. Register Topic
-```
+```bash
 curl -k --location 'https://[[IoT-IP]]:8081/control/registration/registerTopic' \
 --header 'x-api-key: [[control application key]]' \
 --header 'Content-Type: application/json' \
@@ -79,7 +81,7 @@ curl -k --location 'https://[[IoT-IP]]:8081/control/registration/registerTopic' 
 "ids": [
   "[[ble device id]]" # For example: "57f85940-ea8e-405f-bc06-b744141db08c"
 ],
-"controlApp": "[[control app ID]]",
+"controlApp": "[[CONTROL APP ID]]",
 "ble": {
 "type": "advertisements"
 }
@@ -88,6 +90,6 @@ curl -k --location 'https://[[IoT-IP]]:8081/control/registration/registerTopic' 
 ```
 
 ## 4. Get Data
-```
-mosquitto_sub -h [[IoT-IP]] -p 41883 -t enterprise/hospital/advertisements -u "https://[[data app ID]]" --pw [[control app ID]]
+```bash
+mosquitto_sub -h [[IoT-IP]] -p 41883 -t enterprise/hospital/advertisements -u "https://[[data app ID]]" --pw [[CONTROL APP ID]]
 ```
