@@ -11,7 +11,7 @@ This example specifically walks you through the process of:
 2. Registering a data receiver application to consume sensor data.
 3. Registering a topic to specify the type of BLE data to receive.
 4. Subscribing to the MQTT topic to retrieve the BLE beacon advertisements.
-5. Finally, the data Reiver Application will receive the MQTT data. 
+5. Finally, the data Reiver Application will receive the MQTT data. \
 ![Onboarded BLE Sensors](../img/iot-orchestrator3.png)
 
 ## Variables
