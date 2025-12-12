@@ -16,8 +16,7 @@ Complete configuration guide: https://www.cisco.com/c/dam/en/us/td/docs/wireless
 curl -k --location 'https://[[IoT-IP]]:8081/scim/v2/Devices' \ # For example: 192.168.104.10
 --header 'x-api-key: [[onboard application key]]' \
 --header 'Content-Type: application/json' \
---data '
-{
+--data '{
   "schemas": [
     "urn:ietf:params:scim:schemas:core:2.0:Device",
     "urn:ietf:params:scim:schemas:extension:ble:2.0:Device",
@@ -48,7 +47,7 @@ curl -k --location 'https://[[IoT-IP]]:8081/scim/v2/Devices' \ # For example: 19
     ],
     "dataReceiverUrl": []
   }
-} 
+}'
 ```
 
 ## 2. Register the Data Receiver Application
