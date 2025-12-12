@@ -17,11 +17,11 @@ Please make sure you replace the placeholder variables below with values specifi
 - `[[IoT-IP]]` -> IP address of IoT Orchestrator APP
 - `[[Name of the BLE device]]` -> Any name in string format that represents the BLE sensor
 - `[[MAC ADDRESS]]` -> MAC address of the BLE sensor
-- `[[ONBOARD APP ID]]` -> Onboarding App ID available in the IoT Orchestrator GUI*
+- `[[ONBOARD APP ID]]` -> Onboarding App ID available in the IoT Orchestrator GUI* (# For example: **onboardApplication**)
+- `[[CONTROL APP ID]]` -> Control App ID available in the IoT Orchestrator GUI* (For example: **controlApplication**)
+- `[[DATA APP ID]]` -> Data App ID available in the IoT Orchestrator GUI* (For example: **dataApplication**)
 - `[[ONBOARD APP KEY]]` -> Onboarding App Key available in the IoT Orchestrator GUI*
-- `[[CONTROL APP ID]]` -> Control App ID available in the IoT Orchestrator GUI*
 - `[[CONTROL APP KEY]]` -> Control App Key available in the IoT Orchestrator GUI*
-- `[[DATA APP ID]]` -> Data App ID available in the IoT Orchestrator GUI*
 - `[[BLE DEVICE ID]]` -> BLE device ID available in the IoT Orchestrator GUI after sensor registration**
 
 *) Under *Administration > App Registration > Show Registered Apps*\
@@ -59,9 +59,9 @@ curl -k --location 'https://[[IoT-IP]]:8081/scim/v2/Devices' \ # For example: 19
     }
   },
   "urn:ietf:params:scim:schemas:extension:endpointAppsExt:2.0:Device": {
-    "onboardingUrl": "[[ONBOARD APP ID]]", # For example: onboardApplication
+    "onboardingUrl": "[[ONBOARD APP ID]]",
     "deviceControlUrl": [
-      "[[CONTROL APP ID]]" # For example: controlApplication
+      "[[CONTROL APP ID]]"
     ],
     "dataReceiverUrl": []
   }
@@ -79,7 +79,7 @@ curl -k --location 'https://[[IoT-IP]]:8081/control/registration/registerDataApp
 "topic": "enterprise/hospital/advertisements", # any MQTT Topic name
 "dataApps": [
 {
-"dataAppID": "[[DATA APP ID]]" # For example: dataApplication
+"dataAppID": "[[DATA APP ID]]"
 }
 ]
 }'
@@ -101,8 +101,7 @@ curl -k --location 'https://[[IoT-IP]]:8081/control/registration/registerTopic' 
 "ble": {
 "type": "advertisements"
 }
-}
-'
+}'
 ```
 
 ### 4. Get Data
