@@ -22,10 +22,12 @@ Please make sure you replace the placeholder variables below with values specifi
 - `[[DATA APP ID]]` -> Data App ID available in the IoT Orchestrator GUI* (For example: **dataApplication**)
 - `[[ONBOARD APP KEY]]` -> Onboarding App Key available in the IoT Orchestrator GUI*
 - `[[CONTROL APP KEY]]` -> Control App Key available in the IoT Orchestrator GUI*
-- `[[BLE DEVICE ID]]` -> BLE device ID available in the IoT Orchestrator GUI after sensor registration**
+- `[[BLE DEVICE ID]]` -> BLE device ID available in the IoT Orchestrator GUI after sensor registration (step 1)**
 
 *) Under *Administration > App Registration > Show Registered Apps*\
+![App Registration](../img/iot-orchestrator1.png)
 **) Under *Inventory > BLE Client*
+![Onboarded BLE Sensors](../img/iot-orchestrator2.png)
 
 ## Steps
 
