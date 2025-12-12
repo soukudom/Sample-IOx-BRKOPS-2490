@@ -17,7 +17,7 @@ Please make sure you replace the placeholder variables below with values specifi
 - `[[IoT-IP]]` -> IP address of IoT Orchestrator APP
 - `[[Name of the BLE device]]` -> Any name in string format that represents the BLE sensor
 - `[[MAC ADDRESS]]` -> MAC address of the BLE sensor
-- `[[ONBOARD APP ID]]` -> Onboarding App ID available in the IoT Orchestrator GUI* (# For example: **onboardApplication**)
+- `[[ONBOARD APP ID]]` -> Onboarding App ID available in the IoT Orchestrator GUI* (For example: **onboardApplication**)
 - `[[CONTROL APP ID]]` -> Control App ID available in the IoT Orchestrator GUI* (For example: **controlApplication**)
 - `[[DATA APP ID]]` -> Data App ID available in the IoT Orchestrator GUI* (For example: **dataApplication**)
 - `[[ONBOARD APP KEY]]` -> Onboarding App Key available in the IoT Orchestrator GUI*
