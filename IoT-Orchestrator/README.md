@@ -71,6 +71,7 @@ curl -k --location 'https://[[IoT-IP]]:8081/scim/v2/Devices' \
   }
 }'
 ```
+We are using the **SCIM API** to onboard and manage the BLE devices. Refer to the [API Reference](https://developer.cisco.com/docs/spaces-connect-for-iot-services/onboard-operations-apis-overview/) or [Onboarding Guides](https://developer.cisco.com/docs/spaces-connect-for-iot-services/onboarding-ble-devices-using-scim/) for more information.
 
 ### 2. Register the Data Receiver Application
 ```bash
