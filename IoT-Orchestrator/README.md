@@ -16,29 +16,19 @@ This example specifically walks you through the process of:
 
 ## Variables
 Please make sure you replace the placeholder variables below with values specific to your network and IoT Orchestrator setup.
-- `[[IoT-IP]]` -> IP address of IoT Orchestrator APP (For example: 192.168.104.10)
-- `[[BLE NAME]]` -> Any name in string format that represents the BLE sensor (For example: BLE Monitor)
-- `[[MAC ADDRESS]]` -> MAC address of the BLE sensor (For example: F6:04:FB:B0:92:2D)
-- `[[ONBOARD APP ID]]` -> Onboarding App ID available in the IoT Orchestrator GUI* (For example: **onboardApplication**)
-- `[[CONTROL APP ID]]` -> Control App ID available in the IoT Orchestrator GUI* (For example: **controlApplication**)
-- `[[DATA APP ID]]` -> Data App ID available in the IoT Orchestrator GUI* (For example: **dataApplication**)
-- `[[ONBOARD APP KEY]]` -> Onboarding App Key available in the IoT Orchestrator GUI*
-- `[[CONTROL APP KEY]]` -> Control App Key available in the IoT Orchestrator GUI*
-- `[[MQTT TOPIC NAME]]` -> Any MQTT Topic name (For example: enterprise/hospital/advertisements)
-- `[[BLE DEVICE ID]]` -> BLE device ID available in the IoT Orchestrator GUI after sensor registration (step 1)** (For example: "57f85940-ea8e-405f-bc06-b744141db08c")
-
 
 | Placeholder | Description | Example |
 |------------|------------|---------|
 | `[[IoT-IP]]` | IP address of the IoT Orchestrator application | `192.168.104.10` |
-| `[[BLE NAME]]` | Readable name for the BLE sensor | `BLE Monitor` |
+| `[[BLE NAME]]` | Any name in string format that represents the BLE sensor | `BLE Monitor` |
 | `[[MAC ADDRESS]]` | MAC address of the BLE sensor | `F6:04:FB:B0:92:2D` |
 | `[[ONBOARD APP ID]]` | Onboarding application ID from the IoT Orchestrator GUI* | `onboardApplication` |
 | `[[CONTROL APP ID]]` | Control application ID from the IoT Orchestrator GUI* | `controlApplication` |
 | `[[DATA APP ID]]` | Data application ID from the IoT Orchestrator GUI* | `dataApplication` |
 | `[[ONBOARD APP KEY]]` | Onboarding application key from the IoT Orchestrator GUI* | |
 | `[[CONTROL APP KEY]]` | Control application key from the IoT Orchestrator GUI* | |
-| `[[MQTT TOPIC NAME]]` | Any MQTT topic used for publishing data | `enterprise/hospital/advertisements` |
+| `[[DATA APP KEY]]` | Data application key from the IoT Orchestrator GUI* | |
+| `[[MQTT TOPIC NAME]]` | Any name, used as MQTT topic for publishing data | `enterprise/hospital/advertisements` |
 | `[[BLE DEVICE ID]]` | BLE device ID assigned after sensor registration** | `57f85940-ea8e-405f-bc06-b744141db08c` |
 
 *) Under *Administration > App Registration > Show Registered Apps*\
