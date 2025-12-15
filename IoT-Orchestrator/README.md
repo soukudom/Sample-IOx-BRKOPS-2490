@@ -24,7 +24,22 @@ Please make sure you replace the placeholder variables below with values specifi
 - `[[DATA APP ID]]` -> Data App ID available in the IoT Orchestrator GUI* (For example: **dataApplication**)
 - `[[ONBOARD APP KEY]]` -> Onboarding App Key available in the IoT Orchestrator GUI*
 - `[[CONTROL APP KEY]]` -> Control App Key available in the IoT Orchestrator GUI*
+- `[[MQTT TOPIC NAME]]` -> Any MQTT Topic name (For example: enterprise/hospital/advertisements)
 - `[[BLE DEVICE ID]]` -> BLE device ID available in the IoT Orchestrator GUI after sensor registration (step 1)** (For example: "57f85940-ea8e-405f-bc06-b744141db08c")
+
+
+| Placeholder | Description | Example |
+|------------|------------|---------|
+| `[[IoT-IP]]` | IP address of the IoT Orchestrator application | `192.168.104.10` |
+| `[[BLE NAME]]` | Readable name for the BLE sensor | `BLE Monitor` |
+| `[[MAC ADDRESS]]` | MAC address of the BLE sensor | `F6:04:FB:B0:92:2D` |
+| `[[ONBOARD APP ID]]` | Onboarding application ID from the IoT Orchestrator GUI* | `onboardApplication` |
+| `[[CONTROL APP ID]]` | Control application ID from the IoT Orchestrator GUI* | `controlApplication` |
+| `[[DATA APP ID]]` | Data application ID from the IoT Orchestrator GUI* | `dataApplication` |
+| `[[ONBOARD APP KEY]]` | Onboarding application key from the IoT Orchestrator GUI* | |
+| `[[CONTROL APP KEY]]` | Control application key from the IoT Orchestrator GUI* | |
+| `[[MQTT TOPIC NAME]]` | Any MQTT topic used for publishing data | `enterprise/hospital/advertisements` |
+| `[[BLE DEVICE ID]]` | BLE device ID assigned after sensor registration** | `57f85940-ea8e-405f-bc06-b744141db08c` |
 
 *) Under *Administration > App Registration > Show Registered Apps*\
 ![App Registration](../img/iot-orchestrator1.png)
@@ -81,7 +96,7 @@ curl -k --location 'https://[[IoT-IP]]:8081/control/registration/registerDataApp
 --data '
 {
 "controlApp": "[[CONTROL APP ID]]",
-"topic": "enterprise/hospital/advertisements", # any MQTT Topic name
+"topic": "[[MQTT TOPIC NAME]]",
 "dataApps": [
 {
 "dataAppID": "[[DATA APP ID]]"
@@ -99,7 +114,7 @@ curl -k --location 'https://[[IoT-IP]]:8081/control/registration/registerTopic' 
 --data '
 {
 "technology": "ble",
-"topic": "enterprise/hospital/advertisements",
+"topic": "[[MQTT TOPIC NAME]]",
 "ids": [
   "[[BLE DEVICE ID]]"
 ],
@@ -112,8 +127,9 @@ curl -k --location 'https://[[IoT-IP]]:8081/control/registration/registerTopic' 
 
 ### 4. Subscribing to the MQTT topic
 ```bash
-mosquitto_sub -h [[IoT-IP]] -p 41883 -t enterprise/hospital/advertisements \
--u '[[DATA APP ID]]' \
+mosquitto_sub -h [[IoT-IP]] -p 41883 /
+-t '[[MQTT TOPIC NAME]]' /
+-u '[[DATA APP ID]]' /
 --pw '[[DATA APP KEY]]'
 ```
 To subscribe to all topics, use `mosquitto_sub -h [[IoT-IP]] -p 41883 -u '[[DATA APP ID]]' --pw '[[DATA APP KEY]]' -t '#' -v`
