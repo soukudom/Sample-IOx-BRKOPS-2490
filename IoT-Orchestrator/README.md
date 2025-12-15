@@ -117,4 +117,8 @@ mosquitto_sub -h [[IoT-IP]] -p 41883 -t enterprise/hospital/advertisements \
 --pw '[[DATA APP KEY]]'
 ```
 To subscribe to all topics, use `mosquitto_sub -h [[IoT-IP]] -p 41883 -u '[[DATA APP ID]]' --pw '[[DATA APP KEY]]' -t '#' -v`
+
+
+Refer to [Subscribing to Advertisements and Notifications](https://developer.cisco.com/docs/spaces-connect-for-iot-services/subscribing-to-advertisements-and-notifications/) for more information.
+
 ### 5. Consume the data!
