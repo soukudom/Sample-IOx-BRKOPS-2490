@@ -116,15 +116,41 @@ curl -k --location 'https://[[IoT-IP]]:8081/control/registration/registerTopic' 
 ```
 
 ### 4. Subscribing to the MQTT topic
+Once your BLE sensor is onboarded, data receiver application registered, and topic configured, you can subscribe to the MQTT topic to start receiving real-time BLE advertisement data. 
+
+With the basic command you will receive raw, encrypted data. 
 ```bash
 mosquitto_sub -h [[IoT-IP]] -p 41883 /
 -t '[[MQTT TOPIC NAME]]' /
 -u '[[DATA APP ID]]' /
 --pw '[[DATA APP KEY]]'
 ```
-To subscribe to all topics, use `mosquitto_sub -h [[IoT-IP]] -p 41883 -u '[[DATA APP ID]]' --pw '[[DATA APP KEY]]' -t '#' -v`
+To subscribe to all topics, use `mosquitto_sub -h [[IoT-IP]] -p 41883 -u '[[DATA APP ID]]' --pw '[[DATA APP KEY]]' -t '#' -v` insteaed. Refer to [Subscribing to Advertisements and Notifications](https://developer.cisco.com/docs/spaces-connect-for-iot-services/subscribing-to-advertisements-and-notifications/) for more information.
 
+#### Subscribe to the MQTT topic and decrypt the message 
+The data received from the IoT Orchestrator is encoded using Google Protocol Buffers (`Protobuf`). To make this data human-readable, you need to decode it using the provided .proto schema.
 
-Refer to [Subscribing to Advertisements and Notifications](https://developer.cisco.com/docs/spaces-connect-for-iot-services/subscribing-to-advertisements-and-notifications/) for more information.
+1. Download `data_app.proto` file from [here](https://github.com/ietf-wg-asdf/asdf-nipc/blob/cisco-iot-orchestrator-1.1/proto/data_app.proto).
+
+2. Verify the installation of the protoc compiler and the xxd utility, and install them if missing.
+  ```bash
+  protoc --version
+  which xxd
+  ```
+
+3. After that, you can receive and decode the messages using the following command;
+  ```bash
+  mosquitto_sub -h 10.110.160.5 -p 41883 -t 'enterprise/hospital/advertisements' -u 'dataApplication' --pw 'c62c1f0ce230a7c3bdcce0466becd5fa9ce217225f70e7b61752576adcd60e45' -F "%t %x" | \
+  while IFS=' ' read -r topic hex_payload; do
+      if [ -z "$hex_payload" ]; then
+          continue
+      fi
+
+      echo "--- Topic: $topic ---"
+      echo "$hex_payload" | xxd -r -p | protoc --experimental_allow_proto3_optional --decode=nipc.DataBatch -I. data_app.proto
+      echo "--------------------------------------------"
+  done
+  ```
+
 
 ### 5. Consume the data!
