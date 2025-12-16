@@ -39,6 +39,7 @@ Please make sure you replace the placeholder variables below with values specifi
 ## Steps
 
 ### 1. Onboard Sensors
+In the first step, the BLE Device has to be onboarded in the IoT Orchestrator. To do so, run the following API Call:
 ```bash
 curl -k --location 'https://[[IoT-IP]]:8081/scim/v2/Devices' \
 --header 'x-api-key: [[ONBOARD APP KEY]]' \
@@ -79,6 +80,7 @@ curl -k --location 'https://[[IoT-IP]]:8081/scim/v2/Devices' \
 We are using the **SCIM API** to onboard the BLE devices. Refer to the [SCIM API Reference](https://developer.cisco.com/docs/spaces-connect-for-iot-services/onboard-operations-apis-overview/) or [Onboarding BLE Devices Using SCIM](https://developer.cisco.com/docs/spaces-connect-for-iot-services/onboarding-ble-devices-using-scim/) for more information.
 
 ### 2. Register the Data Receiver Application
+Now, the data receiver application has to be registered to consume the sensor data.
 ```bash
 curl -k --location 'https://[[IoT-IP]]:8081/control/registration/registerDataApp' \
 --header 'Content-Type: application/json' \
@@ -97,6 +99,7 @@ curl -k --location 'https://[[IoT-IP]]:8081/control/registration/registerDataApp
 All control operations for BLE devices rely on the **NIPC API**. Please refer to [NIPC API Reference](https://developer.cisco.com/docs/spaces-connect-for-iot-services/control-operations-apis-overview/) or [Control Operations on BLE Devices](https://developer.cisco.com/docs/spaces-connect-for-iot-services/control-operations-on-ble-devices/).
 
 ### 3. Register Topic
+As next, registering a MQTT topic to specify the type of BLE data to receive.
 ```bash
 curl -k --location 'https://[[IoT-IP]]:8081/control/registration/registerTopic' \
 --header 'x-api-key: [[CONTROL APP KEY]]' \
