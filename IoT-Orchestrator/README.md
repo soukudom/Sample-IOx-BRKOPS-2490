@@ -139,7 +139,7 @@ cd iot_decoder
 It is recommended to also download the `timestamp.proto` file from [here](https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/timestamp.proto). Copy the file and create a dedicated folder inside `iot_decoder`:
 
   ```bash
-  mkdir google/protobuf
+  mkdir -p google/protobuf
   cd google/protobuf
   # place the timestamp.proto file here
   ```
@@ -180,7 +180,7 @@ With the command above we receive the unencrypted message, but the data is still
 It is recommended to also download the `timestamp.proto` file from [here](https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/timestamp.proto). Copy the file and create a dedicated folder inside `iot_decoder`:
 
   ```bash
-  mkdir google/protobuf
+  mkdir -p google/protobuf
   cd google/protobuf
   # place the timestamp.proto file here
   ```
