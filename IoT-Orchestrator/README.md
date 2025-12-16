@@ -168,11 +168,11 @@ With the command above we receive the unencrypted message, but the data is still
   ```bash
   protoc --proto_path=. --python_out=. --experimental_allow_proto3_optional data_app.proto
   ```
-3. Copy the content of `decode_mqtt_stream.py` (form this Github repo) and save it in the `iot_decoder` folder.
+3. Copy the content of `decode_mqtt_stream.py` (from this Github repo) and save it in the `iot_decoder` folder.
   ```bash
   touch decode_mqtt_stream.py 
   ```
-4. Now inswtall `protobuf` libarary 
+4. Now install `protobuf` libarary 
   ```
   pip install protobuf
   ```
