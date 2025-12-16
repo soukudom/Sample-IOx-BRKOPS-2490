@@ -161,11 +161,11 @@ With the command above we receive the unencrypted message, but the data is still
 1. Copy the content of the `data_app.proto` file from [here](https://github.com/ietf-wg-asdf/asdf-nipc/blob/cisco-iot-orchestrator-1.1/proto/data_app.proto) and save it locally.
   ```bash
   mkdir iot_decoder
+  cd iot_decoder
   touch data_app.proto
   ```
-2. Run the command to generate the `data_app_pb2.py` file in your working directory.
+2. Run the command to generate the `data_app_pb2.py` file in the `iot_decoder` folder.
   ```bash
-  cd iot_decoder
   protoc --proto_path=. --python_out=. --experimental_allow_proto3_optional data_app.proto
   ```
 3. Copy the content of `decode_mqtt_stream.py` (form this Github repo) and save it in the `iot_decoder` folder.
