@@ -208,4 +208,7 @@ It is recommended to also download the `timestamp.proto` file from [here](https:
   -F "%t %x" | python3 decode_mqtt_stream.py
   ```
 ![Onboarded BLE Sensors](../img/ble-advertisement2.png)
+In our example, a BLE beacon was detected on December 16, 2025. The beacon broadcasts as an iBeacon, with a major value 88, minor value 888, and transmit power -77.
+The signal strength (RSSI) at the time of detection was -93 dBm, indicating a weak or distant signal.
+
 ### 5. Consume the data!
