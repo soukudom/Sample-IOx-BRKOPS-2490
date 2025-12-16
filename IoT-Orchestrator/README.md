@@ -155,6 +155,7 @@ The data received from the IoT Orchestrator is encoded using Google Protocol Buf
       echo "--------------------------------------------"
   done
   ```
+![Onboarded BLE Sensors](../img/ble-advertisement1.png)
 
 #### Subscribe to the MQTT topic and decrypt the message including the BLE data (Using a Python script)
 With the command above we receive the unencrypted message, but the data is still in hex format. To encrypt the entire data packet, use the provided Python script. 
@@ -184,5 +185,5 @@ With the command above we receive the unencrypted message, but the data is still
   --pw '[[CONTROL APP ID]]' \
   -F "%t %x" | python3 decode_mqtt_stream.py
   ```
-
+![Onboarded BLE Sensors](../img/ble-advertisement2.png)
 ### 5. Consume the data!
