@@ -140,7 +140,11 @@ The data received from the IoT Orchestrator is encoded using Google Protocol Buf
 
 3. After that, you can receive and decode the messages using the following command;
   ```bash
-  mosquitto_sub -h 10.110.160.5 -p 41883 -t 'enterprise/hospital/advertisements' -u 'dataApplication' --pw 'c62c1f0ce230a7c3bdcce0466becd5fa9ce217225f70e7b61752576adcd60e45' -F "%t %x" | \
+  mosquitto_sub -h [[IoT-IP]] -p 41883 /
+  -t '[[MQTT TOPIC NAME]]' /
+  -u '[[DATA APP ID]]' /
+  --pw '[[DATA APP KEY]]' / 
+  -F "%t %x" | \
   while IFS=' ' read -r topic hex_payload; do
       if [ -z "$hex_payload" ]; then
           continue
