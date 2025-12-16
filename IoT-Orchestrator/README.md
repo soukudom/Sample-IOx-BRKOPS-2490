@@ -141,7 +141,8 @@ It is recommended to also download the `timestamp.proto` file from [here](https:
   ```bash
   mkdir -p google/protobuf
   cd google/protobuf
-  # place the timestamp.proto file here
+  # place the timestamp.proto file here, then navigate back
+  cd ../..
   ```
 
 2. Verify the installation of the protoc compiler and the xxd utility, and install them if missing.
@@ -182,7 +183,8 @@ It is recommended to also download the `timestamp.proto` file from [here](https:
   ```bash
   mkdir -p google/protobuf
   cd google/protobuf
-  # place the timestamp.proto file here
+  # place the timestamp.proto file here, then navigagte back
+  cd ../..
   ```
 
 2. Run the command to generate the `data_app_pb2.py` file in the `iot_decoder` folder.
