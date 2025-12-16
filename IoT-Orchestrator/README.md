@@ -156,5 +156,33 @@ The data received from the IoT Orchestrator is encoded using Google Protocol Buf
   done
   ```
 
+#### Subscribe to the MQTT topic and decrypt the message including the BLE data (Using a Python script)
+With the command above we receive the unencrypted message, but the data is still in hex format. To encrypt the entire data packet, use the provided Python script. 
+1. Copy the content of the `data_app.proto` file from [here](https://github.com/ietf-wg-asdf/asdf-nipc/blob/cisco-iot-orchestrator-1.1/proto/data_app.proto) and save it locally.
+  ```bash
+  mkdir iot_decoder
+  touch data_app.proto
+  ```
+2. Run the command to generate the `data_app_pb2.py` file in your working directory.
+  ```bash
+  cd iot_decoder
+  protoc --proto_path=. --python_out=. --experimental_allow_proto3_optional data_app.proto
+  ```
+3. Copy the content of `decode_mqtt_stream.py` (form this Github repo) and save it in the `iot_decoder` folder.
+  ```bash
+  touch decode_mqtt_stream.py 
+  ```
+4. Now inswtall `protobuf` libarary 
+  ```
+  pip install protobuf
+  ```
+5. Subscribe to the topic 
+  ```bash
+  mosquitto_sub -h [[IoT-IP]] -p 41883 \
+  -t '[[MQTT TOPIC NAME]]' \
+  -u 'https://[[DATA APP ID]]' \
+  --pw '[[CONTROL APP ID]]' \
+  -F "%t %x" | python3 decode_mqtt_stream.py
+  ```
 
 ### 5. Consume the data!
