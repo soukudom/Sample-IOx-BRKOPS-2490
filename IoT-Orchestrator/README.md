@@ -130,7 +130,19 @@ To subscribe to all topics, use `mosquitto_sub -h [[IoT-IP]] -p 41883 -u '[[DATA
 #### Subscribe to the MQTT topic and decrypt the message 
 The data received from the IoT Orchestrator is encoded using Google Protocol Buffers (`Protobuf`). To make this data human-readable, you need to decode it using the provided .proto schema.
 
-1. Download `data_app.proto` file from [here](https://github.com/ietf-wg-asdf/asdf-nipc/blob/cisco-iot-orchestrator-1.1/proto/data_app.proto).
+1. Copy the content of the `data_app.proto` file from [here](https://github.com/ietf-wg-asdf/asdf-nipc/blob/cisco-iot-orchestrator-1.1/proto/data_app.proto) and save it locally.
+```bash
+mkdir iot_decoder
+cd iot_decoder
+# place the data_app.proto file here
+```
+It is recommended to also download the `timestamp.proto` file from [here](https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/timestamp.proto). Copy the file and create a dedicated folder inside `iot_decoder`:
+
+  ```bash
+  mkdir google/protobuf
+  cd google/protobuf
+  # place the timestamp.proto file here
+  ```
 
 2. Verify the installation of the protoc compiler and the xxd utility, and install them if missing.
   ```bash
@@ -160,11 +172,19 @@ The data received from the IoT Orchestrator is encoded using Google Protocol Buf
 #### Subscribe to the MQTT topic and decrypt the message including the BLE data (Using a Python script)
 With the command above we receive the unencrypted message, but the data is still in hex format. To encrypt the entire data packet, use the provided Python script. 
 1. Copy the content of the `data_app.proto` file from [here](https://github.com/ietf-wg-asdf/asdf-nipc/blob/cisco-iot-orchestrator-1.1/proto/data_app.proto) and save it locally.
-  ```bash
+```bash
   mkdir iot_decoder
   cd iot_decoder
-  touch data_app.proto
+  # place the data_app.proto file here
+```
+It is recommended to also download the `timestamp.proto` file from [here](https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/timestamp.proto). Copy the file and create a dedicated folder inside `iot_decoder`:
+
+  ```bash
+  mkdir google/protobuf
+  cd google/protobuf
+  # place the timestamp.proto file here
   ```
+
 2. Run the command to generate the `data_app_pb2.py` file in the `iot_decoder` folder.
   ```bash
   protoc --proto_path=. --python_out=. --experimental_allow_proto3_optional data_app.proto
