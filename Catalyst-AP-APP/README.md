@@ -12,7 +12,7 @@ This is a sample application that demonstrates a simple web server running on Ci
 
 2. Navigate to the directory containing the Dockerfile and build the image. To build for ARM architecture on an x86 machine, specify the target platform:
     ```
-    docker build --platform linux/arm64 -t web-ap-app .
+    docker build --platform linux/arm64 -t ap-web-app .
     ```
     To verify the the image, use:
     ```
@@ -21,7 +21,7 @@ This is a sample application that demonstrates a simple web server running on Ci
 
 3. Once the docker image is created, use `ioxclient` to create the package file:
     ```
-    ioxclient docker package -p ext2 web-ap-app:latest ./conf
+    ioxclient docker package -p ext2 ap-web-app:latest ./conf
     ```
    Check if successfully has been created:
    ```
