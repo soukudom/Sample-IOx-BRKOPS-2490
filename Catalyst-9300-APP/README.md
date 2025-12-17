@@ -1,6 +1,8 @@
 # Catalyst 9300 APP
 This is a sample application that demonstrates a simple web server running on Cisco Catalyst 9300 switches.
 
+Catalyst 9300 switches are based on an x86 architecture. To build a compatible iox app you need to build it on an x86_64 based system or use cross compilation.
+
 ## Prerequisites
 
 1. Make sure Docker is installed on your system. You can find installation instructions specific to your operating system on the Docker website.
