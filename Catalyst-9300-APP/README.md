@@ -25,7 +25,7 @@ Note: This setup uses Docker version `24.0.5`.
    ```
 3. Export the image to a .tar file:
    ```
-   docker save c9300-web-app:latest -o c9300-c9300-demo.tar
+   docker save c9300-web-app:latest -o c9300-demo.tar
    ```
 
 4. (Optional) You can use the `ioxclient` tool, to package the docker container with the `packacke.yaml` to add medatadata information or overwrite the allocated app resouces. To do so, run the following command  which will create the `package.tar` file that you can now deploy on your switch (instead of `c9300-demo.tar`). 
