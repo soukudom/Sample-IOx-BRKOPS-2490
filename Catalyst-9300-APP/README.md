@@ -17,7 +17,7 @@ Note: This setup uses Docker version `24.0.5`.
 1. Download or clone this GitHub repository to your local machine.
 2. Navigate to the directory containing the Dockerfile and run:
    ```
-   docker build -t cleu25-app .
+   docker build -t c9300-web-app .
    ```
    To verify the the image, use:
    ```
@@ -25,15 +25,15 @@ Note: This setup uses Docker version `24.0.5`.
    ```
 3. Export the image to a .tar file:
    ```
-   docker save cleu25-app:latest -o demo.tar
+   docker save c9300-web-app:latest -o c9300-c9300-demo.tar
    ```
 
-4. (Optional) You can use the `ioxclient` tool, to package the docker container with the `packacke.yaml` to add medatadata information or overwrite the allocated app resouces. To do so, run the following command  which will create the `package.tar` file that you can now deploy on your switch (instead of `demo.tar`). 
+4. (Optional) You can use the `ioxclient` tool, to package the docker container with the `packacke.yaml` to add medatadata information or overwrite the allocated app resouces. To do so, run the following command  which will create the `package.tar` file that you can now deploy on your switch (instead of `c9300-demo.tar`). 
    ```
-   ioxclient docker package cleu25-app:latest ./conf
+   ioxclient docker package c9300-web-app:latest ./conf
    ```
 
-Note: Unfortunately the `demo.tar` has more than 100 MB and cannot be uploaded to Github repository. On the other hand, it is the great opportunity to try docker commands :-)
+Note: Unfortunately the `c9300-demo.tar` has more than 100 MB and cannot be uploaded to Github repository. On the other hand, it is the great opportunity to try docker commands :-)
 
 
 ### Set up the Infrastructure
@@ -78,7 +78,7 @@ Select installation tool and deploy the app. In section below you find details f
 #### Option 1: Install via Catalyst Center
 
 1. In Catalyst Center, open *Provision > Services > Application Hosting*.
-2. Click "New App" and upload the `demo.tar` file.
+2. Click "New App" and upload the `c9300-demo.tar` file.
 3. Select the uploaded app, click "Install," and follow the installation wizard.
 
 <img src="img/switch-app-hosting-catc.gif" width="700">
@@ -87,23 +87,26 @@ Note: Find more information and a detailed guide in the [Catalyst Center End Use
 
 #### Option 2: Install via CLI
 
-1. Copy the `demo.tar` file to the SSD (usfblash1) of your Switch.
+1. Copy the `c9300-demo.tar` file to the SSD (usfblash1) of your Switch. To verify the successful upload, use:
+   ```
+   dir usbflash1:
+   ```
 2. Set up the interface for the application. In this example, the app is connected to a specific VLAN, and a single vNIC receives an IP address via DHCP. The `<guest-interface-number>` represents the Ethernet interface number inside the container (e.g., `eth0` if the value is set to 0):
    ```
    conf t
-   app-hosting appid cleu25 
+   app-hosting appid webapp 
    app-vnic AppGigabitEthernet trunk 
    vlan <vlan_id> guest-interface <guest-interface-number> 
    end
    ```
 3. Install the application using the command  `app-hosting install appid <app-name> package usbflash1:<docker-tar-file>`. E.g.:
    ```
-   app-hosting install appid cleu25 package usbflash1:demo.tar
+   app-hosting install appid webapp package usbflash1:c9300-demo.tar
    ```
 4. Activate and Start the the application
    ```
-   app-hosting activate appid cleu25 
-   app-hosting start appid cleu25 
+   app-hosting activate appid webapp 
+   app-hosting start appid webapp 
    ```
 
 ![StartApp](./../img/install-activate-start.png)
@@ -118,26 +121,26 @@ Note: More detailed information you can find [here](https://developer.cisco.com/
 
    ```
    sh app-hosting list
-   sh app-hosting detail appid cleu25 
+   sh app-hosting detail appid webapp 
    ```
 2. Connect to the app
 
    ```
-   app-hosting connect appid cleu25 session   
+   app-hosting connect appid webapp session   
    ```
 
 **Stop and Remove app**
 
 1. Stop, remove and uninstall the app:
    ```iox
-   app-hosting stop appid cleu25
-   app-hosting deactivate appid cleu25
-   app-hosting uninstall appid cleu25
+   app-hosting stop appid webapp
+   app-hosting deactivate appid webapp
+   app-hosting uninstall appid webapp
    ```
-2. Remove the app-hosting cleu25
+2. Remove the app-hosting webapp
    ```iox
    conf t
-   no app-hosting appid cleu25   
+   no app-hosting appid webapp   
    ```
 
 ![StopApp](./../img/uninstall-deactivate-stop.png)
