@@ -55,7 +55,7 @@ Select installation tool and deploy the app. In section below you find details f
 Note: Find more information and a detailed guide in the [Application Hosting on Catalyst Access Points Deployment Guide](https://www.cisco.com/c/en/us/products/collateral/wireless/access-points/guide-c07-744305.html).
 
 #### Option 2: Install via ioxclient
-1. Configure an `ioxclient` profile:
+1. Configure an `ioxclient` profile. For this, you need to specify a name, the AP's IP address, the AP's username & password and change the IOx platform's SSH Port to 22:
     ```
     ioxclient profiles create
     ```
