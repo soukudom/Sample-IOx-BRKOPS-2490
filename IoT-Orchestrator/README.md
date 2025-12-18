@@ -12,7 +12,7 @@ This example specifically walks you through the process of:
 3. Registering a topic to specify the type of BLE data to receive.
 4. Subscribing to the MQTT topic to retrieve the BLE beacon advertisements.
 5. Finally, the data Reiver Application will receive the MQTT data. \
-![Onboarded BLE Sensors](../img/iot-orchestrator3.png)
+![Onboarded BLE Sensors](img/iot-orchestrator3.png)
 
 ## Variables
 Please make sure you replace the placeholder variables below with values specific to your network and IoT Orchestrator setup.
@@ -32,9 +32,9 @@ Please make sure you replace the placeholder variables below with values specifi
 | `[[BLE DEVICE ID]]` | BLE device ID assigned after sensor registration** | `57f85940-ea8e-405f-bc06-b744141db08c` |
 
 *) Under *Administration > App Registration > Show Registered Apps*\
-![App Registration](../img/iot-orchestrator1.png)
+![App Registration](img/iot-orchestrator1.png)
 **) Under *Inventory > BLE Client*
-![Onboarded BLE Sensors](../img/iot-orchestrator2.png)
+![Onboarded BLE Sensors](img/iot-orchestrator2.png)
 
 ## Steps
 
@@ -171,7 +171,7 @@ It is recommended to also download the `timestamp.proto` file from [here](https:
       echo "--------------------------------------------"
   done
   ```
-![Onboarded BLE Sensors](../img/ble-advertisement1.png)
+![Onboarded BLE Sensors](img/ble-advertisement1.png)
 
 #### Subscribe to the MQTT topic and decrypt the message including the BLE data (Using a Python script)
 With the command above we receive the unencrypted message, but the data is still in hex format. To encrypt the entire data packet, use the provided Python script. 
@@ -210,7 +210,7 @@ It is recommended to also download the `timestamp.proto` file from [here](https:
   --pw '[[CONTROL APP ID]]' \
   -F "%t %x" | python3 decode_mqtt_stream.py
   ```
-![Onboarded BLE Sensors](../img/ble-advertisement2.png)\
+![Onboarded BLE Sensors](img/ble-advertisement2.png)\
 In our example, a BLE beacon was detected on December 16, 2025. The beacon broadcasts as an iBeacon, with a major value 88, minor value 888, and transmit power -77.
 The signal strength (RSSI) at the time of detection was -92 dBm, indicating a weak or distant signal.
 
