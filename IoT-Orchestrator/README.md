@@ -42,17 +42,17 @@ Please make sure you replace the placeholder variables below with values specifi
 
 | Placeholder | Description | Example |
 |------------|------------|---------|
-| `[[IoT-IP]]` | IP address of the IoT Orchestrator application | `192.168.104.10` |
-| `[[BLE NAME]]` | Any name in string format that represents the BLE sensor | `BLE Monitor` |
-| `[[MAC ADDRESS]]` | MAC address of the BLE sensor | `F6:04:FB:B0:92:2D` |
-| `[[ONBOARD APP ID]]` | Onboarding application ID from the IoT Orchestrator GUI* | `onboardApplication` |
-| `[[CONTROL APP ID]]` | Control application ID from the IoT Orchestrator GUI* | `controlApplication` |
-| `[[DATA APP ID]]` | Data application ID from the IoT Orchestrator GUI* | `dataApplication` |
-| `[[ONBOARD APP KEY]]` | Onboarding application key from the IoT Orchestrator GUI* | |
-| `[[CONTROL APP KEY]]` | Control application key from the IoT Orchestrator GUI* | |
-| `[[DATA APP KEY]]` | Data application key from the IoT Orchestrator GUI* | |
-| `[[MQTT TOPIC NAME]]` | Any name, used as MQTT topic for publishing data | `enterprise/hospital/advertisements` |
-| `[[BLE DEVICE ID]]` | BLE device ID assigned after sensor registration** | `57f85940-ea8e-405f-bc06-b744141db08c` |
+| `IOT_IP` | IP address of the IoT Orchestrator application | `192.168.104.10` |
+| `BLE_NAME` | Any name in string format that represents the BLE sensor | `BLE Monitor` |
+| `MAC_ADDRESS` | MAC address of the BLE sensor | `F6:04:FB:B0:92:2D` |
+| `ONBOARD_APP_ID` | Onboarding application ID from the IoT Orchestrator GUI* | `onboardApplication` |
+| `CONTROL_APP_ID` | Control application ID from the IoT Orchestrator GUI* | `controlApplication` |
+| `DATA_APP_ID` | Data application ID from the IoT Orchestrator GUI* | `dataApplication` |
+| `ONBOARD_APP_KEY` | Onboarding application key from the IoT Orchestrator GUI* | |
+| `CONTROL_APP_KEY` | Control application key from the IoT Orchestrator GUI* | |
+| `DATA_APP_KEY` | Data application key from the IoT Orchestrator GUI* | |
+| `MQTT_TOPIC_NAME` | Any name, used as MQTT topic for publishing data | `enterprise/hospital/advertisements` |
+| `BLE_DEVICE_ID` | BLE device ID assigned after sensor registration** | `57f85940-ea8e-405f-bc06-b744141db08c` |
 
 *) Under *Administration > App Registration > Show Registered Apps*\
 ![App Registration](img/iot-orchestrator1.png)
