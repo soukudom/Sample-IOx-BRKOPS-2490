@@ -23,7 +23,7 @@ Supported formats:
 - **iBeacon** 
 Any BLE tag advertising iBeacon data. UUID, major, minor and TX power are decoded  
 
-- **Eddystone UID**  
+- **Eddystone UID** 
 Any BLE tag advertising Eddystone UID. Namespace ID, instance ID and TX power are decoded  
 
 - **Eddystone URL**
