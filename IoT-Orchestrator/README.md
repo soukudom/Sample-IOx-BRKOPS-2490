@@ -7,12 +7,34 @@ Follow the complete [IoT Orchestrator Configuration Guide](https://www.cisco.com
 Make sure that you uploaded the `server.key` and the certificate and that you have created the application keys in the IoT Orchestrator GUI.
 
 This example specifically walks you through the process of:
+
 1. Onboarding a BLE sensor.
 2. Registering a data receiver application to consume sensor data.
 3. Registering a topic to specify the type of BLE data to receive.
 4. Subscribing to the MQTT topic to retrieve the BLE beacon advertisements.
 5. Finally, the data Reiver Application will receive the MQTT data. \
 ![Onboarded BLE Sensors](img/iot-orchestrator3.png)
+
+## Supported BLE beacon formats
+
+The provided Python decoder supports standard BLE advertisement formats and is vendor independent.
+
+Supported formats:
+- **iBeacon** 
+Any BLE tag advertising iBeacon data  
+UUID, major, minor and TX power are decoded  
+
+- **Eddystone UID**  
+Any BLE tag advertising Eddystone UID  
+Namespace ID, instance ID and TX power are decoded  
+
+- **Eddystone URL**
+Any BLE tag advertising Eddystone URL  
+TX power is decoded, URL payload is shown as raw data  
+
+Limitations:
+Vendor specific proprietary formats are not decoded  
+Kontakt.io or other tags are supported only when configured to advertise iBeacon or Eddystone
 
 ## Variables
 Please make sure you replace the placeholder variables below with values specific to your network and IoT Orchestrator setup.
