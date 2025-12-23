@@ -159,7 +159,7 @@ def decode_and_print_message(hex_data_string, topic=None):
     except Exception as e:
         print(f"Error parsing protobuf data from hex '{hex_data_string.strip()}': {e}", file=sys.stderr)
 
-# --- Main execution block for reading from stdin ---
+
 def main():
     print("Waiting for MQTT data... (Press Ctrl+C to exit)")
     for line in sys.stdin:
@@ -175,7 +175,6 @@ def main():
             hex_payload = parts[1]
             decode_and_print_message(hex_payload, topic)
         else:
-            # This case might happen if the line format is unexpected
             print(f"Warning: Unexpected line format, skipping: '{line}'", file=sys.stderr)
 
 if __name__ == "__main__":
