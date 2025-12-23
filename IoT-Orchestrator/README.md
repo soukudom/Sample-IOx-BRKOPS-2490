@@ -36,6 +36,8 @@ Limitations:
 Vendor specific proprietary formats are not decoded  
 Kontakt.io or other tags are supported only when configured to advertise iBeacon or Eddystone
 
+*Note*: Some sensors send their measurements via GATT notifications rather than standard BLE advertisements, so these values may not appear in the parsed advertisement data.
+
 ## Variables
 Please make sure you replace the placeholder variables below with values specific to your network and IoT Orchestrator setup.
 
