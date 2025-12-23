@@ -207,7 +207,7 @@ It is recommended to also download the `timestamp.proto` file from [here](https:
   ```
 ![Onboarded BLE Sensors](img/ble-advertisement1.png)
 
-#### Subscribe to the MQTT topic and decrypt the message including the BLE data (Using a Python script)
+#### Subscribe to the MQTT topic and decrypt the message including the iBeacon data (Using a Python script)
 With the command above we receive the unencrypted message, but the data is still in hex format. To encrypt the entire data packet, use the provided Python script. 
 1. Copy the content of the `data_app.proto` file from [here](https://github.com/ietf-wg-asdf/asdf-nipc/blob/cisco-iot-orchestrator-1.1/proto/data_app.proto) and save it locally.
 ```bash
