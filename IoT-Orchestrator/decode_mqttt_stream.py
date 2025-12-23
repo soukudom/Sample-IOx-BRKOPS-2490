@@ -43,39 +43,39 @@ def parse_ble_advertisement_data(raw_adv_data_bytes):
         ad_data = raw_adv_data_bytes[i+2 : i+1+length]
 
         # --- Common Bluetooth SIG AD Types ---
-        if ad_type == 0x01: # Flags
+        if ad_type == 0x01:
             parsed_data['flags'] = f"0x{ad_data[0]:02x}"
-        elif ad_type in [0x02, 0x03]: # 16-bit Service UUIDs (Incomplete/Complete List)
+        elif ad_type in [0x02, 0x03]:
             parsed_data.setdefault('service_uuids_16bit', []).extend([f"0x{struct.unpack('<H', ad_data[j:j+2])[0]:04x}" for j in range(0, len(ad_data), 2)])
-        elif ad_type in [0x06, 0x07]: # 128-bit Service UUIDs (Incomplete/Complete List)
+        elif ad_type in [0x06, 0x07]:
             parsed_data.setdefault('service_uuids_128bit', []).extend([ad_data[j:j+16].hex() for j in range(0, len(ad_data), 16)])
-        elif ad_type == 0x09: # Complete Local Name
+        elif ad_type == 0x09:
             parsed_data['local_name'] = ad_data.decode('utf-8', errors='ignore')
-        elif ad_type == 0xFF: # Manufacturer Specific Data (MSD)
+        elif ad_type == 0xFF:
             if len(ad_data) >= 2:
-                company_id = struct.unpack('<H', ad_data[0:2])[0] # First two bytes are Company ID
+                company_id = struct.unpack('<H', ad_data[0:2])[0] 
                 parsed_data['manufacturer_id'] = f"0x{company_id:04x}"
-                parsed_data['manufacturer_data_raw'] = ad_data[2:].hex() # Remaining bytes are manufacturer data
+                parsed_data['manufacturer_data_raw'] = ad_data[2:].hex()
 
                 # --- Specific Manufacturer Data Formats ---
                 # iBeacon (Apple Company ID 0x004C)
                 if company_id == 0x004C and len(ad_data) >= 23 and ad_data[2] == 0x02 and ad_data[3] == 0x15:
                     parsed_data['iBeacon'] = {
-                        'uuid': ad_data[4:20].hex(), # 16 bytes for Proximity UUID
-                        'major': struct.unpack('>H', ad_data[20:22])[0], # 2 bytes for Major
-                        'minor': struct.unpack('>H', ad_data[22:24])[0], # 2 bytes for Minor
-                        'tx_power': struct.unpack('>b', ad_data[24:25])[0] # 1 byte for Tx Power (signed)
+                        'uuid': ad_data[4:20].hex(),
+                        'major': struct.unpack('>H', ad_data[20:22])[0],
+                        'minor': struct.unpack('>H', ad_data[22:24])[0],
+                        'tx_power': struct.unpack('>b', ad_data[24:25])[0]
                     }
                 # Eddystone UID (Google Company ID 0x00FE, Frame Type 0x00)
                 elif company_id == 0x00FE and len(ad_data) >= 20 and ad_data[2] == 0x00:
                      parsed_data['eddystone_uid'] = {
-                         'tx_power': struct.unpack('>b', ad_data[3:4])[0], # 1 byte for Tx Power (signed)
-                         'namespace_id': ad_data[4:14].hex(), # 10 bytes for Namespace ID
-                         'instance_id': ad_data[14:20].hex() # 6 bytes for Instance ID
+                         'tx_power': struct.unpack('>b', ad_data[3:4])[0],
+                         'namespace_id': ad_data[4:14].hex(),
+                         'instance_id': ad_data[14:20].hex()
                      }
                 # Eddystone URL (Google Company ID 0x00FE, Frame Type 0x10)
                 elif company_id == 0x00FE and len(ad_data) >= 4 and ad_data[2] == 0x10:
-                     parsed_data['eddystone_url_tx_power'] = struct.unpack('>b', ad_data[3:4])[0] # 1 byte for Tx Power (signed)
+                     parsed_data['eddystone_url_tx_power'] = struct.unpack('>b', ad_data[3:4])[0]
                      # URL encoding/decoding is more complex, storing raw hex for now
                      parsed_data['eddystone_url_raw'] = ad_data[4:].hex()
                 
