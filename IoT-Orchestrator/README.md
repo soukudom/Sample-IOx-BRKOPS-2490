@@ -17,7 +17,7 @@ This example specifically walks you through the process of:
 
 ## Supported BLE beacon formats
 
-The provided Python decoder supports standard BLE advertisement formats and is vendor independent.
+The provided Python decoder supports standard **BLE advertisement** formats and is vendor independent.
 
 Supported formats:
 - **iBeacon** 
@@ -33,7 +33,7 @@ Any BLE tag advertising Eddystone URL. TX power is decoded, URL payload is shown
 Vendor specific proprietary formats are not decoded  
 Kontakt.io or other tags are supported only when configured to advertise iBeacon or Eddystone
 
-*Note*: Some sensors send their measurements via *GATT notifications* rather than standard BLE advertisements, so these values may not appear in the parsed advertisement data. The IoT Orchestrator supports forwarding both BLE advertisements and GATT notifications, but this Python decoder only parses advertisement payloads. Data sent via GATT notifications will not be decoded by this script.
+*Note*: Some sensors send their measurements via **GATT notifications** rather than standard BLE advertisements, so these values may not appear in the parsed advertisement data. The IoT Orchestrator supports forwarding both BLE advertisements and GATT notifications, but this Python decoder only parses advertisement payloads. Data sent via GATT notifications will not be decoded by this script.
 
 ## Variables
 Please make sure you replace the placeholder variables below with values specific to your network and IoT Orchestrator setup.
