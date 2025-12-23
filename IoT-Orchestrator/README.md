@@ -15,6 +15,8 @@ This example specifically walks you through the process of:
 5. Finally, the data Reiver Application will receive the MQTT data. \
 ![Onboarded BLE Sensors](img/iot-orchestrator3.png)
 
+> *Note*: The Onboard Application, Control Application, and Data Receiver Application are three separate components. The Onboard Application handles device registration and authentication, the Control Application manages commands and control messages to the devices, and the Data Receiver Application collects and processes data from the sensors. In this example, we use a simplified setup where all three components are configured from a single Linux machine.
+
 ## Supported BLE beacon formats
 
 The provided Python decoder supports standard **BLE advertisement** formats and is vendor independent.
@@ -33,7 +35,7 @@ Any BLE tag advertising Eddystone URL. TX power is decoded, URL payload is shown
 Vendor specific proprietary formats are not decoded  
 Kontakt.io or other tags are supported only when configured to advertise iBeacon or Eddystone
 
-*Note*: Some sensors send their measurements via **GATT notifications** rather than standard BLE advertisements, so these values may not appear in the parsed advertisement data. The IoT Orchestrator supports forwarding both BLE advertisements and GATT notifications, but this Python decoder only parses advertisement payloads. Data sent via GATT notifications will not be decoded by this script.
+> *Note*: Some sensors send their measurements via **GATT notifications** rather than standard BLE advertisements, so these values may not appear in the parsed advertisement data. The IoT Orchestrator supports forwarding both BLE advertisements and GATT notifications, but this Python decoder only parses advertisement payloads. Data sent via GATT notifications will not be decoded by this script.
 
 ## Variables
 Please make sure you replace the placeholder variables below with values specific to your network and IoT Orchestrator setup.
@@ -58,26 +60,38 @@ Please make sure you replace the placeholder variables below with values specifi
 ![Onboarded BLE Sensors](img/iot-orchestrator2.png)
 
 ## Steps
-
+Before you start, you can store all values as environment variables in your terminal:
+```bash
+export IOT_IP=
+export BLE_NAME=
+export MAC_ADDRESS=
+export ONBOARD_APP_ID=
+export CONTROL_APP_ID=
+export DATA_APP_ID=
+export ONBOARD_APP_KEY=
+export CONTROL_APP_KEY=
+export DATA_APP_KEY=
+export MQTT_TOPIC_NAME=
+```
 ### 1. Onboard Sensors
 In the first step, the BLE Device has to be onboarded in the IoT Orchestrator. To do so, run the following API Call:
 ```bash
-curl -k --location 'https://[[IoT-IP]]:8081/scim/v2/Devices' \
---header 'x-api-key: [[ONBOARD APP KEY]]' \
---header 'Content-Type: application/json' \
+curl -k --location "https://$IOT_IP:8081/scim/v2/Devices" \
+--header "x-api-key: $ONBOARD_APP_KEY" \
+--header "Content-Type: application/json" \
 --data '{
   "schemas": [
     "urn:ietf:params:scim:schemas:core:2.0:Device",
     "urn:ietf:params:scim:schemas:extension:ble:2.0:Device",
     "urn:ietf:params:scim:schemas:extension:endpointapps:2.0:Device"
   ],
-  "deviceDisplayName": "[[BLE NAME]]",
+  "deviceDisplayName": "'"$BLE_NAME"'",
   "adminState": true,
   "urn:ietf:params:scim:schemas:extension:ble:2.0:Device": {
     "versionSupport": [
       "5.3"
     ],
-    "deviceMacAddress": "[[MAC ADDRESS]]",
+    "deviceMacAddress": "'"$MAC_ADDRESS"'",
     "isRandom": false,
     "mobility": false,
     "pairingMethods": [
@@ -90,31 +104,35 @@ curl -k --location 'https://[[IoT-IP]]:8081/scim/v2/Devices' \
     }
   },
   "urn:ietf:params:scim:schemas:extension:endpointAppsExt:2.0:Device": {
-    "onboardingUrl": "[[ONBOARD APP ID]]",
+    "onboardingUrl": "'"$ONBOARD_APP_ID"'",
     "deviceControlUrl": [
-      "[[CONTROL APP ID]]"
+      "'"$CONTROL_APP_ID"'"
     ],
     "dataReceiverUrl": []
   }
 }'
 ```
+Now, you can log in to your IoT Orchestrator dashboard, and under *Inventory > BLE Client* copy the BLE device id and save it as enivornment variable. 
+```bash
+export BLE_DEVICE_ID=
+```
+
 We are using the **SCIM API** to onboard the BLE devices. Refer to the [SCIM API Reference](https://developer.cisco.com/docs/spaces-connect-for-iot-services/onboard-operations-apis-overview/) or [Onboarding BLE Devices Using SCIM](https://developer.cisco.com/docs/spaces-connect-for-iot-services/onboarding-ble-devices-using-scim/) for more information.
 
 ### 2. Register the Data Receiver Application
 Now, the data receiver application has to be registered to consume the sensor data.
 ```bash
-curl -k --location 'https://[[IoT-IP]]:8081/control/registration/registerDataApp' \
---header 'Content-Type: application/json' \
---header 'x-api-key: [[CONTROL APP KEY]]' \
---data '
-{
-"controlApp": "[[CONTROL APP ID]]",
-"topic": "[[MQTT TOPIC NAME]]",
-"dataApps": [
-{
-"dataAppID": "[[DATA APP ID]]"
-}
-]
+curl -k --location "https://$IOT_IP:8081/control/registration/registerDataApp" \
+--header "Content-Type: application/json" \
+--header "x-api-key: $CONTROL_APP_KEY" \
+--data '{
+  "controlApp": "'"$CONTROL_APP_ID"'",
+  "topic": "'"$MQTT_TOPIC_NAME"'",
+  "dataApps": [
+    {
+      "dataAppID": "'"$DATA_APP_ID"'"
+    }
+  ]
 }'
 ```
 All control operations for BLE devices rely on the **NIPC API**. Please refer to [NIPC API Reference](https://developer.cisco.com/docs/spaces-connect-for-iot-services/control-operations-apis-overview/) or [Control Operations on BLE Devices](https://developer.cisco.com/docs/spaces-connect-for-iot-services/control-operations-on-ble-devices/).
@@ -122,20 +140,19 @@ All control operations for BLE devices rely on the **NIPC API**. Please refer to
 ### 3. Register Topic
 As next, registering a MQTT topic to specify the type of BLE data to receive.
 ```bash
-curl -k --location 'https://[[IoT-IP]]:8081/control/registration/registerTopic' \
---header 'x-api-key: [[CONTROL APP KEY]]' \
---header 'Content-Type: application/json' \
---data '
-{
-"technology": "ble",
-"topic": "[[MQTT TOPIC NAME]]",
-"ids": [
-  "[[BLE DEVICE ID]]"
-],
-"controlApp": "[[CONTROL APP ID]]",
-"ble": {
-"type": "advertisements"
-}
+curl -k --location "https://$IOT_IP:8081/control/registration/registerTopic" \
+--header "x-api-key: $CONTROL_APP_KEY" \
+--header "Content-Type: application/json" \
+--data '{
+  "technology": "ble",
+  "topic": "'"$MQTT_TOPIC_NAME"'",
+  "ids": [
+    "'"$BLE_DEVICE_ID"'"
+  ],
+  "controlApp": "'"$CONTROL_APP_ID"'",
+  "ble": {
+    "type": "advertisements"
+  }
 }'
 ```
 
@@ -144,10 +161,10 @@ Once your BLE sensor is onboarded, data receiver application registered, and top
 
 With the basic command you will receive raw, encrypted data. 
 ```bash
-mosquitto_sub -h [[IoT-IP]] -p 41883 /
--t '[[MQTT TOPIC NAME]]' /
--u '[[DATA APP ID]]' /
---pw '[[DATA APP KEY]]'
+mosquitto_sub -h $IOT_IP -p 41883 \
+-t "$MQTT_TOPIC_NAME" \
+-u "$DATA_APP_ID" \
+--pw "$DATA_APP_KEY"
 ```
 To subscribe to all topics, use `mosquitto_sub -h [[IoT-IP]] -p 41883 -u '[[DATA APP ID]]' --pw '[[DATA APP KEY]]' -t '#' -v` instead. Refer to [Subscribing to Advertisements and Notifications](https://developer.cisco.com/docs/spaces-connect-for-iot-services/subscribing-to-advertisements-and-notifications/) for more information.
 
@@ -177,10 +194,10 @@ It is recommended to also download the `timestamp.proto` file from [here](https:
 
 3. After that, you can receive and decode the messages using the following command;
   ```bash
-  mosquitto_sub -h [[IoT-IP]] -p 41883 /
-  -t '[[MQTT TOPIC NAME]]' /
-  -u '[[DATA APP ID]]' /
-  --pw '[[DATA APP KEY]]' / 
+  mosquitto_sub -h $IOT_IP -p 41883 \
+  -t "$MQTT_TOPIC_NAME" \
+  -u "$DATA_APP_ID" \
+  --pw "$DATA_APP_KEY" \
   -F "%t %x" | \
   while IFS=' ' read -r topic hex_payload; do
       if [ -z "$hex_payload" ]; then
@@ -225,10 +242,10 @@ It is recommended to also download the `timestamp.proto` file from [here](https:
   ```
 5. Subscribe to the topic 
   ```bash
-  mosquitto_sub -h [[IoT-IP]] -p 41883 \
-  -t '[[MQTT TOPIC NAME]]' \
-  -u 'https://[[DATA APP ID]]' \
-  --pw '[[CONTROL APP ID]]' \
+  mosquitto_sub -h $IOT_IP -p 41883 \
+  -t "$MQTT_TOPIC_NAME" \
+  -u "$DATA_APP_ID" \
+  --pw "$DATA_APP_KEY" \
   -F "%t %x" | python3 decode_mqtt_stream.py
   ```
 ![Onboarded BLE Sensors](img/ble-advertisement2.png)\
