@@ -150,7 +150,7 @@ mosquitto_sub -h [[IoT-IP]] -p 41883 /
 -u '[[DATA APP ID]]' /
 --pw '[[DATA APP KEY]]'
 ```
-To subscribe to all topics, use `mosquitto_sub -h [[IoT-IP]] -p 41883 -u '[[DATA APP ID]]' --pw '[[DATA APP KEY]]' -t '#' -v` insteaed. Refer to [Subscribing to Advertisements and Notifications](https://developer.cisco.com/docs/spaces-connect-for-iot-services/subscribing-to-advertisements-and-notifications/) for more information.
+To subscribe to all topics, use `mosquitto_sub -h [[IoT-IP]] -p 41883 -u '[[DATA APP ID]]' --pw '[[DATA APP KEY]]' -t '#' -v` instead. Refer to [Subscribing to Advertisements and Notifications](https://developer.cisco.com/docs/spaces-connect-for-iot-services/subscribing-to-advertisements-and-notifications/) for more information.
 
 #### Subscribe to the MQTT topic and decrypt the message 
 The data received from the IoT Orchestrator is encoded using Google Protocol Buffers (`Protobuf`). To make this data human-readable, you need to decode it using the provided .proto schema.
@@ -170,7 +170,7 @@ It is recommended to also download the `timestamp.proto` file from [here](https:
   cd ../..
   ```
 
-2. Verify the installation of the protoc compiler and the xxd utility, and install them if missing.
+2. Verify the installation of the `protoc` compiler and the `xxd` utility, and install them if missing.
   ```bash
   protoc --version
   which xxd
