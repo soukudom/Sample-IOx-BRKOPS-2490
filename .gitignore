@@ -20,3 +20,8 @@ Catalyst-9300-APP/c93000-demo.tar
 */iot_decoder/
 */google/
 */__pycache__/
+
+# Hide server certificate files
+server.crt 
+server.csr
+server.key
