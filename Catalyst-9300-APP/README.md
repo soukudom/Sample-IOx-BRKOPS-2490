@@ -87,10 +87,12 @@ Note: Find more information and a detailed guide in the [Catalyst Center End Use
 
 #### Option 2: Install via CLI
 
-1. Copy the `c9300-demo.tar` file to the SSD (usfblash1) of your Switch. To verify the successful upload, use:
+1. Copy the `c9300-demo.tar` file to the SSD (usfblash1) of your Switch. Then, verify the successful upload:
    ```
+   copy scp://<user>@<serverIP>://<path>/c9300-demo.tar usbflash1:/
    dir usbflash1:
    ```
+
 2. Set up the interface for the application. In this example, the app is connected to a specific VLAN, and a single vNIC receives an IP address via DHCP. The `<guest-interface-number>` represents the Ethernet interface number inside the container (e.g., `eth0` if the value is set to 0):
    ```
    conf t
