@@ -14,3 +14,8 @@ Catalyst-AP-APP/demo*
 
 # Hide new demo.tar files
 iPerf-App/demo.tar
+
+# Hide server certificates, generated directories, and Python cache files
+*/iot_decoder/
+*/google/
+*/__pycache__/
