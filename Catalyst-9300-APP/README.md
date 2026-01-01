@@ -131,7 +131,7 @@ Note: More detailed information you can find [here](https://developer.cisco.com/
    app-hosting connect appid webapp session   
    ```
    
-3. View logs from within the container (after connecting via session):
+3. Access application logs. The application uses the `CAF_APP_LOG_DIR` environment variable (provided by IOx framework) to write logs to a persistent storage location. To view logs from within the container (after connecting via session):
    ```bash
    cat iox_data/logs/server.log 
    ```
