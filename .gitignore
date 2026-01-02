@@ -9,6 +9,9 @@ Catalyst-AP-APP/*demo.tar
 */conf/package.tar
 */conf/.package.metadata
 
+# Ignore newly created configuration files, starting with yyyyMM
+*/conf/202601*
+
 # Hide any Pyton virtual environments
 */venv
 
