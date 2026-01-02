@@ -5,6 +5,8 @@ This is a sample application that demonstrates a simple web server running on Ci
 1. [Download ioxclient](https://developer.cisco.com/docs/iox/#!iox-resource-downloads). The tool `ioxclient` is required to convert docker image to the proper format for Catalyst APs. You can also install the IOx SDE which is an Ubuntu VM (14.04) with all the tools (docker, ioxclient) required to build an IOx application package pre-installed. 
 2. Install Docker (see details based on your OS).
 
+> *Note*: This setup uses **Docker** version `28.5.1` and **ioxclient** version `1.17.0.0`. 
+
 ## Step by Step deployment 
 
 ### Create your Application File
@@ -27,9 +29,11 @@ This is a sample application that demonstrates a simple web server running on Ci
    ```
    ls -lr ./conf
    ```
+   For this command, IOxclient needs to be run in a Linux environment! 
+
 6. Select installation tool and deploy the app. In section below you find details for Cisco Catalyst Center and ioxclient
 
-Note: A Package of the sample app (`package.tar`) and a packaged `demo.tar` Docker container are available in the `/packages` directory.
+> *Note*: A Package of the sample app (`package.tar`) and a packaged `demo.tar` Docker container are available in the `/packages` directory.
 
 ### Set up the Infrastructure
 Before installation enable the IOx feature on your C9800 controller:
@@ -52,7 +56,7 @@ Select installation tool and deploy the app. In section below you find details f
 
 <img src="img/ap-app-hosting-catc.gif" width="700">
 
-Note: Find more information and a detailed guide in the [Application Hosting on Catalyst Access Points Deployment Guide](https://www.cisco.com/c/en/us/products/collateral/wireless/access-points/guide-c07-744305.html).
+> *Note*: Find more information and a detailed guide in the [Application Hosting on Catalyst Access Points Deployment Guide](https://www.cisco.com/c/en/us/products/collateral/wireless/access-points/guide-c07-744305.html).
 
 #### Option 2: Install via ioxclient
 1. Configure an `ioxclient` profile. For this, you need to specify a name, the AP's IP address, the AP's username & password and change the IOx platform's SSH Port to 22:
@@ -74,7 +78,7 @@ Note: Find more information and a detailed guide in the [Application Hosting on 
     ``` 
 ![StartApp](./../img/install-activate-start.png)
 
-Note: Find more information on the Cisco DevNet site on how to [Deploy IOx Application on AP Using ioxclient](https://developer.cisco.com/docs/app-hosting-ap/deploy-iox-application-on-ap-using-ioxclient/).
+> *Note*: Find more information on the Cisco DevNet site on how to [Deploy IOx Application on AP Using ioxclient](https://developer.cisco.com/docs/app-hosting-ap/deploy-iox-application-on-ap-using-ioxclient/).
 
 <img src="img/ioxclient.gif" width="700">
 
