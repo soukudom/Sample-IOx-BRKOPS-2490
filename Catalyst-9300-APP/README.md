@@ -34,7 +34,7 @@ Catalyst 9300 switches are based on an x86 architecture. To build a compatible i
    ioxclient docker package c9300-web-app:latest ./conf
    ```
 
-Note: Unfortunately the `c9300-demo.tar` has more than 100 MB and cannot be uploaded to Github repository. On the other hand, it is the great opportunity to try docker commands :-)
+> *Note*: Unfortunately the `c9300-demo.tar` has more than 100 MB and cannot be uploaded to Github repository. On the other hand, it is the great opportunity to try docker commands :-)
 
 
 ### Set up the Infrastructure
