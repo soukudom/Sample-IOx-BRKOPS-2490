@@ -8,14 +8,15 @@ Catalyst 9300 switches are based on an x86 architecture. To build a compatible i
 1. Make sure Docker is installed on your system. You can find installation instructions specific to your operating system on the Docker website.
 2. (Optional) [Download ioxclient](https://developer.cisco.com/docs/iox/#!iox-resource-downloads).
 
-Note: This setup uses Docker version `24.0.5`.
+> *Note*: This setup uses **Docker** version `24.0.5` and **ioxclient** version `1.17.0.0`. Using different versions may result in compatibility issues when packaging the Docker file using ioxclient (Step 4).
 
 ## Step by Step deployment 
 
 ### Create your Application File
 
 1. Download or clone this GitHub repository to your local machine.
-2. Navigate to the directory containing the Dockerfile and run:
+2. Navigate to the directory containing the Dockerfile and run (on an x86_64 based architecuture). If sing arm-based environment, use simple cross-compilation build x86_64 compatible image `docker build --platform linux/amd64 -t c9300-web-app .`
+
    ```
    docker build -t c9300-web-app .
    ```
@@ -83,7 +84,7 @@ Select installation tool and deploy the app. In section below you find details f
 
 <img src="img/switch-app-hosting-catc.gif" width="700">
 
-Note: Find more information and a detailed guide in the [Catalyst Center End User Guide](https://www.cisco.com/c/en/us/td/docs/cloud-systems-management/network-automation-and-management/catalyst-center/2-3-7/user_guide/b_cisco_catalyst_center_user_guide_237/b_cisco_dna_center_ug_2_3_7_chapter_01111.html?bookSearch=true#id_132431).
+> *Note*: Find more information and a detailed guide in the [Catalyst Center End User Guide](https://www.cisco.com/c/en/us/td/docs/cloud-systems-management/network-automation-and-management/catalyst-center/2-3-7/user_guide/b_cisco_catalyst_center_user_guide_237/b_cisco_dna_center_ug_2_3_7_chapter_01111.html?bookSearch=true#id_132431).
 
 #### Option 2: Install via CLI
 
@@ -113,7 +114,7 @@ Note: Find more information and a detailed guide in the [Catalyst Center End Use
 
 ![StartApp](./../img/install-activate-start.png)
 
-Note: More detailed information you can find [here](https://developer.cisco.com/docs/app-hosting/#!getting-cat9k-setup). There is much more examples including details, such as networking configuration.
+> *Note*: More detailed information you can find [here](https://developer.cisco.com/docs/app-hosting/#!getting-cat9k-setup). There is much more examples including details, such as networking configuration.
 
 <img src="img/app-hosting.gif" width="700">
 
