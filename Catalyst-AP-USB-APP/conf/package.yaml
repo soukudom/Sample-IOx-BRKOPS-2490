@@ -1,0 +1,36 @@
+descriptor-schema-version: "2.10"
+
+info:
+  name: zig2mqtt
+  description: "zigbeeApp"
+  version: "2.0.2"
+  author-link: "http://www.cisco.com"
+  author-name: "Dominik Soukup"
+
+app:
+ # Refer Platform Support Matrix table.
+ # armv7l for 32 bit CPU Architecture.
+ # aarch64 for 64 bit CPU Architecture.
+  cpuarch: aarch64
+  type: docker
+  env:
+    TZ: "Europe/Prague"
+    # Explicitly set data directory to the persistent volume
+    ZIGBEE2MQTT_DATA: "/data"
+  resources:
+    profile: c1.small
+    devices:
+      # CRITICAL FOR APs: You MUST use the 'alias' field.
+      - type: serial
+        label: ZIGBEE_STICK
+        alias: usb_serial
+        usage: Zigbee Stick
+    network:
+    - interface-name: eth0
+      ports:
+        tcp: [8080]
+        udp: [8080]
+
+  startup:
+    rootfs: rootfs.img
+    target: ["/bin/sh"]
