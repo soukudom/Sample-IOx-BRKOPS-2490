@@ -16,5 +16,8 @@ TCI App with required configuration on the network device: [Packet-Capture-Captu
 ## iPerf-APP
 Simple iPerf App with Graphical User Interface running on Catalyst 9000 Switches: [iPerf-APP](/iPerf-APP/README.md). 
 
+## Catalyst-AP-USB-APP
+Sample application to demontrate a simple use case with USB.
+ [Catalyst-AP-USB-AP](/Catalyst-AP-USB-APP/README.md). 
 
-*Note*: In case of any challenges feel free to open an Issue. We can provide fix or clarification.
+> *Note*: In case of any challenges feel free to open an Issue. We can provide fix or clarification.

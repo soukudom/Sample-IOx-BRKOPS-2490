@@ -32,7 +32,8 @@ usb-enable
 end
 ``` 
 To verify if apphost is enabled on your 9800 controller, use `sh ap apphost summary`.
-Note: for USB based apps it is necessary to have required PoE budget (typically 60W and more)
+
+> *Note*: for USB based apps it is necessary to have required PoE budget (typically 60W and more)
 
 ### Install the Application
 
@@ -83,7 +84,7 @@ Use `ioxclient` to install the app since it supports enhanced options required f
 3. Rest of parameter can we in default. They can be changed later.
 4. Save the initial configuration and validate the zigbee2mqtt live logs in the console
 
-Note: If you select wrong USB driver or the connection towards mqtt broker does not work, the app will not shut down 
+> *Note*: If you select wrong USB driver or the connection towards mqtt broker does not work, the app will not shut down 
     
 
 ---
