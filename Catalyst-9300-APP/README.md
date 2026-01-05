@@ -12,15 +12,7 @@ Catalyst 9300 switches are based on an x86 architecture. To build a compatible i
 
 > *Note*: The `main.py` application implements two logging mechanisms:
 > - **File Logging**: Logs are written to persistent storage using the `CAF_APP_LOG_DIR` environment variable (provided by the IOx framework). Logs can be accessed at `iox_data/logs/server.log` within the container.
-   ```cisco
-   / # cat iox_data/logs/server.log 
-   Setting up logging to file /iox_data/logs/server.log
-   Server running at http://0.0.0.0:8000/
-   Request from 10.0.0.103
-   Syslog message sent successfully
-   Response sent..
-   ```
-> - **Syslog via Serial Port**: Log messages are also sent to the switch's syslog through the `/dev/ttyS2` serial interface, allowing integration with the switch's native logging system.
+> - **Syslog via Serial Port**: Log messages are also sent to the switch's syslog through the `/dev/ttyS2` serial interface, allowing integration with the switch's native logging system.\
       ```cisco
       Jan  5 12:33:33.281: %IM-5-IOX_INST_NOTICE: Switch 1 R0/0: ioxman: IOX SERVICE webapp LOG: Request from 10.0.0.103
       ```
@@ -147,11 +139,15 @@ Select installation tool and deploy the app. In section below you find details f
    app-hosting connect appid webapp session   
    ```
    
-3. Access application logs. The application uses the `CAF_APP_LOG_DIR` environment variable (provided by IOx framework) to write logs to a persistent storage location. To view logs from within the container (after connecting via session):
-   ```bash
-   cat iox_data/logs/server.log 
+3. To view the app logs from within the container (after connecting via session):
+   ```cisco
+   / # cat iox_data/logs/server.log 
+   Setting up logging to file /iox_data/logs/server.log
+   Server running at http://0.0.0.0:8000/
+   Request from 10.0.0.103
+   Syslog message sent successfully
+   Response sent..
    ```
-
 **Stop and Remove app**
 
 1. Stop, remove and uninstall the app:
