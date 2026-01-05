@@ -12,7 +12,18 @@ Catalyst 9300 switches are based on an x86 architecture. To build a compatible i
 
 > *Note*: The `main.py` application implements two logging mechanisms:
 > - **File Logging**: Logs are written to persistent storage using the `CAF_APP_LOG_DIR` environment variable (provided by the IOx framework). Logs can be accessed at `iox_data/logs/server.log` within the container.
+   ```cisco
+   / # cat iox_data/logs/server.log 
+   Setting up logging to file /iox_data/logs/server.log
+   Server running at http://0.0.0.0:8000/
+   Request from 10.0.0.103
+   Syslog message sent successfully
+   Response sent..
+   ```
 > - **Syslog via Serial Port**: Log messages are also sent to the switch's syslog through the `/dev/ttyS2` serial interface, allowing integration with the switch's native logging system.
+      ```cisco
+      Jan  5 12:33:33.281: %IM-5-IOX_INST_NOTICE: Switch 1 R0/0: ioxman: IOX SERVICE webapp LOG: Request from 10.0.0.103
+      ```
 
 ## Step by Step deployment 
 
@@ -45,7 +56,7 @@ Catalyst 9300 switches are based on an x86 architecture. To build a compatible i
 
 1. Enter configuration mode and enable iox:
 
-   ```
+   ```cisco
    conf t
    iox
    ip http server
@@ -53,7 +64,7 @@ Catalyst 9300 switches are based on an x86 architecture. To build a compatible i
    ```
 
    Verify the IOX service:
-   ```
+   ```cisco
    sh iox-service 
    ```
 
@@ -61,7 +72,7 @@ Catalyst 9300 switches are based on an x86 architecture. To build a compatible i
 
    Get info on any installed apps, use the `sh app-hosting ?` command.
 2. Configure the `AppGigabitEthernet` interface to allow only traffic from the specified VLAN `<vlan_id>` to pass through. Note that the `AppGig` interface is only available on the Cisco Catalyst 9300 series, Catalyst 9400 series and Catalyst 9500X switches. 
-   ```iox
+   ```cisco
    conf t
    interface AppGigabitEthernet 1/0/1
    switchport trunk allowed vlan <vlan_id>
@@ -69,7 +80,7 @@ Catalyst 9300 switches are based on an x86 architecture. To build a compatible i
    ```
 3. (Optional) If you need to disable signed verification for app hosting, execute:
 
-   ```
+   ```cisco
    conf t
    no app-hosting signed-verification
    ```
@@ -93,13 +104,13 @@ Select installation tool and deploy the app. In section below you find details f
 #### Option 2: Install via CLI
 
 1. Copy the `c9300-demo.tar` file to the SSD (usfblash1) of your Switch. Then, verify the successful upload:
-   ```
+   ```cisco
    copy scp://<user>@<serverIP>://<path>/c9300-demo.tar usbflash1:/
    dir usbflash1:
    ```
 
 2. Set up the interface for the application. In this example, the app is connected to a specific VLAN, and a single vNIC receives an IP address via DHCP. The `<guest-interface-number>` represents the Ethernet interface number inside the container (e.g., `eth0` if the value is set to 0):
-   ```
+   ```cisco
    conf t
    app-hosting appid webapp 
    app-vnic AppGigabitEthernet trunk 
@@ -107,11 +118,11 @@ Select installation tool and deploy the app. In section below you find details f
    end
    ```
 3. Install the application using the command  `app-hosting install appid <app-name> package usbflash1:<docker-tar-file>`. E.g.:
-   ```
+   ```cisco
    app-hosting install appid webapp package usbflash1:c9300-demo.tar
    ```
 4. Activate and Start the the application
-   ```
+   ```cisco
    app-hosting activate appid webapp 
    app-hosting start appid webapp 
    ```
@@ -126,13 +137,13 @@ Select installation tool and deploy the app. In section below you find details f
 
 1. To Verify the installed apps and an app status, use:
 
-   ```
+   ```cisco
    sh app-hosting list
    sh app-hosting detail appid webapp 
    ```
 2. Connect to the app
 
-   ```
+   ```cisco
    app-hosting connect appid webapp session   
    ```
    
@@ -144,13 +155,13 @@ Select installation tool and deploy the app. In section below you find details f
 **Stop and Remove app**
 
 1. Stop, remove and uninstall the app:
-   ```iox
+   ```cisco
    app-hosting stop appid webapp
    app-hosting deactivate appid webapp
    app-hosting uninstall appid webapp
    ```
 2. Remove the app-hosting webapp
-   ```iox
+   ```cisco
    conf t
    no app-hosting appid webapp   
    ```
