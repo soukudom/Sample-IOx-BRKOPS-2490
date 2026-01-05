@@ -10,6 +10,10 @@ Catalyst 9300 switches are based on an x86 architecture. To build a compatible i
 
 > *Note*: This setup uses **Docker** version `24.0.5` and **ioxclient** version `1.17.0.0`. Using different versions may result in compatibility issues when packaging the Docker file using ioxclient (Step 4).
 
+> *Note*: The `main.py` application implements two logging mechanisms:
+> - **File Logging**: Logs are written to persistent storage using the `CAF_APP_LOG_DIR` environment variable (provided by the IOx framework). Logs can be accessed at `iox_data/logs/server.log` within the container.
+> - **Syslog via Serial Port**: Log messages are also sent to the switch's syslog through the `/dev/ttyS2` serial interface, allowing integration with the switch's native logging system.
+
 ## Step by Step deployment 
 
 ### Create your Application File
