@@ -205,6 +205,7 @@ It is recommended to also download the `timestamp.proto` file from [here](https:
       echo "--------------------------------------------"
   done
   ```
+Note: If you have problem to decode protobuf telemetry data check the message format. It can be DataBatch or DataSubscription. In this example we use DataBatch which improves performance. For DataSubscription use decode=nipc.DataSubscription   
 ![Onboarded BLE Sensors](img/ble-advertisement1.png)
 
 #### Subscribe to the MQTT topic and decrypt the message including the iBeacon data (Using a Python script)
