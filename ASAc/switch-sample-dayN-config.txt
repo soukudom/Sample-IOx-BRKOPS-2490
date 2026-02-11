@@ -1,0 +1,35 @@
+interface Vlan100
+ ip address 192.168.150.14 255.255.255.240
+ no ip route-cache
+!
+interface Vlan600
+ ip dhcp client client-id ascii FOC2427L3C8
+ ip address 192.168.111.25 255.255.255.0
+ no ip redirects
+ no ip route-cache
+!
+!
+interface TwoGigabitEthernet3/0/1
+ switchport access vlan 100
+ device-tracking attach-policy IPDT_POLICY
+ service-policy input DNA-MARKING_IN
+ service-policy output DNA-dscp#APIC_QOS_Q_OUT
+!
+!
+interface AppGigabitEthernet3/0/1
+ switchport trunk allowed vlan 1,100,600
+ switchport mode trunk
+!
+!
+interface TenGigabitEthernet3/0/48
+ description PNP STARTUP VLAN
+ switchport access vlan 600
+ device-tracking attach-policy IPDT_POLICY
+ service-policy input DNA-MARKING_IN
+ service-policy output DNA-dscp#APIC_QOS_Q_OUT
+!
+!
+ip dhcp pool vl100
+ network 192.168.150.0 255.255.255.240
+ default-router 192.168.150.12 
+!
