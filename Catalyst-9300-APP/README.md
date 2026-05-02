@@ -3,6 +3,17 @@ This is a sample application that demonstrates a simple web server running on Ci
 
 Catalyst 9300 switches are based on an x86 architecture. To build a compatible iox app you need to build it on an x86_64 based system (e.g. on a Ubuntu server) or use cross compilation.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Step by Step deployment](#step-by-step-deployment)
+   - [Create your Application File](#create-your-application-file)
+   - [Set up the Infrastructure](#set-up-the-infrastructure)
+   - [Install the Application](#install-the-application)
+      - [Option 1: Install via Catalyst Center](#option-1-install-via-catalyst-center)
+      - [Option 2: Install via CLI](#option-2-install-via-cli)
+- [Useful Resources](#useful-resources)
+
 ## Prerequisites
 
 1. Make sure Docker is installed on your system. You can find installation instructions specific to your operating system on the Docker website.

@@ -1,0 +1,10 @@
+{
+	"resources": {
+		"network": [
+			{
+				"interface-name": "eth0", 
+				"network-name": "iox-bridge0"
+			}
+		]
+	}
+}
