@@ -20,8 +20,8 @@ For more infor check this [link](https://www.simac.cz/en/solutions-and-services/
 
 
 ## Install via Catalyst Center
-1. The same approach as described in section [Catalyst-9300-APP](/Catalyst-9300-APP/README.md). 
+1. The same approach as described in section [Catalyst-9300-APP](/Catalyst-9300-APP/README.md#option-1-install-via-catalyst-center). 
 
 ## Install via CLI
-1. The same approach as described section [Catalyst-9300-APP](/Catalyst-9300-APP/README.md). 
+1. The same approach as described section [Catalyst-9300-APP](/Catalyst-9300-APP/README.md#option-2-install-via-cli). 
 
