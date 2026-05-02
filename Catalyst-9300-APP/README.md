@@ -12,6 +12,9 @@ Catalyst 9300 switches are based on an x86 architecture. To build a compatible i
    - [Install the Application](#install-the-application)
       - [Option 1: Install via Catalyst Center](#option-1-install-via-catalyst-center)
       - [Option 2: Install via CLI](#option-2-install-via-cli)
+   - [Verify and Manage via CLI](#verify-and-manage-via-cli)
+      - [Verify and Test the app](#verify-and-test-the-app)
+      - [Stop and Remove app](#stop-and-remove-app)
 - [Useful Resources](#useful-resources)
 
 ## Prerequisites
@@ -136,7 +139,9 @@ Select installation tool and deploy the app. In section below you find details f
 
 <img src="img/app-hosting.gif" width="700">
 
-**Verify and Test the app**
+### Verify and Manage via CLI
+
+#### Verify and Test the app
 
 1. To Verify the installed apps and an app status, use:
 
@@ -159,7 +164,7 @@ Select installation tool and deploy the app. In section below you find details f
    Syslog message sent successfully
    Response sent..
    ```
-**Stop and Remove app**
+#### Stop and Remove app
 
 1. Stop, remove and uninstall the app:
    ```console
@@ -189,5 +194,7 @@ Select installation tool and deploy the app. In section below you find details f
 
 - [Application Hosting (Catalyst Center End User Guide)](https://www.cisco.com/c/en/us/td/docs/cloud-systems-management/network-automation-and-management/catalyst-center/2-3-7/user_guide/b_cisco_catalyst_center_user_guide_237/b_cisco_dna_center_ug_2_3_7_chapter_01111.html?bookSearch=true#id_132431)  
   End-user guide for application hosting in Catalyst Center.  
+
+- [Understand App Hosting on Catalyst 9000 Series Switches](https://www.cisco.com/c/en/us/support/docs/switches/catalyst-9500-series-switches/222780-understand-app-hosting-on-catalyst-9000.html)
 
 ---
