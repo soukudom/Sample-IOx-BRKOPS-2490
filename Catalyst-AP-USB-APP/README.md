@@ -8,6 +8,10 @@ This is a getting application to demontrate a simple use case with USB based app
     - [Create your Application File](#create-your-application-file)
     - [Set up the Infrastructure](#set-up-the-infrastructure)
     - [Install the Application](#install-the-application)
+    - [Verify and Configure the Application](#verify-and-configure-the-application)
+        - [Verify the app](#verify-the-app)
+        - [Start the webserver environment for configuration](#start-the-webserver-environment-for-configuration)
+        - [Configure the zigbee2mqtt app](#configure-the-zigbee2mqtt-app)
 - [Useful Resources](#useful-resources)
 
 ## Prerequisites
@@ -66,14 +70,16 @@ Use `ioxclient` to install the app since it supports enhanced options required f
     ioxclient app start zigbee2mqtt
     ``` 
 
-**Verify the app**
+### Verify and Configure the Application
+
+#### Verify the app
 1. To Verify the installed apps, check the app status, or to validate configuration, use:
     ```iox
     ioxclient application list
     ioxclient application info zigbee2mqtt
     ```
 
-**Start the webserver environment for configuration**
+#### Start the webserver environment for configuration
 1. Connect to the app 
     ```iox
     connect iox application
@@ -84,7 +90,7 @@ Use `ioxclient` to install the app since it supports enhanced options required f
     cd app
     node index.js
     ```
-**Configure the zigbee2mqtt app**
+#### Configure the zigbee2mqtt app
 1. In web browser open http://<access-point-IP>:8080
 2. Validate path for USB dongle, set valid driver and define mqtt broker connect
     * USB path: /dev/ttyUSB
