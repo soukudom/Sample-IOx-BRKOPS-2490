@@ -3,6 +3,12 @@ This repository contains a Docker container that allows network packet capture u
 
 Follow the instructions below to build, install and run the app.
 
+## Table of Contents
+
+- [Build](#build)
+- [Install via Catalyst Center](#install-via-catalyst-center)
+- [Run](#run)
+
 ## Build 
 Installation instructions and build packages are available [here](https://github.com/FETA-Project/TrafficCaptureInfrastructure/tree/main). For packages please check the Release section. 
 

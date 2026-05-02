@@ -2,6 +2,13 @@
 This repository contains a Docker container that processes network traffic using [ipfixprobe](https://github.com/CESNET/ipfixprobe/tree/master) or allows to capture traffic using tcpdump. 
 
 Follow the instructions below to build, install and run  the app
+
+## Table of Contents
+
+- [Build](#build)
+- [Install](#install)
+- [Run](#run)
+
 ## Build 
 * `docker build -t net-analysis .`
 

@@ -1,5 +1,9 @@
 ## Simple iPerf App with Graphical User Interface
 
+## Table of Contents
+
+- [Simple iPerf App with Graphical User Interface](#simple-iperf-app-with-graphical-user-interface)
+
 1. Create image, specify target platform
 ```
 docker build --platform linux/amd64 -t iperf3-app .
