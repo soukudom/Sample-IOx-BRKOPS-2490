@@ -1,6 +1,20 @@
 # Catalyst AP APP
 This is a sample application that demonstrates a simple web server running on Cisco Catalyst 9100 Access Points.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Step by Step deployment](#step-by-step-deployment)
+    - [Create your Application File](#create-your-application-file)
+    - [Set up the Infrastructure](#set-up-the-infrastructure)
+    - [Install the Application](#install-the-application)
+        - [Option 1: Install via Catalyst Center](#option-1-install-via-catalyst-center)
+        - [Option 2: Install via ioxclient](#option-2-install-via-ioxclient)
+        - [Verify the app](#verify-the-app)
+        - [Verify and Test the app from the AP itself](#verify-and-test-the-app-from-the-ap-itself)
+        - [Stop and Remove app](#stop-and-remove-app)
+- [Useful Resources](#useful-resources)
+
 ## Prerequisites
 1. [Download ioxclient](https://developer.cisco.com/docs/iox/#!iox-resource-downloads). The tool `ioxclient` is required to convert docker image to the proper format for Catalyst APs. You can also install the IOx SDE which is an Ubuntu VM (14.04) with all the tools (docker, ioxclient) required to build an IOx application package pre-installed. 
 2. Install Docker (see details based on your OS).
