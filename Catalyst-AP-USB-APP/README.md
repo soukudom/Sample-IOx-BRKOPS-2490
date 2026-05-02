@@ -1,6 +1,15 @@
 # Catalyst AP USB APP
 This is a getting application to demontrate a simple use case with USB based appliacation. For demonstration we use USB dongle with Zigbee support and [Zigbee2mqtt application](https://www.zigbee2mqtt.io/)
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Step by Step deployment](#step-by-step-deployment)
+    - [Create your Application File](#create-your-application-file)
+    - [Set up the Infrastructure](#set-up-the-infrastructure)
+    - [Install the Application](#install-the-application)
+- [Useful Resources](#useful-resources)
+
 ## Prerequisites
 1. [Download ioxclient](https://developer.cisco.com/docs/iox/#!iox-resource-downloads). The tool `ioxclient` is required to convert docker image to the proper format for Catalyst APs. You can also install the IOx SDE which is an Ubuntu VM (14.04) with all the tools (docker, ioxclient) required to build an IOx application package pre-installed. 
 2. Install Docker (see details based on your OS).

@@ -1,6 +1,20 @@
 # IoT Orchestrator Asset Tracking Example
 Cisco Spaces Connect for IoT Services solution enables delivery of advanced BLE capabilities over Cisco Catalyst Wireless infrastructure. 
 
+## Table of Contents
+
+- [Prerequisite](#prerequisite)
+- [Supported BLE beacon formats](#supported-ble-beacon-formats)
+- [Variables](#variables)
+- [Steps](#steps)
+  - [1. Onboard Sensors](#1-onboard-sensors)
+  - [2. Register the Data Receiver Application](#2-register-the-data-receiver-application)
+  - [3. Register Topic](#3-register-topic)
+  - [4. Subscribing to the MQTT topic](#4-subscribing-to-the-mqtt-topic)
+    - [Subscribe to the MQTT topic and decrypt the message](#subscribe-to-the-mqtt-topic-and-decrypt-the-message)
+    - [Subscribe to the MQTT topic and decrypt the message including the iBeacon data (Using a Python script)](#subscribe-to-the-mqtt-topic-and-decrypt-the-message-including-the-ibeacon-data-using-a-python-script)
+  - [5. Consume the data!](#5-consume-the-data)
+
 ## Prerequisite
 Follow the complete [IoT Orchestrator Configuration Guide](https://www.cisco.com/c/dam/en/us/td/docs/wireless/spaces/iot-orchestrator/qsg/spaces-connect-iot-qsg.pdf) to set up the IoT Orchestrator on your 9800 Controller. 
 
