@@ -10,6 +10,7 @@ This is a sample application that demonstrates a simple web server running on Ci
     - [Install the Application](#install-the-application)
         - [Option 1: Install via Catalyst Center](#option-1-install-via-catalyst-center)
         - [Option 2: Install via ioxclient](#option-2-install-via-ioxclient)
+    - [Verify and Manage the Applicaiton](#verify-and-manage-via-cli)
         - [Verify the app](#verify-the-app)
         - [Verify and Test the app from the AP itself](#verify-and-test-the-app-from-the-ap-itself)
         - [Stop and Remove app](#stop-and-remove-app)
@@ -96,14 +97,16 @@ Select installation tool and deploy the app. In section below you find details f
 
 <img src="img/ioxclient.gif" width="700">
 
-**Verify the app**
+### Verify and Manage via CLI
+
+#### Verify the app
 1. To Verify the installed apps, check the app status, or to validate configuration, use:
     ```iox
     ioxclient application list
     ioxclient application info CLEUAPP
     ```
 
-**Verify and Test the app from the AP itself**
+#### Verify and Test the app from the AP itself
 1. To Verify the app status, use:
     ```iox
     sh iox applications
@@ -115,7 +118,7 @@ Select installation tool and deploy the app. In section below you find details f
     ```
     Note that this command is not supported on Console, use SSH session to connect.
     
-**Stop and Remove app**
+#### Stop and Remove app
 1. Stop, remove and uninstall the app:
    ```iox
     ioxclient app stop CLEUAPP
