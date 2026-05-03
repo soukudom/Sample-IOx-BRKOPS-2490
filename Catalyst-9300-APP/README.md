@@ -93,10 +93,17 @@ Catalyst 9300 switches are based on an x86 architecture. To build a compatible i
 
    Verify the IOX service:
    ```
-   sh iox-service 
+   Switch# show iox-service
+   IOx Infrastructure Summary:
+   ---------------------------
+   IOx service (CAF)		      : Running
+   IOx service (HA)		      : Running
+   IOx service (IOxman)	      : Running
+   IOx service (Sec storage)	: Running
+   Libvirta 5.5.0		         : Running
+   Dockerd v19.03.13-ce	      : Running
+   Sync Status		            : Disabled
    ```
-
-   ![ioxservice](./img/ioxservice.png)
 
    Get info on any installed apps, use the `sh app-hosting ?` command.
 3. Configure the `AppGigabitEthernet` interface to allow only traffic from the specified VLAN `<vlan_id>` to pass through.
