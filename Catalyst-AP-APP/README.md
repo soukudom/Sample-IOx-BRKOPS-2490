@@ -4,6 +4,7 @@ This is a sample application that demonstrates a simple web server running on Ci
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
+- [Folder Overview](#folder-overview)
 - [Deployment](#deployment)
     - [Build](#build)
     - [Install Prerequisites](#install-prerequisites)
@@ -21,6 +22,15 @@ This is a sample application that demonstrates a simple web server running on Ci
 2. Install Docker (see details based on your OS).
 
 > *Note*: This setup uses **Docker** version `28.5.1` and **ioxclient** version `1.17.0.0`. 
+
+## Folder Overview
+
+- [main.py](./main.py): Sample web server for the Catalyst AP.
+- [Dockerfile](./Dockerfile): Container build definition for the app.
+- [activation.json](./activation.json): Otional, App activation profile and runtime settings.
+- [conf/package.yaml](./conf/package.yaml): IOx package metadata and resource settings.
+- [packages/demo.tar](./packages/demo.tar): Exported Docker image archive.
+- [packages/package.tar](./packages/package.tar): Packaged IOx application archive.
 
 ## Deployment
 
