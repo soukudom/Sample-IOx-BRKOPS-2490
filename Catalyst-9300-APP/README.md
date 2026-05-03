@@ -55,7 +55,7 @@ Catalyst 9300 switches are based on an x86 architecture. To build a compatible i
    ioxclient docker package c9300-web-app:latest ./conf
    ```
 
-> *Note*: Unfortunately the `c9300-demo.tar` has more than 100 MB and cannot be uploaded to Github repository. On the other hand, it is the great opportunity to try docker commands :-)
+> *Note*: Unfortunately the `c9300-demo.tar` has more than 100 MB and cannot be uploaded to the Github repository. On the other hand, it is a great opportunity to try docker commands :-)
 
 
 ### Set up the Infrastructure
@@ -89,7 +89,7 @@ Catalyst 9300 switches are based on an x86 architecture. To build a compatible i
    conf t
    no app-hosting signed-verification
    ```
-   To verify if signed verification has been disbaled, use `sh app-hosting infra`.
+   To verify if signed verification has been disabled, use `sh app-hosting infra`.
 
 
 ### Install the Application
@@ -108,7 +108,7 @@ Select installation tool and deploy the app. In section below you find details f
 
 #### Option 2: Install via CLI
 
-1. Copy the `c9300-demo.tar` file to the SSD (usfblash1) of your Switch. Then, verify the successful upload:
+1. Copy the `c9300-demo.tar` file to the SSD (usbflash1) of your Switch. Then, verify the successful upload:
    ```
    copy scp://<user>@<serverIP>://<path>/c9300-demo.tar usbflash1:/
    dir usbflash1:
@@ -126,7 +126,7 @@ Select installation tool and deploy the app. In section below you find details f
    ```
    app-hosting install appid webapp package usbflash1:c9300-demo.tar
    ```
-4. Activate and Start the the application
+4. Activate and start the application
    ```
    app-hosting activate appid webapp 
    app-hosting start appid webapp 
@@ -142,7 +142,7 @@ Select installation tool and deploy the app. In section below you find details f
 
 #### Verify and Test the app
 
-1. To Verify the installed apps and an app status, use:
+1. To list the installed apps and verify the app status, use:
 
    ```
    sh app-hosting list
@@ -195,5 +195,3 @@ Select installation tool and deploy the app. In section below you find details f
   End-user guide for application hosting in Catalyst Center.  
 
 - [Understand App Hosting on Catalyst 9000 Series Switches](https://www.cisco.com/c/en/us/support/docs/switches/catalyst-9500-series-switches/222780-understand-app-hosting-on-catalyst-9000.html)
-
----
