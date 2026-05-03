@@ -6,8 +6,9 @@ Follow the instructions below to build, install, and run the app.
 ## Table of Contents
 
 - [Build](#build)
-- [Install via Catalyst Center](#install-via-catalyst-center)
+- [Install](#install-via-catalyst-center)
 - [Run](#run)
+- [Useful Resources](#useful-resources)
 
 ## Build
 Installation instructions and build packages are available [here](https://github.com/FETA-Project/TrafficCaptureInfrastructure/tree/main). For packages, please check the Releases section.
@@ -22,3 +23,7 @@ If you would like to learn how to build a basic Docker image, please check the s
 
 ## Run
 Follow the Getting Started documentation for the Drone component available [here](https://feta-project.github.io/TrafficCaptureInfrastructure/). After modification of the configuration file, the Drone will try to connect to the Hive component (collection and control point).
+
+## Useful Resources
+- [Traffic Capture Infrastructure (GitHub)](https://github.com/FETA-Project/TrafficCaptureInfrastructure/tree/main)
+- [Traffic Capture Infrastructure Documentation](https://feta-project.github.io/TrafficCaptureInfrastructure/)
