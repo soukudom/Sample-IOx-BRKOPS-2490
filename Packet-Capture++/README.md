@@ -5,23 +5,25 @@ Follow the instructions below to build, install, and run the app.
 
 ## Table of Contents
 
-- [Build](#build)
-- [Install](#install-via-catalyst-center)
-- [Run](#run)
+- [Deployment](#deployment)
+	- [Build](#build)
+	- [Install](#install)
+	- [Run](#run)
 - [Useful Resources](#useful-resources)
 
-## Build
+## Deployment
+### Build
 Installation instructions and build packages are available [here](https://github.com/FETA-Project/TrafficCaptureInfrastructure/tree/main). For packages, please check the Releases section.
 
 If you would like to learn how to build a basic Docker image, please check the sample app for [Catalyst 9000](../Catalyst-9300-APP/README.md) or [Catalyst 9100](../Catalyst-AP-APP/README.md).
 
 
-## Install
+### Install
 * The installation is done using the same workflow as described in the section [Catalyst-9300-APP](/Catalyst-9300-APP/README.md). It is possible to choose Catalyst Center or CLI option.
 
 > *Note*: To capture live traffic, mirror network traffic to the IOx application (TCI Drone) using ERSPAN. The same approach applies to CyberVision. An example configuration is available in `erspan-config.txt`.
 
-## Run
+### Run
 Follow the Getting Started documentation for the Drone component available [here](https://feta-project.github.io/TrafficCaptureInfrastructure/). After modification of the configuration file, the Drone will try to connect to the Hive component (collection and control point).
 
 ## Useful Resources
