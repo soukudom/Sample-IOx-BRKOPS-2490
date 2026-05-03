@@ -6,6 +6,7 @@ Catalyst 9300 switches are based on an x86 architecture. To build a compatible i
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
+- [Folder Overview](#folder-overview)
 - [Deployment](#deployment)
    - [Build](#build)
    - [Install Prerequisites](#install-prerequisites)
@@ -23,6 +24,13 @@ Catalyst 9300 switches are based on an x86 architecture. To build a compatible i
 2. (Optional) [Download ioxclient](https://developer.cisco.com/docs/iox/#!iox-resource-downloads).
 
 > *Note*: This setup uses **Docker** version `24.0.5` and **ioxclient** version `1.17.0.0`. Using different versions may result in compatibility issues when packaging the Docker file using ioxclient (Step 4).
+
+## Folder Overview
+
+- [main.py](./main.py): Sample web server with file and syslog logging.
+- [Dockerfile](./Dockerfile): Container build definition for the app.
+- [conf/package.yaml](./conf/package.yaml): Optional IOx package metadata, resources, and startup settings.
+
 
 > *Note*: The `main.py` application implements two logging mechanisms:
 > - **File Logging**: Logs are written to persistent storage using the `CAF_APP_LOG_DIR` environment variable (provided by the IOx framework). Logs can be accessed at `iox_data/logs/server.log` within the container.
@@ -109,7 +117,7 @@ Catalyst 9300 switches are based on an x86 architecture. To build a compatible i
    conf t
    no app-hosting signed-verification
    ```
-   Alternatively, log in to the switch Web UI, navigate to Configuration > Services > IOx, locate `Application Signature Validation`, and disable it.
+   Alternatively, log in to the switch Web UI, navigate to *Configuration > Services > IOx*, locate `Application Signature Validation`, and disable it.
    To verify that signed verification has been successfully disabled, run 
    ```
    sh app-hosting infra
