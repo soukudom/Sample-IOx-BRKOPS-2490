@@ -77,7 +77,7 @@ Catalyst 9300 switches are based on an x86 architecture. To build a compatible i
 
    Get info on any installed apps, use the `sh app-hosting ?` command.
 2. Configure the `AppGigabitEthernet` interface to allow only traffic from the specified VLAN `<vlan_id>` to pass through. Note that the `AppGig` interface is only available on the Cisco Catalyst 9300 series, Catalyst 9400 series and Catalyst 9500X switches. 
-   ```console
+   ```
    conf t
    interface AppGigabitEthernet 1/0/1
    switchport trunk allowed vlan <vlan_id>
@@ -85,7 +85,7 @@ Catalyst 9300 switches are based on an x86 architecture. To build a compatible i
    ```
 3. (Optional) If you need to disable signed verification for app hosting, execute:
 
-   ```console
+   ```
    conf t
    no app-hosting signed-verification
    ```
