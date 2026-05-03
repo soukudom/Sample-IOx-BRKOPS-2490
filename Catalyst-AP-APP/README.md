@@ -109,7 +109,7 @@ Select installation tool and deploy the app. In section below you find details f
 
 <img src="img/ioxclient.gif" width="700">
 
-Once the application is started, you can access the running app via `http://<ap-app-ip>:8000`.
+Once the application is started, you can access the running app via `http://<ap-ip>:8000`.
 
 ### Verify
 
