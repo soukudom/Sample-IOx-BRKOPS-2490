@@ -16,12 +16,16 @@ Maintaining certificates for network endpoints is a common challenge we face in 
 
 ![dashboard](./img/dashboard.png)
 
-For more infor check this [link](https://www.simac.cz/en/solutions-and-services/digital-transformation/cassie)
+For more information, check this [link](https://www.simac.cz/en/solutions-and-services/digital-transformation/cassie)
 
 
 ## Install via Catalyst Center
 1. The same approach as described in section [Catalyst-9300-APP](/Catalyst-9300-APP/README.md#option-1-install-via-catalyst-center). 
+2. Confirm the CASSIE package is ready and the app network can reach DNS/NTP and CA/PKI endpoints.
+3. After deployment, verify the app status is `RUNNING` and validate certificate enrollment with a test endpoint.
 
 ## Install via CLI
-1. The same approach as described section [Catalyst-9300-APP](/Catalyst-9300-APP/README.md#option-2-install-via-cli). 
+1. The same approach as described in section [Catalyst-9300-APP](/Catalyst-9300-APP/README.md#option-2-install-via-cli). 
+2. Place the CASSIE package in reachable switch storage (for example, `usbflash1:`) and apply app networking for CA/PKI reachability.
+3. Validate with `show app-hosting list` and `show app-hosting detail appid <app-id>`, then confirm certificate enrollment.
 
