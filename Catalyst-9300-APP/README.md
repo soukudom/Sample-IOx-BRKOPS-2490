@@ -65,7 +65,6 @@ Catalyst 9300 switches are based on an x86 architecture. To build a compatible i
    ```console
    conf t
    iox
-   ip http server
    end
    ```
 
@@ -110,13 +109,13 @@ Select installation tool and deploy the app. In section below you find details f
 #### Option 2: Install via CLI
 
 1. Copy the `c9300-demo.tar` file to the SSD (usfblash1) of your Switch. Then, verify the successful upload:
-   ```console
+   ```
    copy scp://<user>@<serverIP>://<path>/c9300-demo.tar usbflash1:/
    dir usbflash1:
    ```
 
 2. Set up the interface for the application. In this example, the app is connected to a specific VLAN, and a single vNIC receives an IP address via DHCP. The `<guest-interface-number>` represents the Ethernet interface number inside the container (e.g., `eth0` if the value is set to 0):
-   ```console
+   ```
    conf t
    app-hosting appid webapp 
    app-vnic AppGigabitEthernet trunk 
@@ -124,11 +123,11 @@ Select installation tool and deploy the app. In section below you find details f
    end
    ```
 3. Install the application using the command  `app-hosting install appid <app-name> package usbflash1:<docker-tar-file>`. E.g.:
-   ```console
+   ```
    app-hosting install appid webapp package usbflash1:c9300-demo.tar
    ```
 4. Activate and Start the the application
-   ```console
+   ```
    app-hosting activate appid webapp 
    app-hosting start appid webapp 
    ```
@@ -145,18 +144,18 @@ Select installation tool and deploy the app. In section below you find details f
 
 1. To Verify the installed apps and an app status, use:
 
-   ```console
+   ```
    sh app-hosting list
    sh app-hosting detail appid webapp 
    ```
 2. Connect to the app
 
-   ```console
+   ```
    app-hosting connect appid webapp session   
    ```
    
 3. To view the app logs from within the container (after connecting via session):
-   ```console
+   ```
    / # cat iox_data/logs/server.log 
    Setting up logging to file /iox_data/logs/server.log
    Server running at http://0.0.0.0:8000/
@@ -167,13 +166,13 @@ Select installation tool and deploy the app. In section below you find details f
 #### Stop and Remove app
 
 1. Stop, remove and uninstall the app:
-   ```console
+   ```
    app-hosting stop appid webapp
    app-hosting deactivate appid webapp
    app-hosting uninstall appid webapp
    ```
 2. Remove the app-hosting webapp
-   ```console
+   ```
    conf t
    no app-hosting appid webapp   
    ```
