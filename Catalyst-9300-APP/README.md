@@ -96,9 +96,9 @@ Catalyst 9300 switches are based on an x86 architecture. To build a compatible i
    Switch# show iox-service
    IOx Infrastructure Summary:
    ---------------------------
-   IOx service (CAF)		      : Running
-   IOx service (HA)		      : Running
-   IOx service (IOxman)	      : Running
+   IOx service (CAF)          : Running
+   IOx service (HA)           : Running
+   IOx service (IOxman)       : Running
    IOx service (Sec storage)  : Running
    Libvirta 5.5.0             : Running
    Dockerd v19.03.13-ce       : Running
