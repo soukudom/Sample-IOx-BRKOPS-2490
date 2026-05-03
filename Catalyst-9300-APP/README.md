@@ -55,7 +55,7 @@ Catalyst 9300 switches are based on an x86 architecture. To build a compatible i
    ioxclient docker package c9300-web-app:latest ./conf
    ```
 
-> *Note*: Unfortunately the `c9300-demo.tar` has more than 100 MB and cannot be uploaded to the Github repository. On the other hand, it is a great opportunity to try docker commands :-)
+> *Note*: The `c9300-demo.tar` file exceeds 100 MB and cannot be uploaded to this GitHub repository. You can generate it locally as part of practicing the Docker workflow.
 
 
 ### Install Prerequisites
@@ -92,7 +92,10 @@ Catalyst 9300 switches are based on an x86 architecture. To build a compatible i
    no app-hosting signed-verification
    ```
    Alternatively, log in to the switch Web UI, navigate to Configuration > Services > IOx, locate `Application Signature Validation`, and disable it.
-   To verify that signed verification has been successfully disabled, run `sh app-hosting infra`.
+   To verify that signed verification has been successfully disabled, run 
+   ```
+   sh app-hosting infra
+   ```
 
 
 ### Install
