@@ -17,12 +17,12 @@ This repository provides the source code of applications presented during the Ci
 | --- | --- | --- | --- |
 | ASAc | Catalyst 9000 | Firewall application example | [ASAc](./ASAc/README.md) |
 | Catalyst 9300 App | Catalyst 9000 | Sample web application for switch app hosting | [Catalyst-9300-APP](./Catalyst-9300-APP/README.md) |
-| Catalyst AP App | Catalyst 9100 AP | Sample web application for AP app hosting | [Catalyst-AP-APP](./Catalyst-AP-APP/README.md) |
-| Catalyst AP USB App | Catalyst 9100 AP | USB-connected application example (Zigbee2MQTT) | [Catalyst-AP-USB-APP](./Catalyst-AP-USB-APP/README.md) |
+| Catalyst AP App | Catalyst 9100 | Sample web application for AP app hosting | [Catalyst-AP-APP](./Catalyst-AP-APP/README.md) |
+| Catalyst AP USB App | Catalyst 9100 | USB-connected application example (Zigbee2MQTT) | [Catalyst-AP-USB-APP](./Catalyst-AP-USB-APP/README.md) |
 | Certificate Auto Enrollment | Catalyst 9000 | Certificate lifecycle automation with CASSIE | [Certificate-auto-enrollment](./Certificate-auto-enrollment/README.md) |
-| IoT Orchestrator | Catalyst Wireless + IoT Orchestrator | BLE onboarding and MQTT data subscription workflow | [IoT-Orchestrator](./IoT-Orchestrator/README.md) |
-| Network Analysis++ | Catalyst app hosting | Traffic analysis with ipfixprobe and tcpdump | [Network-Analysis++](./Network-Analysis++/README.md) |
-| Packet Capture++ | Catalyst app hosting | TCI packet-capture deployment example | [Packet-Capture++](./Packet-Capture++/README.md) |
+| IoT Orchestrator | Catalyst 9800 | BLE onboarding and MQTT data subscription workflow | [IoT-Orchestrator](./IoT-Orchestrator/README.md) |
+| Network Analysis++ | Catalyst 9000 | Traffic analysis with ipfixprobe and tcpdump | [Network-Analysis++](./Network-Analysis++/README.md) |
+| Packet Capture++ | Catalyst 9000 | TCI packet-capture deployment example | [Packet-Capture++](./Packet-Capture++/README.md) |
 | iPerf App | Catalyst 9000 | Throughput testing app with web UI | [iPerf-APP](./iPerf-APP/README.md) |
 
 ## Support
