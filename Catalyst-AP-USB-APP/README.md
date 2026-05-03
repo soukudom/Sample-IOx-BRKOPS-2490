@@ -93,15 +93,15 @@ Use `ioxclient` to install the app since it supports enhanced options required f
     node index.js
     ```
 #### Configure the zigbee2mqtt app
-1. In web browser open http://<access-point-IP>:8080
-2. Validate path for USB dongle, set valid driver and define mqtt broker connect
-    * USB path: /dev/ttyUSB
-    * Driver: zstack (for Sonoff), ember (for SkyConnect) 
+1. In a web browser, open `http://<access-point-IP>:8080`.
+2. Validate the path for the USB dongle, set the correct driver, and define the MQTT broker connection:
+    * USB path: `/dev/ttyUSB0`
+    * Driver: `zstack` (for Sonoff), `ember` (for SkyConnect)
     * Select frontend access (for easier control of the Zigbee network)
 3. The rest of the parameters can be left as default. They can be changed later.
-4. Save the initial configuration and validate the zigbee2mqtt live logs in the console
+4. Save the initial configuration and validate the zigbee2mqtt live logs in the console.
 
-> *Note*: If you select wrong USB driver or the connection towards mqtt broker does not work, the app will not shut down 
+> *Note*: If you select the wrong USB driver or the connection to the MQTT broker does not work, the app will not start correctly.
     
 
 ---
@@ -113,6 +113,5 @@ Use `ioxclient` to install the app since it supports enhanced options required f
 - [Application Hosting on Catalyst Access Points Deployment Guide](https://www.cisco.com/c/en/us/products/collateral/wireless/access-points/guide-c07-744305.html)  
   Deployment guide for application hosting on Cisco Catalyst Access Points.  
 
----
 
 
