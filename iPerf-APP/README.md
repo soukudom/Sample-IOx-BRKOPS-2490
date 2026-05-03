@@ -5,6 +5,7 @@ This sample app packages an iPerf3-based throughput test utility with a simple w
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
+- [Folder Overview](#folder-overview)
 - [Deployment](#deployment)
   - [Build](#build)
   - [Install](#install)
@@ -14,6 +15,11 @@ This sample app packages an iPerf3-based throughput test utility with a simple w
 
 - Docker installed on your build machine
 - A Cisco Catalyst switch with application hosting enabled
+
+## Folder Overview
+
+- [app.py](./app.py): Web UI and iPerf test logic.
+- [Dockerfile](./Dockerfile): Container build definition for the app.
 
 ## Deployment
 

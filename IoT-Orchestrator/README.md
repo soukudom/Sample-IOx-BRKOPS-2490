@@ -4,6 +4,7 @@ Cisco Spaces Connect for IoT Services solution enables delivery of advanced BLE 
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
+- [Folder Overview](#folder-overview)
 - [Supported BLE beacon formats](#supported-ble-beacon-formats)
 - [Variables](#variables)
 - [Deployment](#deployment)
@@ -31,6 +32,10 @@ This example specifically walks you through the process of:
 ![Onboarded BLE Sensors](img/iot-orchestrator3.png)
 
 > *Note*: The Onboard Application, Control Application, and Data Receiver Application are three separate components. The Onboard Application handles device registration and authentication, the Control Application manages commands and control messages to the devices, and the Data Receiver Application collects and processes data from the sensors. In this example, we use a simplified setup where all three components are configured from a single Linux machine.
+
+## Folder Overview
+
+- [decode_mqtt_stream.py](./decode_mqtt_stream.py): Python helper to decode MQTT BLE advertisement data.
 
 ## Supported BLE beacon formats
 

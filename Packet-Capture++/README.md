@@ -5,11 +5,16 @@ Follow the instructions below to build, install, and run the app.
 
 ## Table of Contents
 
+- [Folder Overview](#folder-overview)
 - [Deployment](#deployment)
   - [Build](#build)
   - [Install](#install)
   - [Run](#run)
 - [Useful Resources](#useful-resources)
+
+## Folder Overview
+
+- [erspan-config.txt](./erspan-config.txt): Example ERSPAN configuration for mirrored traffic.
 
 ## Deployment
 ### Build

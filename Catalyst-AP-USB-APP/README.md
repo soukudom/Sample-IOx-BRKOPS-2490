@@ -4,6 +4,7 @@ This is a getting application to demonstrate a simple use case with USB based ap
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
+- [Folder Overview](#folder-overview)
 - [Deployment](#deployment)
     - [Build](#build)
     - [Install Prerequisites](#install-prerequisites)
@@ -18,6 +19,12 @@ This is a getting application to demonstrate a simple use case with USB based ap
 1. [Download ioxclient](https://developer.cisco.com/docs/iox/#!iox-resource-downloads). The tool `ioxclient` is required to convert docker image to the proper format for Catalyst APs. You can also install the IOx SDE which is an Ubuntu VM (14.04) with all the tools (docker, ioxclient) required to build an IOx application package pre-installed. 
 2. Install Docker (see details based on your OS).
 3. Get compatible USB dongle (see [Access AP's Internal USB interface](https://developer.cisco.com/docs/app-hosting-ap/create-an-iox-application-package/#create-an-iox-application-package) section). For this example we used SkyConnect dongle and Sonoff ZBDongle-P dongle. 
+
+## Folder Overview
+
+- [activation.json](./activation.json): App activation payload for runtime settings.
+- [conf/package.yaml](./conf/package.yaml): IOx package metadata and resource settings.
+- [package.tar](./package.tar): Packaged IOx application archive.
 
 ## Deployment
 
