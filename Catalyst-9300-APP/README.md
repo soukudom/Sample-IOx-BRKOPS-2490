@@ -76,7 +76,9 @@ Catalyst 9300 switches are based on an x86 architecture. To build a compatible i
    ![ioxservice](./img/ioxservice.png)
 
    Get info on any installed apps, use the `sh app-hosting ?` command.
-2. Configure the `AppGigabitEthernet` interface to allow only traffic from the specified VLAN `<vlan_id>` to pass through. Note that the `AppGig` interface is only available on the Cisco Catalyst 9300 series, Catalyst 9400 series and Catalyst 9500X switches. 
+2. Configure the `AppGigabitEthernet` interface to allow only traffic from the specified VLAN `<vlan_id>` to pass through.
+
+   > *Note*: The `AppGig` interface is only available on the Cisco Catalyst 9300 series, Catalyst 9400 series and Catalyst 9500X switches.
    ```
    conf t
    interface AppGigabitEthernet 1/0/1

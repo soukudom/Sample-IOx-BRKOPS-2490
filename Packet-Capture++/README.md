@@ -18,7 +18,7 @@ If you would like to learn how to build basic docker image, please check the sam
 ## Install via Catalyst Center
 * The installation is done using the same workflow  as described in the section [Catalyst-9300-APP](/Catalyst-9300-APP/README.md). It is possible to choose Catalyst Center or CLI option. 
 
-Note: To make packet capture alive you need to mirror the traffic to the IOx application (TCI Drone). The same is valid for example for CyberVision. Please configure ERSPAN in the IOS-XE. The example is in the `erspan-config.txt`.
+> *Note*: To make packet capture alive you need to mirror the traffic to the IOx application (TCI Drone). The same is valid for example for CyberVision. Please configure ERSPAN in the IOS-XE. The example is in the `erspan-config.txt`.
 
 ## Run
 Follow the Getting started documentation for Drone component available [here](https://feta-project.github.io/TrafficCaptureInfrastructure/). After modification of the configuration file the Drone will try to connect to the Hive compoment (collection and control point). 

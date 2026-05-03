@@ -84,7 +84,9 @@ Use `ioxclient` to install the app since it supports enhanced options required f
     ```iox
     connect iox application
     ```
-    Note that this command is not supported on Console, use SSH session to connect.
+
+   > *Note*: This command is not supported on Console; use an SSH session to connect.
+
 2. Start the web server
     ```
     cd app

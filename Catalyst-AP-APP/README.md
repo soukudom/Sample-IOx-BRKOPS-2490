@@ -25,7 +25,9 @@ This is a sample application that demonstrates a simple web server running on Ci
 ## Step by Step deployment 
 
 ### Create your Application File
-1. Download or clone this GitHub repository to your local machine. Note that The specified base image, `arm64v8/alpine`, has been tested with Alpine Linux `v3.21.0`.
+1. Download or clone this GitHub repository to your local machine.
+
+   > *Note*: The specified base image, `arm64v8/alpine`, has been tested with Alpine Linux `v3.21.0`.
 
 2. Navigate to the directory containing the Dockerfile and build the image. To build for ARM architecture on an x86 machine, specify the target platform:
     ```
@@ -116,7 +118,8 @@ Select installation tool and deploy the app. In section below you find details f
     ```iox
     connect iox application
     ```
-    Note that this command is not supported on Console, use SSH session to connect.
+
+   > *Note*: This command is not supported on Console; use an SSH session to connect.
     
 #### Stop and Remove app
 1. Stop, remove and uninstall the app:
