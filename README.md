@@ -1,5 +1,5 @@
 # Sample-IOx-BRKOPS-2490
-This repository provides the source code of applications presented during the Cisco Live breakout session. Each directory contains prebuilt packages, source codes, and several hints for app hosting.
+This repository provides the source code of applications presented during the Cisco Live breakout session. Each directory contains prebuilt packages, source code, and several hints for app hosting.
 
 ## Table of Contents
 
@@ -26,19 +26,19 @@ Sample web hello world based application for Catalyst 9100 family: [Catalyst-AP-
 Certificate lifecycle automation example based on CASSIE and Cisco application hosting: [Certificate-auto-enrollment](/Certificate-auto-enrollment/README.md).
 
 ## IoT-Orchestrator
-Guide to configure the BLE Becons in the IoT Orchestrator: [IoT-Orchestrator](/IoT-Orchestrator/README.md).
+Guide to configure BLE beacons in the IoT Orchestrator: [IoT-Orchestrator](/IoT-Orchestrator/README.md).
 
 ## Network-Analysis++
 Traffic analysis example using tools such as `ipfixprobe` and `tcpdump`: [Network-Analysis++](/Network-Analysis++/README.md).
 
 ## Packet-Capture++
-TCI App with required configuration on the network device: [Packet-Capture-Capture++](/Packet-Capture++/README.md). 
+TCI App with required configuration on the network device: [Packet-Capture++](/Packet-Capture++/README.md). 
 
 ## iPerf-APP
 Simple iPerf App with Graphical User Interface running on Catalyst 9000 Switches: [iPerf-APP](/iPerf-APP/README.md). 
 
 ## Catalyst-AP-USB-APP
-Sample application to demontrate a simple use case with USB.
- [Catalyst-AP-USB-AP](/Catalyst-AP-USB-APP/README.md). 
+Sample application to demonstrate a simple use case with USB.
+ [Catalyst-AP-USB-APP](/Catalyst-AP-USB-APP/README.md). 
 
 > *Note*: In case of any challenges feel free to open an Issue. We can provide fix or clarification.
