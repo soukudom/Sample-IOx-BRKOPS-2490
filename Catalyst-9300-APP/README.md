@@ -62,14 +62,14 @@ Catalyst 9300 switches are based on an x86 architecture. To build a compatible i
 
 1. Enter configuration mode and enable iox:
 
-   ```console
+   ```
    conf t
    iox
    end
    ```
 
    Verify the IOX service:
-   ```console
+   ```
    sh iox-service 
    ```
 
