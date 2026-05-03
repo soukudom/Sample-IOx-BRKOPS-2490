@@ -3,10 +3,10 @@ Cisco Spaces Connect for IoT Services solution enables delivery of advanced BLE 
 
 ## Table of Contents
 
-- [Prerequisite](#prerequisite)
+- [Prerequisites](#prerequisites)
 - [Supported BLE beacon formats](#supported-ble-beacon-formats)
 - [Variables](#variables)
-- [Steps](#steps)
+- [Deployment](#deployment)
   - [1. Onboard Sensors](#1-onboard-sensors)
   - [2. Register the Data Receiver Application](#2-register-the-data-receiver-application)
   - [3. Register Topic](#3-register-topic)
@@ -14,8 +14,9 @@ Cisco Spaces Connect for IoT Services solution enables delivery of advanced BLE 
     - [Subscribe to the MQTT topic and decrypt the message](#subscribe-to-the-mqtt-topic-and-decrypt-the-message)
     - [Subscribe to the MQTT topic and decrypt the message including the iBeacon data (Using a Python script)](#subscribe-to-the-mqtt-topic-and-decrypt-the-message-including-the-ibeacon-data-using-a-python-script)
   - [5. Consume the data!](#5-consume-the-data)
+- [Useful Resources](#useful-resources)
 
-## Prerequisite
+## Prerequisites
 Follow the complete [IoT Orchestrator Configuration Guide](https://www.cisco.com/c/dam/en/us/td/docs/wireless/spaces/iot-orchestrator/qsg/spaces-connect-iot-qsg.pdf) to set up the IoT Orchestrator on your 9800 Controller. 
 
 Make sure that you uploaded the `server.key` and the certificate and that you have created the application keys in the IoT Orchestrator GUI.
@@ -69,7 +70,7 @@ Please make sure you replace the placeholder variables below with values specifi
 **) Under *Inventory > BLE Client*
 ![Onboarded BLE Sensors](img/iot-orchestrator2.png)
 
-## Steps
+## Deployment
 Before you start, you can store all values as environment variables in your terminal:
 ```bash
 export IOT_IP=
@@ -219,7 +220,7 @@ It is recommended to also download the `timestamp.proto` file from [here](https:
       echo "--------------------------------------------"
   done
   ```
-> *Note*: If you have problem to decode protobuf telemetry data check the message format. It can be DataBatch or DataSubscription. In this example we use DataBatch which improves performance. For DataSubscription use decode=nipc.DataSubscription.
+> *Note*: If you have problems decoding protobuf telemetry data, check the message format. It can be `DataBatch` or `DataSubscription`. In this example we use `DataBatch`, which improves performance. For `DataSubscription`, use `decode=nipc.DataSubscription`.
 ![Onboarded BLE Sensors](img/ble-advertisement1.png)
 
 #### Subscribe to the MQTT topic and decrypt the message including the iBeacon data (Using a Python script)
@@ -264,3 +265,8 @@ In our example, a BLE beacon was detected on December 16, 2025. The beacon broad
 The signal strength (RSSI) at the time of detection was -92 dBm, indicating a weak or distant signal.
 
 ### 5. Consume the data!
+
+## Useful Resources
+- [IoT Orchestrator Configuration Guide (PDF)](https://www.cisco.com/c/dam/en/us/td/docs/wireless/spaces/iot-orchestrator/qsg/spaces-connect-iot-qsg.pdf)
+- [SCIM API Reference](https://developer.cisco.com/docs/spaces-connect-for-iot-services/onboard-operations-apis-overview/)
+- [NIPC API Reference](https://developer.cisco.com/docs/spaces-connect-for-iot-services/control-operations-apis-overview/)

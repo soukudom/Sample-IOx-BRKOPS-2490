@@ -4,11 +4,11 @@ This is a getting application to demonstrate a simple use case with USB based ap
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Step by Step deployment](#step-by-step-deployment)
-    - [Create your Application File](#create-your-application-file)
-    - [Set up the Infrastructure](#set-up-the-infrastructure)
-    - [Install the Application](#install-the-application)
-    - [Verify and Configure the Application](#verify-and-configure-the-application)
+- [Deployment](#deployment)
+    - [Build](#build)
+    - [Install Prerequisites](#install-prerequisites)
+    - [Install](#install)
+    - [Verify](#verify)
         - [Verify the app](#verify-the-app)
         - [Start the webserver environment for configuration](#start-the-webserver-environment-for-configuration)
         - [Configure the zigbee2mqtt app](#configure-the-zigbee2mqtt-app)
@@ -19,9 +19,9 @@ This is a getting application to demonstrate a simple use case with USB based ap
 2. Install Docker (see details based on your OS).
 3. Get compatible USB dongle (see [Access AP's Internal USB interface](https://developer.cisco.com/docs/app-hosting-ap/create-an-iox-application-package/#create-an-iox-application-package) section). For this example we used SkyConnect dongle and Sonoff ZBDongle-P dongle. 
 
-## Step by Step deployment 
+## Deployment
 
-### Create your Application File
+### Build
 1. Download or clone this GitHub repository to your local machine. 
 
 2. Use the pre-built [`package.tar`](./package.tar) for installation and continue with the next section, or pull the docker image for the zigbee2mqtt app: 
@@ -35,7 +35,7 @@ This is a getting application to demonstrate a simple use case with USB based ap
    ls -la ./conf
    ```
 
-### Set up the Infrastructure
+### Install Prerequisites
 Before installation enable the IOx feature on your C9800 controller:
 ```
 conf t
@@ -48,7 +48,7 @@ To verify if apphost is enabled on your 9800 controller, use `sh ap apphost summ
 
 > *Note*: for USB based apps it is necessary to have required PoE budget (typically 60W and more)
 
-### Install the Application
+### Install
 
 Use `ioxclient` to install the app since it supports enhanced options required for USB based apps 
 
@@ -70,7 +70,7 @@ Use `ioxclient` to install the app since it supports enhanced options required f
     ioxclient app start zigbee2mqtt
     ``` 
 
-### Verify and Configure the Application
+### Verify
 
 #### Verify the app
 1. To verify the installed apps, check the app status, or to validate configuration, use:

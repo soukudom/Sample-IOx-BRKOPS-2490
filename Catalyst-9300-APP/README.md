@@ -6,13 +6,13 @@ Catalyst 9300 switches are based on an x86 architecture. To build a compatible i
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Step by Step deployment](#step-by-step-deployment)
-   - [Create your Application File](#create-your-application-file)
-   - [Set up the Infrastructure](#set-up-the-infrastructure)
-   - [Install the Application](#install-the-application)
+- [Deployment](#deployment)
+   - [Build](#build)
+   - [Install Prerequisites](#install-prerequisites)
+   - [Install](#install)
       - [Option 1: Install via Catalyst Center](#option-1-install-via-catalyst-center)
       - [Option 2: Install via CLI](#option-2-install-via-cli)
-   - [Verify and Manage via CLI](#verify-and-manage-via-cli)
+   - [Verify](#verify)
       - [Verify and Test the app](#verify-and-test-the-app)
       - [Stop and Remove app](#stop-and-remove-app)
 - [Useful Resources](#useful-resources)
@@ -31,9 +31,9 @@ Catalyst 9300 switches are based on an x86 architecture. To build a compatible i
    Jan  5 12:33:33.281: %IM-5-IOX_INST_NOTICE: Switch 1 R0/0: ioxman: IOX SERVICE webapp LOG: Request from 10.0.0.103
    ```
 
-## Step by Step deployment 
+## Deployment
 
-### Create your Application File
+### Build
 
 1. Download or clone this GitHub repository to your local machine.
 2. Navigate to the directory containing the Dockerfile and run (on an x86_64 based architecuture). If sing arm-based environment, use simple cross-compilation build x86_64 compatible image `docker build --platform linux/amd64 -t c9300-web-app .`
@@ -50,7 +50,7 @@ Catalyst 9300 switches are based on an x86 architecture. To build a compatible i
    docker save c9300-web-app:latest -o c9300-demo.tar
    ```
 
-4. (Optional) You can use the `ioxclient` tool, to package the docker container with the `packacke.yaml` to add medatadata information or overwrite the allocated app resouces. To do so, run the following command  which will create the `package.tar` file that you can now deploy on your switch (instead of `c9300-demo.tar`). 
+4. (Optional) You can use the `ioxclient` tool to package the Docker container with `package.yaml` to add metadata or override the allocated app resources. To do so, run the following command, which creates `package.tar` that you can deploy on your switch (instead of `c9300-demo.tar`).
    ```
    ioxclient docker package c9300-web-app:latest ./conf
    ```
@@ -58,7 +58,7 @@ Catalyst 9300 switches are based on an x86 architecture. To build a compatible i
 > *Note*: Unfortunately the `c9300-demo.tar` has more than 100 MB and cannot be uploaded to the Github repository. On the other hand, it is a great opportunity to try docker commands :-)
 
 
-### Set up the Infrastructure
+### Install Prerequisites
 
 1. Enter configuration mode and enable iox:
 
@@ -94,7 +94,7 @@ Catalyst 9300 switches are based on an x86 architecture. To build a compatible i
    To verify if signed verification has been disabled, use `sh app-hosting infra`.
 
 
-### Install the Application
+### Install
 
 Select installation tool and deploy the app. In section below you find details for Cisco Catalyst Center and CLI.
 
@@ -140,7 +140,7 @@ Select installation tool and deploy the app. In section below you find details f
 
 <img src="img/app-hosting.gif" width="700">
 
-### Verify and Manage via CLI
+### Verify
 
 #### Verify and Test the app
 

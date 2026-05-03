@@ -4,8 +4,8 @@ ASAc enables you to run a firewall application directly on a Cisco Catalyst 9000
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Verify the Deployment](#verify-the-deployment)
+- [Deployment](#deployment)
+- [Verify](#verify)
 - [Useful Resources](#useful-resources)
 
 ## Prerequisites
@@ -21,7 +21,7 @@ Before starting, make sure you have:
 	- [switch-sample-dayN-config.txt](./switch-sample-dayN-config.txt)
 
 
-## Installation
+## Deployment
 Full installation steps for Cisco application hosting are documented [here](https://developer.cisco.com/docs/app-hosting/introduction/).
 
 In general you need to follow these steps:
@@ -33,7 +33,7 @@ In general you need to follow these steps:
 	- [switch-sample-dayN-config.txt](./switch-sample-dayN-config.txt)
 	- [asac-sample-dayN-config.txt](./asac-sample-dayN-config.txt)
 
-## Verify the Deployment
+## Verify
 
 After installation, verify that:
 

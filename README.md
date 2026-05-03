@@ -12,6 +12,7 @@ This repository provides the source code of applications presented during the Ci
 - [Packet-Capture++](#packet-capture)
 - [iPerf-APP](#iperf-app)
 - [Catalyst-AP-USB-APP](#catalyst-ap-usb-app)
+- [Useful Resources](#useful-resources)
 
 ## ASAc
 Firewall application example for Catalyst 9000 switches: [ASAc](/ASAc/README.md).
@@ -38,7 +39,11 @@ TCI App with required configuration on the network device: [Packet-Capture++](/P
 Simple iPerf App with Graphical User Interface running on Catalyst 9000 Switches: [iPerf-APP](/iPerf-APP/README.md). 
 
 ## Catalyst-AP-USB-APP
-Sample application to demonstrate a simple use case with USB.
- [Catalyst-AP-USB-APP](/Catalyst-AP-USB-APP/README.md). 
+Sample application to demonstrate a simple use case with USB: [Catalyst-AP-USB-APP](/Catalyst-AP-USB-APP/README.md).
 
-> *Note*: In case of any challenges feel free to open an Issue. We can provide fix or clarification.
+## Useful Resources
+- [Cisco Application Hosting Introduction](https://developer.cisco.com/docs/app-hosting/introduction/)
+- [Catalyst 9300 App Hosting Sample](./Catalyst-9300-APP/README.md)
+- [Catalyst AP App Hosting Sample](./Catalyst-AP-APP/README.md)
+
+> *Note*: If you encounter any challenges, feel free to open an issue. We can provide fixes or clarification.

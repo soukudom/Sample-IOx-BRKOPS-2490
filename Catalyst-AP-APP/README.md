@@ -4,13 +4,13 @@ This is a sample application that demonstrates a simple web server running on Ci
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Step by Step deployment](#step-by-step-deployment)
-    - [Create your Application File](#create-your-application-file)
-    - [Set up the Infrastructure](#set-up-the-infrastructure)
-    - [Install the Application](#install-the-application)
+- [Deployment](#deployment)
+    - [Build](#build)
+    - [Install Prerequisites](#install-prerequisites)
+    - [Install](#install)
         - [Option 1: Install via Catalyst Center](#option-1-install-via-catalyst-center)
         - [Option 2: Install via ioxclient](#option-2-install-via-ioxclient)
-    - [Verify and Manage the Application](#verify-and-manage-via-cli)
+    - [Verify](#verify)
         - [Verify the app](#verify-the-app)
         - [Verify and Test the app from the AP itself](#verify-and-test-the-app-from-the-ap-itself)
         - [Stop and Remove app](#stop-and-remove-app)
@@ -22,9 +22,9 @@ This is a sample application that demonstrates a simple web server running on Ci
 
 > *Note*: This setup uses **Docker** version `28.5.1` and **ioxclient** version `1.17.0.0`. 
 
-## Step by Step deployment 
+## Deployment
 
-### Create your Application File
+### Build
 1. Download or clone this GitHub repository to your local machine.
 
    > *Note*: The specified base image, `arm64v8/alpine`, has been tested with Alpine Linux `v3.21.0`.
@@ -52,7 +52,7 @@ This is a sample application that demonstrates a simple web server running on Ci
 
 > *Note*: A Package of the sample app (`package.tar`) and a packaged `demo.tar` Docker container are available in the `/packages` directory.
 
-### Set up the Infrastructure
+### Install Prerequisites
 Before installation enable the IOx feature on your C9800 controller:
 ```
 conf t
@@ -62,7 +62,7 @@ end
 ``` 
 To verify if apphost is enabled on your 9800 controller, use `sh ap apphost summary`.
 
-### Install the Application
+### Install
 
 Select installation tool and deploy the app. In section below you find details for Cisco Catalyst Center and CLI.
 
@@ -99,7 +99,7 @@ Select installation tool and deploy the app. In section below you find details f
 
 <img src="img/ioxclient.gif" width="700">
 
-### Verify and Manage via CLI
+### Verify
 
 #### Verify the app
 1. To verify the installed apps, check the app status, or to validate configuration, use:

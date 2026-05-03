@@ -6,9 +6,9 @@ Follow the instructions below to build, install, and run the app.
 ## Table of Contents
 
 - [Deployment](#deployment)
-	- [Build](#build)
-	- [Install](#install)
-	- [Run](#run)
+  - [Build](#build)
+  - [Install](#install)
+  - [Run](#run)
 - [Useful Resources](#useful-resources)
 
 ## Deployment
