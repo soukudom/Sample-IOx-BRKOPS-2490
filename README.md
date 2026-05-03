@@ -9,7 +9,7 @@ This repository provides the source code of applications presented during the Ci
 
 ## Start Here
 - If you are focused on Catalyst 9000 app hosting, start with [Catalyst 9300 App](./Catalyst-9300-APP/README.md) and [ASAc](./ASAc/README.md).
-- If you are focused on Catalyst AP app hosting, start with [Catalyst AP App](./Catalyst-AP-APP/README.md) and [Catalyst AP USB App](./Catalyst-AP-USB-APP/README.md).
+- If you are focused on Catalyst 9100 AP app hosting, start with [Catalyst AP App](./Catalyst-AP-APP/README.md) and [Catalyst AP USB App](./Catalyst-AP-USB-APP/README.md).
 - If you are focused on visibility and telemetry use cases, start with [Network Analysis++](./Network-Analysis++/README.md), [Packet Capture++](./Packet-Capture++/README.md), and [IoT Orchestrator](./IoT-Orchestrator/README.md).
 
 ## Projects
