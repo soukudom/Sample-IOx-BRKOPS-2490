@@ -4,6 +4,7 @@ ASAc enables you to run a firewall application directly on a Cisco Catalyst 9000
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
+- [Folder Overview](#folder-overview)
 - [Deployment](#deployment)
 - [Verify](#verify)
 - [Useful Resources](#useful-resources)
@@ -14,11 +15,13 @@ Before starting, make sure you have:
 
 1. A Cisco Catalyst 9000 switch with application hosting enabled.
 2. The ASAc application package you want to deploy.
-3. The configuration files in this folder:
-	- [day0-config.txt](./day0-config.txt)
-	- [interface-config.txt](./interface-config.txt)
-	- [asac-sample-dayN-config.txt](./asac-sample-dayN-config.txt)
-	- [switch-sample-dayN-config.txt](./switch-sample-dayN-config.txt)
+
+## Folder Overview
+
+- [day0-config.txt](./day0-config.txt): Initial ASAc bootstrap configuration.
+- [interface-config.txt](./interface-config.txt): Example interface configuration.
+- [asac-sample-dayN-config.txt](./asac-sample-dayN-config.txt): Sample ASA-side day-N configuration.
+- [switch-sample-dayN-config.txt](./switch-sample-dayN-config.txt): Sample switch-side day-N configuration.
 
 
 ## Deployment

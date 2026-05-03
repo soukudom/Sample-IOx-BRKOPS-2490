@@ -4,7 +4,6 @@ Maintaining certificates for network endpoints is a common challenge we face in 
 ## Table of Contents
 
 - [What is CASSIE?](#what-is-cassie)
-- [Folder Overview](#folder-overview)
 - [Deployment](#deployment)
   - [Catalyst Center](#catalyst-center)
   - [CLI](#cli)
