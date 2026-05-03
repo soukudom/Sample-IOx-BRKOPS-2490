@@ -100,6 +100,9 @@ Catalyst 9300 switches are based on an x86 architecture. To build a compatible i
    switchport trunk allowed vlan <vlan_id>
    switchport mode trunk  
    ```
+
+   ![appgigabitethernet-port](./img/appgigabitethernet-port.png)
+
 4. (Optional) If you need to disable signed verification for app hosting, execute:
 
    ```
@@ -143,6 +146,9 @@ Select installation tool and deploy the app. In section below you find details f
    vlan <vlan_id> guest-interface <guest-interface-number> 
    end
    ```
+
+   ![application-interface](./img/application-interface.png)
+
 3. Install the application using the command  `app-hosting install appid <app-name> package usbflash1:<docker-tar-file>`. E.g.:
    ```
    app-hosting install appid webapp package usbflash1:c9300-demo.tar
