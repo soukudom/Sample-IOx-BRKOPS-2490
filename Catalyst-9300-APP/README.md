@@ -60,7 +60,22 @@ Catalyst 9300 switches are based on an x86 architecture. To build a compatible i
 
 ### Install Prerequisites
 
-1. Enter configuration mode and enable iox:
+1. Verify the license level:
+
+   An Advantage license level is required.
+
+   ```
+   Switch# show version
+   Technology Package License Information:
+   --------------------------------------
+   Technology-package
+   Current                ...
+   --------------------------------------
+   network-advantage ...
+   dna-advantage ...
+   ```
+
+2. Enter configuration mode and enable iox:
 
    ```
    conf t
@@ -76,7 +91,7 @@ Catalyst 9300 switches are based on an x86 architecture. To build a compatible i
    ![ioxservice](./img/ioxservice.png)
 
    Get info on any installed apps, use the `sh app-hosting ?` command.
-2. Configure the `AppGigabitEthernet` interface to allow only traffic from the specified VLAN `<vlan_id>` to pass through.
+3. Configure the `AppGigabitEthernet` interface to allow only traffic from the specified VLAN `<vlan_id>` to pass through.
 
    > *Note*: The `AppGig` interface is only available on the Cisco Catalyst 9300 series, Catalyst 9400 series and Catalyst 9500X switches.
    ```
@@ -85,7 +100,7 @@ Catalyst 9300 switches are based on an x86 architecture. To build a compatible i
    switchport trunk allowed vlan <vlan_id>
    switchport mode trunk  
    ```
-3. (Optional) If you need to disable signed verification for app hosting, execute:
+4. (Optional) If you need to disable signed verification for app hosting, execute:
 
    ```
    conf t
