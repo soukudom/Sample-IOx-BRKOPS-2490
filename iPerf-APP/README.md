@@ -2,7 +2,9 @@
 
 ## Table of Contents
 
-- [Simple iPerf App with Graphical User Interface](#simple-iperf-app-with-graphical-user-interface)
+- [Steps](#steps)
+
+## Steps
 
 1. Create image, specify target platform
 ```

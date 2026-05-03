@@ -3,12 +3,18 @@ This repository provides the source code of applications presented during the Ci
 
 ## Table of Contents
 
+- [ASAc](#asac)
 - [Catalyst-9300-APP](#catalyst-9300-app)
 - [Catalyst-AP-APP](#catalyst-ap-app)
+- [Certificate-auto-enrollment](#certificate-auto-enrollment)
 - [IoT-Orchestrator](#iot-orchestrator)
+- [Network-Analysis++](#network-analysis)
 - [Packet-Capture++](#packet-capture)
 - [iPerf-APP](#iperf-app)
 - [Catalyst-AP-USB-APP](#catalyst-ap-usb-app)
+
+## ASAc
+Firewall application example for Catalyst 9000 switches: [ASAc](/ASAc/README.md).
 
 ## Catalyst-9300-APP
 Sample web hello world based application for Catalyst 9000 family: [Catalyst-9300-APP](/Catalyst-9300-APP/README.md).
@@ -16,8 +22,14 @@ Sample web hello world based application for Catalyst 9000 family: [Catalyst-930
 ## Catalyst-AP-APP
 Sample web hello world based application for Catalyst 9100 family: [Catalyst-AP-APP](/Catalyst-AP-APP/README.md).
 
+## Certificate-auto-enrollment
+Certificate lifecycle automation example based on CASSIE and Cisco application hosting: [Certificate-auto-enrollment](/Certificate-auto-enrollment/README.md).
+
 ## IoT-Orchestrator
 Guide to configure the BLE Becons in the IoT Orchestrator: [IoT-Orchestrator](/IoT-Orchestrator/README.md).
+
+## Network-Analysis++
+Traffic analysis example using tools such as `ipfixprobe` and `tcpdump`: [Network-Analysis++](/Network-Analysis++/README.md).
 
 ## Packet-Capture++
 TCI App with required configuration on the network device: [Packet-Capture-Capture++](/Packet-Capture++/README.md). 
