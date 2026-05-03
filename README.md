@@ -3,47 +3,27 @@ This repository provides the source code of applications presented during the Ci
 
 ## Table of Contents
 
-- [ASAc](#asac)
-- [Catalyst-9300-APP](#catalyst-9300-app)
-- [Catalyst-AP-APP](#catalyst-ap-app)
-- [Certificate-auto-enrollment](#certificate-auto-enrollment)
-- [IoT-Orchestrator](#iot-orchestrator)
-- [Network-Analysis++](#network-analysis)
-- [Packet-Capture++](#packet-capture)
-- [iPerf-APP](#iperf-app)
-- [Catalyst-AP-USB-APP](#catalyst-ap-usb-app)
-- [Useful Resources](#useful-resources)
+- [Start Here](#start-here)
+- [Projects](#projects)
+- [Support](#support)
 
-## ASAc
-Firewall application example for Catalyst 9000 switches: [ASAc](/ASAc/README.md).
+## Start Here
+- If you are focused on Catalyst 9000 app hosting, start with [Catalyst 9300 App](./Catalyst-9300-APP/README.md) and [ASAc](./ASAc/README.md).
+- If you are focused on Catalyst AP app hosting, start with [Catalyst AP App](./Catalyst-AP-APP/README.md) and [Catalyst AP USB App](./Catalyst-AP-USB-APP/README.md).
+- If you are focused on visibility and telemetry use cases, start with [Network Analysis++](./Network-Analysis++/README.md), [Packet Capture++](./Packet-Capture++/README.md), and [IoT Orchestrator](./IoT-Orchestrator/README.md).
 
-## Catalyst-9300-APP
-Sample web hello world based application for Catalyst 9000 family: [Catalyst-9300-APP](/Catalyst-9300-APP/README.md).
+## Projects
+| Project | Platform | Purpose | README |
+| --- | --- | --- | --- |
+| ASAc | Catalyst 9000 | Firewall application example | [ASAc](./ASAc/README.md) |
+| Catalyst 9300 App | Catalyst 9000 | Sample web application for switch app hosting | [Catalyst-9300-APP](./Catalyst-9300-APP/README.md) |
+| Catalyst AP App | Catalyst 9100 AP | Sample web application for AP app hosting | [Catalyst-AP-APP](./Catalyst-AP-APP/README.md) |
+| Catalyst AP USB App | Catalyst 9100 AP | USB-connected application example (Zigbee2MQTT) | [Catalyst-AP-USB-APP](./Catalyst-AP-USB-APP/README.md) |
+| Certificate Auto Enrollment | Catalyst 9000 | Certificate lifecycle automation with CASSIE | [Certificate-auto-enrollment](./Certificate-auto-enrollment/README.md) |
+| IoT Orchestrator | Catalyst Wireless + IoT Orchestrator | BLE onboarding and MQTT data subscription workflow | [IoT-Orchestrator](./IoT-Orchestrator/README.md) |
+| Network Analysis++ | Catalyst app hosting | Traffic analysis with ipfixprobe and tcpdump | [Network-Analysis++](./Network-Analysis++/README.md) |
+| Packet Capture++ | Catalyst app hosting | TCI packet-capture deployment example | [Packet-Capture++](./Packet-Capture++/README.md) |
+| iPerf App | Catalyst 9000 | Throughput testing app with web UI | [iPerf-APP](./iPerf-APP/README.md) |
 
-## Catalyst-AP-APP
-Sample web hello world based application for Catalyst 9100 family: [Catalyst-AP-APP](/Catalyst-AP-APP/README.md).
-
-## Certificate-auto-enrollment
-Certificate lifecycle automation example based on CASSIE and Cisco application hosting: [Certificate-auto-enrollment](/Certificate-auto-enrollment/README.md).
-
-## IoT-Orchestrator
-Guide to configure BLE beacons in the IoT Orchestrator: [IoT-Orchestrator](/IoT-Orchestrator/README.md).
-
-## Network-Analysis++
-Traffic analysis example using tools such as `ipfixprobe` and `tcpdump`: [Network-Analysis++](/Network-Analysis++/README.md).
-
-## Packet-Capture++
-TCI App with required configuration on the network device: [Packet-Capture++](/Packet-Capture++/README.md). 
-
-## iPerf-APP
-Simple iPerf App with Graphical User Interface running on Catalyst 9000 Switches: [iPerf-APP](/iPerf-APP/README.md). 
-
-## Catalyst-AP-USB-APP
-Sample application to demonstrate a simple use case with USB: [Catalyst-AP-USB-APP](/Catalyst-AP-USB-APP/README.md).
-
-## Useful Resources
-- [Cisco Application Hosting Introduction](https://developer.cisco.com/docs/app-hosting/introduction/)
-- [Catalyst 9300 App Hosting Sample](./Catalyst-9300-APP/README.md)
-- [Catalyst AP App Hosting Sample](./Catalyst-AP-APP/README.md)
-
-> *Note*: If you encounter any challenges, feel free to open an issue. We can provide fixes or clarification.
+## Support
+If you encounter any challenges, please open an issue in this repository: [GitHub Issues](https://github.com/soukudom/Sample-IOx-BRKOPS-2490/issues). Include a clear title, affected app folder, reproduction steps, and any relevant logs or screenshots.
