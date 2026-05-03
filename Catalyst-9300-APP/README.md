@@ -173,6 +173,8 @@ Select installation tool and deploy the app. In section below you find details f
 
 <img src="img/app-hosting.gif" width="700">
 
+Once the application is started, you can access the running app via `http://<switch-app-ip>:8000`.
+
 ### Verify
 
 #### Verify and Test the app
