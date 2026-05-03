@@ -39,7 +39,10 @@ After installation, verify that:
 
 1. The ASAc application is installed and running in the application hosting environment.
 2. The switch-side configuration from `switch-sample-dayN-config.txt` is applied successfully.
-3. You can access the ASAc console and switch from the Linux shell to the ASA CLI with `lina_cli`.
+3. You can access the ASAc console and switch from the Linux shell to the ASA CLI with
+    ```
+    lina_cli
+    ```
 4. The ASA-side configuration from `asac-sample-dayN-config.txt` is applied as expected.
 
 ## Useful Resources
