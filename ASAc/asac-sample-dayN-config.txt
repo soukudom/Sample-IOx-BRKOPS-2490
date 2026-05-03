@@ -1,0 +1,23 @@
+!
+interface GigabitEthernet0/0
+ nameif inside
+ security-level 100
+ ip address 192.168.150.12 255.255.255.240 
+!
+interface GigabitEthernet0/1
+ nameif outside
+ security-level 10
+ ip address 192.168.111.149 255.255.255.0 
+!             
+interface Management0/0
+ management-only
+ nameif management
+ security-level 0
+ ip address 192.168.103.234 255.255.255.0
+!
+route outside 0.0.0.0 0.0.0.0 192.168.111.16 1
+!
+http 0.0.0.0 0.0.0.0 management
+!
+access-group OUTSIDE_TO_INSIDE_ACL in interface outside
+access-list OUTSIDE_TO_INSIDE_ACL extended permit ip any any 

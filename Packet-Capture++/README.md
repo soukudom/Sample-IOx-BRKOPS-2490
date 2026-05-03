@@ -1,15 +1,31 @@
-# How to build the code
-Installation instructions and build packages are available [here](https://github.com/FETA-Project/TrafficCaptureInfrastructure/tree/main). For packages please check the Release section. 
+# Network Packet Capture++
+This repository contains a Docker container that allows network packet capture using the Traffic Capture Interface (TCI) solution. TCI is capable of remote and on-demand packet capture in a distributed environment with multiple collection points.
 
-If you would like to learn how to build basic docker image, please check the sample app for Catalyst 9000 or Catalyst 9100 
+Follow the instructions below to build, install, and run the app.
 
-Note: To make packet capture alive you need to mirror the traffic to the IOx application (TCI Drone). The same is valid for example for CyberVision. Please configure ERSPAN in the IOS-XE. The example is in the `erspan-config.txt`
+## Table of Contents
 
-# Install via Catalyst Center
-1. The same approach as for Catalyst Switch Sample app
+- [Deployment](#deployment)
+  - [Build](#build)
+  - [Install](#install)
+  - [Run](#run)
+- [Useful Resources](#useful-resources)
 
-# Install via CLI
-1. The same approach as for Catalyst Switch Sample app
+## Deployment
+### Build
+Installation instructions and build packages are available [here](https://github.com/FETA-Project/TrafficCaptureInfrastructure/tree/main). For packages, please check the Releases section.
+
+If you would like to learn how to build a basic Docker image, please check the sample app for [Catalyst 9000](../Catalyst-9300-APP/README.md) or [Catalyst 9100](../Catalyst-AP-APP/README.md).
 
 
-Note: Video demonstration - TBD
+### Install
+* The installation is done using the same workflow as described in the section [Catalyst-9300-APP](/Catalyst-9300-APP/README.md). It is possible to choose Catalyst Center or CLI option.
+
+> *Note*: To capture live traffic, mirror network traffic to the IOx application (TCI Drone) using ERSPAN. The same approach applies to CyberVision. An example configuration is available in `erspan-config.txt`.
+
+### Run
+Follow the Getting Started documentation for the Drone component available [here](https://feta-project.github.io/TrafficCaptureInfrastructure/). After modification of the configuration file, the Drone will try to connect to the Hive component (collection and control point).
+
+## Useful Resources
+- [Traffic Capture Infrastructure (GitHub)](https://github.com/FETA-Project/TrafficCaptureInfrastructure/tree/main)
+- [Traffic Capture Infrastructure Documentation](https://feta-project.github.io/TrafficCaptureInfrastructure/)

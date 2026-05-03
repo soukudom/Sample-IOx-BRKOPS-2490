@@ -1,0 +1,22 @@
+{
+    "resources": {
+        "devices": [
+            {
+		"type": "serial",
+                "label": "ZIGBEE_STICK",
+                "device-id": "/dev/ttyUSB0",
+		"alias": "usb_serial",
+		"usage": "Zigbee Stick"
+            }
+        ],
+        "network": [
+            {
+                "interface-name": "eth0",
+                "network-name": "iox-nat0",
+                "port_map": {
+                    "mode": "1to1"
+                }
+            }
+        ]
+    }
+}

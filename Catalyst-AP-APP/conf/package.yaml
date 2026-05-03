@@ -1,8 +1,8 @@
 descriptor-schema-version: "2.10"
 
 info:
-  name: CLEU-WEB-AP-APP
-  description: "CLEU25-web-ap-app"
+  name: AP-WEB-APP
+  description: "AP Web App for Cisco Live 2026"
   version: "1.0.0"
   author-link: "http://www.cisco.com"
   author-name: "Cisco Systems"

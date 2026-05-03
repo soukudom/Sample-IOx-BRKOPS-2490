@@ -1,0 +1,16 @@
+interface management 0/0
+nameif management
+ip address dhcp setroute
+security-level 100
+no shut
+username admin password password1
+aaa authentication ssh console LOCAL
+aaa authentication http console LOCAL
+aaa authentication telnet console LOCAL
+ssh 0.0.0.0 0.0.0.0 management
+no ssh stack ciscossh
+telnet 0.0.0.0 0.0.0.0 management
+http server enable
+http 0.0.0.0 0.0.0.0 management
+crypto key generate rsa modulus 2048
+

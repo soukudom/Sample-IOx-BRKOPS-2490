@@ -1,37 +1,58 @@
 # Catalyst AP APP
 This is a sample application that demonstrates a simple web server running on Cisco Catalyst 9100 Access Points.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Deployment](#deployment)
+    - [Build](#build)
+    - [Install Prerequisites](#install-prerequisites)
+    - [Install](#install)
+        - [Option 1: Install via Catalyst Center](#option-1-install-via-catalyst-center)
+        - [Option 2: Install via ioxclient](#option-2-install-via-ioxclient)
+    - [Verify](#verify)
+        - [Verify the app](#verify-the-app)
+        - [Verify and Test the app from the AP itself](#verify-and-test-the-app-from-the-ap-itself)
+        - [Stop and Remove app](#stop-and-remove-app)
+- [Useful Resources](#useful-resources)
+
 ## Prerequisites
 1. [Download ioxclient](https://developer.cisco.com/docs/iox/#!iox-resource-downloads). The tool `ioxclient` is required to convert docker image to the proper format for Catalyst APs. You can also install the IOx SDE which is an Ubuntu VM (14.04) with all the tools (docker, ioxclient) required to build an IOx application package pre-installed. 
 2. Install Docker (see details based on your OS).
 
-## Step by Step deployment 
+> *Note*: This setup uses **Docker** version `28.5.1` and **ioxclient** version `1.17.0.0`. 
 
-### Create your Application File
-1. Download or clone this GitHub repository to your local machine. Note that The specified base image, `arm64v8/alpine`, has been tested with Alpine Linux v3.21.0.
+## Deployment
+
+### Build
+1. Download or clone this GitHub repository to your local machine.
+
+   > *Note*: The specified base image, `arm64v8/alpine`, has been tested with Alpine Linux `v3.21.0`.
 
 2. Navigate to the directory containing the Dockerfile and build the image. To build for ARM architecture on an x86 machine, specify the target platform:
     ```
-    docker build --platform linux/arm64 -t web-ap-app .
+    docker build --platform linux/arm64 -t ap-web-app .
     ```
-    To verify the the image, use:
+    To verify the image, use:
     ```
     docker images
     ```
 
 3. Once the docker image is created, use `ioxclient` to create the package file:
     ```
-    ioxclient docker package -p ext2 web-ap-app:latest ./conf
+    ioxclient docker package -p ext2 ap-web-app:latest ./conf
     ```
-   Check if successfully has been created:
+   Verify the package was created
    ```
-   ls -lr ./conf
+   ls -la ./conf
    ```
-6. Select installation tool and deploy the app. In section below you find details for Cisco Catalyst Center and ioxclient
+   For this command, IOxclient needs to be run in a Linux environment! 
 
-Note: A Package of the sample app (`package.tar`) and a packaged `demo.tar` Docker container are available in the `/packages` directory.
+4. Select installation tool and deploy the app. In section below you find details for Cisco Catalyst Center and ioxclient
 
-### Set up the Infrastructure
+> *Note*: A Package of the sample app (`package.tar`) and a packaged `demo.tar` Docker container are available in the `/packages` directory.
+
+### Install Prerequisites
 Before installation enable the IOx feature on your C9800 controller:
 ```
 conf t
@@ -41,7 +62,7 @@ end
 ``` 
 To verify if apphost is enabled on your 9800 controller, use `sh ap apphost summary`.
 
-### Install the Application
+### Install
 
 Select installation tool and deploy the app. In section below you find details for Cisco Catalyst Center and CLI.
 
@@ -52,41 +73,43 @@ Select installation tool and deploy the app. In section below you find details f
 
 <img src="img/ap-app-hosting-catc.gif" width="700">
 
-Note: Find more information and a detailed guide in the [Application Hosting on Catalyst Access Points Deployment Guide](https://www.cisco.com/c/en/us/products/collateral/wireless/access-points/guide-c07-744305.html).
+> *Note*: Find more information and a detailed guide in the [Application Hosting on Catalyst Access Points Deployment Guide](https://www.cisco.com/c/en/us/products/collateral/wireless/access-points/guide-c07-744305.html).
 
 #### Option 2: Install via ioxclient
-1. Configure an `ioxclient` profile:
+1. Configure an `ioxclient` profile. For this, you need to specify a name, the AP's IP address, the AP's username & password and change the IOx platform's SSH Port to 22:
     ```
     ioxclient profiles create
     ```
     To verify the active profile, use `ioxclient profiles list`.
-2.  Install the application using the command.
+2.  Install the application by pointing to your locally stored package file:
     ```
     ioxclient app install CLEUAPP package.tar
     ```
-3.  To activate the app use:
+3.  Then, activate the app. Optionally, provide an `activation.json` file if the IOx app needs access to a serial device or a 1:1 network port map.
     ```
     ioxclient app activate CLEUAPP --payload activation.json
     ``` 
-4.  Now, start the app
+4.  Now, start the app:
     ```
     ioxclient app start CLEUAPP
     ``` 
 ![StartApp](./../img/install-activate-start.png)
 
-Note: Find more information on the Cisco DevNet site on how to [Deploy IOx Application on AP Using ioxclient](https://developer.cisco.com/docs/app-hosting-ap/deploy-iox-application-on-ap-using-ioxclient/).
+> *Note*: Find more information on the Cisco DevNet site on how to [Deploy IOx Application on AP Using ioxclient](https://developer.cisco.com/docs/app-hosting-ap/deploy-iox-application-on-ap-using-ioxclient/).
 
 <img src="img/ioxclient.gif" width="700">
 
-**Verify the app**
-1. To Verify the installed apps, check the app status, or to validate configuration, use:
+### Verify
+
+#### Verify the app
+1. To verify the installed apps, check the app status, or to validate configuration, use:
     ```iox
     ioxclient application list
     ioxclient application info CLEUAPP
     ```
 
-**Verify and Test the app from the AP itself**
-1. To Verify the app status, use:
+#### Verify and Test the app from the AP itself
+1. To verify the app status, use:
     ```iox
     sh iox applications
     ```
@@ -95,9 +118,10 @@ Note: Find more information on the Cisco DevNet site on how to [Deploy IOx Appli
     ```iox
     connect iox application
     ```
-    Note that this command is not supported on Console, use SSH session to connect.
+
+   > *Note*: This command is not supported on Console; use an SSH session to connect.
     
-**Stop and Remove app**
+#### Stop and Remove app
 1. Stop, remove and uninstall the app:
    ```iox
     ioxclient app stop CLEUAPP

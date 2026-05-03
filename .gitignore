@@ -2,10 +2,29 @@
 .DS_Store
 
 ## Ignore newly created demo.tar files 
-Catalyst-9300-APP/demo*
-Catalyst-AP-APP/demo*
+Catalyst-9300-APP/*demo.tar
+Catalyst-AP-APP/*demo.tar
 
 ## Ingore newly created package files
 */conf/package.tar
 */conf/.package.metadata
 
+# Ignore newly created configuration files, starting with yyyyMM
+*/conf/202601*
+
+# Hide any Pyton virtual environments
+*/venv
+
+# Hide new demo.tar files
+iPerf-App/demo.tar
+Catalyst-9300-APP/c9300-demo.tar
+
+# Hide server certificates, generated directories, and Python cache files
+*/iot_decoder/
+*/google/
+*/__pycache__/
+
+# Hide server certificate files
+server.crt 
+server.csr
+server.key
