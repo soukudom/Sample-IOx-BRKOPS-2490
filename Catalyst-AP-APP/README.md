@@ -10,7 +10,7 @@ This is a sample application that demonstrates a simple web server running on Ci
     - [Install the Application](#install-the-application)
         - [Option 1: Install via Catalyst Center](#option-1-install-via-catalyst-center)
         - [Option 2: Install via ioxclient](#option-2-install-via-ioxclient)
-    - [Verify and Manage the Applicaiton](#verify-and-manage-via-cli)
+    - [Verify and Manage the Application](#verify-and-manage-via-cli)
         - [Verify the app](#verify-the-app)
         - [Verify and Test the app from the AP itself](#verify-and-test-the-app-from-the-ap-itself)
         - [Stop and Remove app](#stop-and-remove-app)
@@ -31,7 +31,7 @@ This is a sample application that demonstrates a simple web server running on Ci
     ```
     docker build --platform linux/arm64 -t ap-web-app .
     ```
-    To verify the the image, use:
+    To verify the image, use:
     ```
     docker images
     ```
@@ -40,13 +40,13 @@ This is a sample application that demonstrates a simple web server running on Ci
     ```
     ioxclient docker package -p ext2 ap-web-app:latest ./conf
     ```
-   Check if successfully has been created:
+   Verify the package was created
    ```
-   ls -lr ./conf
+   ls -la ./conf
    ```
    For this command, IOxclient needs to be run in a Linux environment! 
 
-6. Select installation tool and deploy the app. In section below you find details for Cisco Catalyst Center and ioxclient
+4. Select installation tool and deploy the app. In section below you find details for Cisco Catalyst Center and ioxclient
 
 > *Note*: A Package of the sample app (`package.tar`) and a packaged `demo.tar` Docker container are available in the `/packages` directory.
 
@@ -100,14 +100,14 @@ Select installation tool and deploy the app. In section below you find details f
 ### Verify and Manage via CLI
 
 #### Verify the app
-1. To Verify the installed apps, check the app status, or to validate configuration, use:
+1. To verify the installed apps, check the app status, or to validate configuration, use:
     ```iox
     ioxclient application list
     ioxclient application info CLEUAPP
     ```
 
 #### Verify and Test the app from the AP itself
-1. To Verify the app status, use:
+1. To verify the app status, use:
     ```iox
     sh iox applications
     ```
