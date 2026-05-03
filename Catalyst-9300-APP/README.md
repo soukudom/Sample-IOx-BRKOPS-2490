@@ -99,10 +99,10 @@ Catalyst 9300 switches are based on an x86 architecture. To build a compatible i
    IOx service (CAF)		      : Running
    IOx service (HA)		      : Running
    IOx service (IOxman)	      : Running
-   IOx service (Sec storage)	: Running
-   Libvirta 5.5.0		         : Running
-   Dockerd v19.03.13-ce	      : Running
-   Sync Status		            : Disabled
+   IOx service (Sec storage)  : Running
+   Libvirta 5.5.0             : Running
+   Dockerd v19.03.13-ce       : Running
+   Sync Status                : Disabled
    ```
 
    Get info on any installed apps, use the `sh app-hosting ?` command.
