@@ -1,7 +1,7 @@
 # Network-Analysis++
-This repository contains a Docker container that processes network traffic using [ipfixprobe](https://github.com/CESNET/ipfixprobe/tree/master) or allows to capture traffic using tcpdump. 
+This example provides a Docker-based IOx application for network traffic analysis. It supports traffic capture with [tcpdump](https://www.tcpdump.org/) and flow-oriented analysis with [ipfixprobe](https://github.com/CESNET/ipfixprobe/tree/master).
 
-Follow the instructions below to build, install and run  the app
+Follow the instructions below to build, install, and run the app.
 
 ## Table of Contents
 
@@ -9,16 +9,28 @@ Follow the instructions below to build, install and run  the app
 - [Install](#install)
 - [Run](#run)
 
-## Build 
-* `docker build -t net-analysis .`
+## Build
+Build the local Docker image from the `Dockerfile`:
 
-## Install 
-* The installation is done using the  same approach as described in the section [Catalyst-9300-APP](/Catalyst-9300-APP/README.md). It is possible to choose Catalyst Center or CLI option.
+```bash
+docker build -t net-analysis .
+```
 
-> *Note*: To make packet capture alive you need to mirror the traffic to the IOx application (TCI Drone). The same is valid for example for CyberVision. Please configure ERSPAN in the IOS-XE. The example is in the `erspan-config.txt`.
+Export the image as a package that you can upload to the switch:
+
+```bash
+docker save net-analysis:latest -o net-analysis.tar
+```
+
+## Install
+Install the app using the same workflow as [Catalyst-9300-APP](/Catalyst-9300-APP/README.md) (Catalyst Center or CLI).
+Use `net-analysis.tar` as the application package during deployment.
+
+
+> *Note*: To capture live traffic, mirror network traffic to the IOx application (TCI Drone) using ERSPAN.  The same is valid for example for CyberVision. An example configuration is available in `erspan-config.txt`.
 
 ## Run
-Based on the target use case, you can run one of the available tools to process network traffic from the container environment:
-* tcpdump (e.g., tcpdump -i eth0 -n)
-* ipfixprobe (e.g.,  ipfixprobe -i 'raw;ifc=eth0;b=2;p=10' -o 'text')
+After the app is running, use one of the following tools inside the container based on your use case:
+* `tcpdump` (e.g., `tcpdump -i eth0 -n`)
+* `ipfixprobe` (e.g., `ipfixprobe -i 'raw;ifc=eth0;b=2;p=10' -o 'text'`)
 
