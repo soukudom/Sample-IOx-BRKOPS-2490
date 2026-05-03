@@ -6,6 +6,8 @@ This sample app packages an iPerf3-based throughput test utility with a simple w
 
 - [Prerequisites](#prerequisites)
 - [Steps](#steps)
+	- [Build](#build)
+	- [Install and Run](#install-and-run)
 
 ## Prerequisites
 
