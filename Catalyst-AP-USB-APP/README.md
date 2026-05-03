@@ -1,5 +1,5 @@
 # Catalyst AP USB APP
-This is a getting application to demontrate a simple use case with USB based appliacation. For demonstration we use USB dongle with Zigbee support and [Zigbee2mqtt application](https://www.zigbee2mqtt.io/)
+This is a getting application to demonstrate a simple use case with USB based application. For demonstration we use USB dongle with Zigbee support and [Zigbee2mqtt application](https://www.zigbee2mqtt.io/)
 
 ## Table of Contents
 
@@ -24,7 +24,7 @@ This is a getting application to demontrate a simple use case with USB based app
 ### Create your Application File
 1. Download or clone this GitHub repository to your local machine. 
 
-2. User directly `package.tar` for installation and continue with next section, or pull the docker image for zigbee2mqtt app 
+2. Use the pre-built [`package.tar`](./package.tar) for installation and continue with the next section, or pull the docker image for the zigbee2mqtt app: 
 
 3. Once the docker image is pulled, use `ioxclient` to create the package file:
     ```
@@ -32,7 +32,7 @@ This is a getting application to demontrate a simple use case with USB based app
     ```
    Check if successfully has been created:
    ```
-   ls -lr ./conf
+   ls -la ./conf
    ```
 
 ### Set up the Infrastructure
@@ -61,7 +61,7 @@ Use `ioxclient` to install the app since it supports enhanced options required f
     ```
     ioxclient app install zigbee2mqtt package.tar
     ```
-3.  Then, activate the app togeher with the `activation.json` file
+3.  Then, activate the app together with the `activation.json` file
     ```
     ioxclient app activate zigbee2mqtt --payload activation.json
     ``` 
@@ -73,7 +73,7 @@ Use `ioxclient` to install the app since it supports enhanced options required f
 ### Verify and Configure the Application
 
 #### Verify the app
-1. To Verify the installed apps, check the app status, or to validate configuration, use:
+1. To verify the installed apps, check the app status, or to validate configuration, use:
     ```iox
     ioxclient application list
     ioxclient application info zigbee2mqtt
@@ -96,7 +96,7 @@ Use `ioxclient` to install the app since it supports enhanced options required f
     * USB path: /dev/ttyUSB
     * Driver: zstack (for Sonoff), ember (for SkyConnect) 
     * Select frontend access (for easier control of the Zigbee network)
-3. Rest of parameter can we in default. They can be changed later.
+3. The rest of the parameters can be left as default. They can be changed later.
 4. Save the initial configuration and validate the zigbee2mqtt live logs in the console
 
 > *Note*: If you select wrong USB driver or the connection towards mqtt broker does not work, the app will not shut down 
