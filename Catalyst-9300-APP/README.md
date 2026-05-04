@@ -125,7 +125,7 @@ Catalyst 9300 switches are based on an x86 architecture. To build a compatible i
    no app-hosting signed-verification
    ```
    Alternatively, log in to the switch Web UI, navigate to *Configuration > Services > IOx*, locate `Application Signature Validation`, and disable it.
-   To verify that signed verification has been successfully disabled, run 
+   To verify that signed verification has been successfully disabled, run: 
    ```
    Switch#sh app-hosting infra
    IOX version: 2.13.0
