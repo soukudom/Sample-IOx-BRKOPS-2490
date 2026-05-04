@@ -65,26 +65,26 @@ This is a sample application that demonstrates a simple web server running on Ci
 ### Install Prerequisites
 1. Verify the license level:
 
-An Advantage license level is required.
+    An Advantage license level is required.
 
-```
-C9800-CL#sh license summary
-...
-License Usage:
-    License                 Entitlement Tag               Count Status
-    -----------------------------------------------------------------------------
-    air-network-advantage   (DNA_NWStack)                     ...
-    air-dna-advantage       (AIR-DNA-A)                       ...
-```
+    ```
+    C9800-CL#sh license summary
+    ...
+    License Usage:
+        License                 Entitlement Tag               Count Status
+        -----------------------------------------------------------------------------
+        air-network-advantage   (DNA_NWStack)                     ...
+        air-dna-advantage       (AIR-DNA-A)                       ...
+    ```
 
 2. Before installation, enable the IOx feature on your C9800 controller:
-```
-conf t
-ap profile default-ap-profile
-apphost
-end
-```
-To verify if apphost is enabled on your 9800 controller, use `sh ap apphost summary`.
+    ```
+    conf t
+    ap profile default-ap-profile
+    apphost
+    end
+    ```
+    To verify if apphost is enabled on your 9800 controller, use `sh ap apphost summary`.
 
 ### Install
 
